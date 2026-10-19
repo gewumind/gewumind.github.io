@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="GewuMind Boot · AI Dev Tool | Install the skill, let AI turn requirements into apps">GewuMind Boot · AI 开发工具 | 装上 skill，让 AI 把需求变成应用</title>
+  <meta name="description" data-i18n="GewuMind is an AI dev tool: install gewumind-skill and let Claude Code / Cursor / opencode turn requirements into apps through a four-stage flow — requirements, design, code generation, publish — on top of the open-source low-code backend container GewuMind Boot." content="GewuMind（格物智）是 AI 开发工具：装上 gewumind-skill，让 Claude Code / Cursor / opencode 按「需求→设计→生成→发布」四阶段把需求变成应用；运行在开源的低代码后端容器 GewuMind Boot 之上。" />
+  <meta name="keywords" content="GewuMind,格物智,low-code,低代码,magic-api,AI,后端容器,MCP,skill,opencode,Claude Code,Cursor" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta property="og:title" data-i18n="GewuMind Boot · AI Dev Tool" content="GewuMind Boot · AI 开发工具" />
+  <meta property="og:description" data-i18n="Install gewumind-skill and let any AI agent complete the four stages from requirements to publish, on top of an open-source low-code backend container." content="装上 gewumind-skill，让任意 AI Agent 四阶段完成需求到发布。运行在开源低代码后端容器之上。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/social-preview.png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" data-i18n="GewuMind Boot · AI dev tool · open-source kernel" content="GewuMind Boot · AI 开发工具 · 开源内核" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/logo-mark.svg" alt="GewuMind" class="brand-mark" />
+      <span class="brand-text">Gewu<strong>Mind</strong> Boot</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#about"><span data-zh>概览</span><span data-en>Overview</span></a>
+      <a href="#features"><span data-zh>特性</span><span data-en>Features</span></a>
+      <a href="#openapi"><span data-zh>开放接口</span><span data-en>Open API</span></a>
+      <a href="#ai"><span data-zh>AI 开发</span><span data-en>AI Dev</span></a>
+      <a href="#videos"><span data-zh>视频教程</span><span data-en>Videos</span></a>
+      <a href="#start"><span data-zh>快速开始</span><span data-en>Start</span></a>
+      <a href="#ecosystem"><span data-zh>生态</span><span data-en>Ecosystem</span></a>
+      <a href="#repo"><span data-zh>开源仓库</span><span data-en>Repo</span></a>
+      <a href="#license"><span data-zh>版本与授权</span><span data-en>License</span></a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang-switch" id="langSwitch" aria-label="Switch language">
+        <span class="lang-zh-label">中文</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-en-label">EN</span>
+      </button>
+      <a class="btn btn-ghost" href="https://github.com/gewumind" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.82-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="pill">
+        <span class="dot"></span>
+        <span data-zh>AI 开发工具 · 开源内核</span>
+        <span data-en>AI development tool · Open Core</span>
+      </span>
+      <h1>
+        <span data-zh>装上 skill，<br />让 AI 把需求变成应用</span>
+        <span data-en>Install the skill,<br />let AI turn ideas into apps</span>
+      </h1>
+      <p class="lead">
+        <span data-zh>GewuMind Boot（格物智）是一套 <strong>AI 开发工具</strong>：装上 <strong>gewumind-skill</strong>，你手上的 Claude Code / Cursor / opencode 就获得完整的后端开发能力，按「需求 → 设计 → 生成 → 发布」四阶段交付应用。它跑在一个 <strong>低代码后端容器</strong> 上——HTTP 接口用脚本编写、页面用组件文件维护、菜单/字典/配置全部在线管理。</span>
+        <span data-en>GewuMind Boot is an <strong>AI development tool</strong>: install <strong>gewumind-skill</strong> and your Claude Code / Cursor / opencode gains full backend development capability, delivering apps through a 4-stage pipeline — requirements → design → generation → publish. It runs on a <strong>low-code backend container</strong>: HTTP APIs as scripts, pages kept as component files, menus/dictionaries/config managed online.</span>
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#start">
+          <span data-zh>5 分钟上手</span><span data-en>Get started in 5 min</span>
+        </a>
+        <a class="btn btn-outline" href="https://github.com/gewumind/gewumind-boot" target="_blank" rel="noopener">
+          <span data-zh>查看源码</span><span data-en>View source</span>
+        </a>
+      </div>
+
+      <div class="hero-tags">
+        <span>magic-api</span><span>Spring Boot 3</span><span>MySQL</span>
+        <span>MCP</span><span>Sa-Token</span><span>Vue 3</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><span class="mock-title">gewumind-boot</span></div>
+        <pre class="mock-body" data-zh><code><span class="c-comment"># 1. 装上 gewumind-skill</span>
+<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
+
+<span class="c-comment"># 2. 跑起后端容器</span>
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot
+<span class="c-prompt">$</span> cd gewumind-boot
+<span class="c-prompt">$</span> mysql -h127.0.0.1 -uroot -p gewumind-boot \
+      &lt; db/init/01-baseline.sql
+<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
+<span class="c-prompt">$</span> mvn clean package -DskipTests
+<span class="c-prompt">$</span> bash scripts/start.sh
+
+<span class="c-ok">✔</span> 后台     http://localhost:9089   （admin / 123456）
+<span class="c-ok">✔</span> Magic-Web http://localhost:9089/magic/web
+
+<span class="c-comment"># 3. 对 AI Agent 说：</span>
+<span class="c-str">"用 gewumind-boot 做一个设备管理模块，
+  发布到 localhost:9089"</span>
+
+<span class="c-ai">→ 需求 → 设计文档 → 生成代码 → 一键发布</span></code></pre>
+        <pre class="mock-body" data-en><code><span class="c-comment"># 1. Install gewumind-skill</span>
+<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
+
+<span class="c-comment"># 2. Run the backend container</span>
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot
+<span class="c-prompt">$</span> cd gewumind-boot
+<span class="c-prompt">$</span> mysql -h127.0.0.1 -uroot -p gewumind-boot \
+      &lt; db/init/01-baseline.sql
+<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
+<span class="c-prompt">$</span> mvn clean package -DskipTests
+<span class="c-prompt">$</span> bash scripts/start.sh
+
+<span class="c-ok">✔</span> Admin     http://localhost:9089   (admin / 123456)
+<span class="c-ok">✔</span> Magic-Web http://localhost:9089/magic/web
+
+<span class="c-comment"># 3. Tell your AI Agent:</span>
+<span class="c-str">"Build a device management module with gewumind-boot,
+  then publish it to localhost:9089"</span>
+
+<span class="c-ai">→ Requirements → Design docs → Code → One-click publish</span></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="container stats">
+    <div class="stat"><b>3</b><span data-zh>步跑起后端</span><span data-en>steps to run</span></div>
+    <div class="stat"><b>4</b><span data-zh>阶段 AI 管线</span><span data-en>stage pipeline</span></div>
+    <div class="stat"><b>83</b><span data-zh>篇 AI 知识库</span><span data-en>AI knowledge docs</span></div>
+    <div class="stat"><b>∞</b><span data-zh>个 AI Agent 可接入</span><span data-en>AI agents supported</span></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>它是什么</span><span data-en>What it is</span></span>
+      <h2><span data-zh>一个容器，装下整个后端</span><span data-en>One container for your whole backend</span></h2>
+      <p><span data-zh>把接口、数据、权限、组件、工作流、消息、AI 能力装进一个开箱即用的 Spring Boot 应用，业务用「配置 + 脚本」表达，而不是重复写样板代码。</span><span data-en>APIs, data, auth, components, workflow, messaging and AI in one ready-to-run Spring Boot app — business logic expressed as config + scripts, not boilerplate.</span></p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        </div>
+        <h3><span data-zh>接口即脚本</span><span data-en>APIs as scripts</span></h3>
+        <p><span data-zh>基于 magic-api，在线编写 HTTP 接口，热更新、免编译、免重启，天然适配 AI 生成。</span><span data-en>Powered by magic-api: write HTTP endpoints online, hot-reload, no compile, no restart — ideal for AI generation.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3><span data-zh>页面即组件文件</span><span data-en>Pages are component files</span></h3>
+        <p><span data-zh>页面以 <code>.ms</code> 组件文件存在于 <code>data/magic-api/component/</code>，后端启动时读取并注册为全局组件。改完文件、刷新页面就生效，不需要重新打包。</span><span data-en>Pages live as <code>.ms</code> component files under <code>data/magic-api/component/</code>; the backend reads and registers them as global components at startup. Edit a file, refresh — no repackaging.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8.5 7.5 11 15M15.5 7.5 13 15"/></svg>
+        </div>
+        <h3><span data-zh>在线管理一切</span><span data-en>Manage everything online</span></h3>
+        <p><span data-zh>菜单、角色、用户、字典、模块、配置、图标、页面组件，全部后台可视化维护。</span><span data-en>Menus, roles, users, dictionaries, modules, config, icons and page components — all maintained in the admin UI.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>能力清单</span><span data-en>Capabilities</span></span>
+      <h2><span data-zh>开箱即用的企业级能力</span><span data-en>Enterprise features, out of the box</span></h2>
+    </div>
+
+    <div class="grid grid-3 gap-lg">
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg>
+        </div>
+        <h3><span data-zh>低代码后端容器</span><span data-en>Low-code backend</span></h3>
+        <p><span data-zh>magic-api 脚本驱动接口，多数据源、事务、缓存、校验、分页一站式。</span><span data-en>magic-api scripted endpoints: multi-datasource, transactions, cache, validation, paging.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16M4 12h10M4 19h7"/><circle cx="18" cy="12" r="2"/><circle cx="15" cy="19" r="2"/></svg>
+        </div>
+        <h3><span data-zh>工作流引擎</span><span data-en>Workflow engine</span></h3>
+        <p><span data-zh>内置请假/采购/合同/跨部门演示：条件分支、抄送、逐层驳回、按节点分组审批。</span><span data-en>Built-in demos: conditional branching, CC nodes, layered rejection, per-node approval dialogs.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        </div>
+        <h3><span data-zh>报表插件</span><span data-en>Report plugin</span></h3>
+        <p><span data-zh>拖拽式报表设计 + 导出 Excel，业务查询直接落地。</span><span data-en>Designer-based reports and Excel export, ready for business queries.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+        </div>
+        <h3><span data-zh>消息中台</span><span data-en>Messaging hub</span></h3>
+        <p><span data-zh>Kafka / MQTT / TCP / WebSocket / SSE / Redis 统一接入，配置化开关。</span><span data-en>Kafka, MQTT, TCP, WebSocket, SSE and Redis — toggled by config.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+        </div>
+        <h3><span data-zh>安全与授权</span><span data-en>Security &amp; license</span></h3>
+        <p><span data-zh>登录/密码策略、Sa-Token 会话、SSO、离线 License（免费 + 商业双版本）。</span><span data-en>Login/password policy, Sa-Token, SSO, offline license (free + commercial editions).</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+        </div>
+        <h3><span data-zh>监听调试</span><span data-en>Debug &amp; listen</span></h3>
+        <p><span data-zh>用真实页面的请求打断点，前后台联调所见即真实入参（magic-api 无此能力）。</span><span data-en>Break on real frontend requests — see actual parameters while integrating front and back (not in magic-api).</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+        </div>
+        <h3><span data-zh>数据与缓存</span><span data-en>Data &amp; cache</span></h3>
+        <p><span data-zh>MySQL 多数据源、Redis 缓存与共享会话、Druid 连接池、MyBatis 兼容。</span><span data-en>MySQL multi-datasource, Redis cache &amp; shared sessions, Druid pool, MyBatis compatible.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="13" width="18" height="7" rx="1"/><path d="M7 6.5h.01M7 16.5h.01"/></svg>
+        </div>
+        <h3><span data-zh>模块化菜单</span><span data-en>Modular menus</span></h3>
+        <p><span data-zh>菜单/字典/图标/配置在线注册，模块化授权，权限精确到按钮。</span><span data-en>Register menus/dictionaries/icons/config online; module-based authorization down to buttons.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 7v10l8 4 8-4V7"/></svg>
+        </div>
+        <h3><span data-zh>可集成的内核</span><span data-en>Embeddable kernel</span></h3>
+        <p><span data-zh>可作为 Maven 依赖（<code>com.gewumind:gewumind-boot</code>）嵌入你自己的 Spring Boot 工程。</span><span data-en>Use as a Maven dependency (<code>com.gewumind:gewumind-boot</code>) inside your own Spring Boot app.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPEN API / GATEWAY ============ -->
+<section class="section section-alt" id="openapi">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>API 网关 · 开放接口</span><span data-en>API gateway · Open API</span></span>
+      <h2><span data-zh>把后端开放出去，接 APP、小程序和第三方系统</span><span data-en>Expose your backend to apps, mini-programs and partners</span></h2>
+      <p>
+        <span data-zh>内置一套完整的开放接口网关：<strong>注册应用 → 换 token → 按接口授权 → 限流 → 留调用日志</strong>。外部系统不碰你的后台账号体系，只拿一个应用身份调用被授权的接口。</span>
+        <span data-en>A built-in open-API gateway: <strong>register an app → exchange a token → authorize per endpoint → rate-limit → keep call logs</strong>. External systems never touch your admin accounts; they call authorized endpoints with an app identity.</span>
+      </p>
+    </div>
+
+    <div class="grid grid-3 gap-lg">
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h4"/><path d="M16 8v8M20 10v4"/></svg>
+        </div>
+        <h3><span data-zh>应用注册</span><span data-en>App registration</span></h3>
+        <p><span data-zh>为每个接入方建一个应用，拿到 <code>appKey</code> 与 <code>appSecret</code>；secret 可随时重置，停用即刻失效。</span><span data-en>Create one app per partner with an <code>appKey</code> and <code>appSecret</code>; secrets can be rotated and apps disabled instantly.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg>
+        </div>
+        <h3><span data-zh>token 鉴权</span><span data-en>Token auth</span></h3>
+        <p><span data-zh>用 <code>appKey</code> + <code>appSecret</code> 换取 token，之后请求带 <code>Authorization: Bearer &lt;token&gt;</code>，由拦截器统一校验。</span><span data-en>Exchange <code>appKey</code> + <code>appSecret</code> for a token, then send <code>Authorization: Bearer &lt;token&gt;</code> on every call — validated by a shared interceptor.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 16l3 2-3 2z"/></svg>
+        </div>
+        <h3><span data-zh>按接口授权</span><span data-en>Per-endpoint grants</span></h3>
+        <p><span data-zh>授权精确到「路径 + 方法」，还能给单个接口设独立的速率限制——小程序只给读接口，后台管理接口不开放。</span><span data-en>Grants are scoped to path + method, each with its own rate limit — give the mini-program read-only endpoints and keep admin APIs closed.</span></p>
+      </article>
+    </div>
+
+    <div class="openapi-flow">
+      <div class="openapi-code">
+        <pre data-zh class="code code-lg"><code><span class="c-comment"># 1. 用 appKey / appSecret 换 token</span>
+<span class="c-prompt">$</span> curl -X POST http://localhost:9089/open/app/token \
+    -d <span class="c-str">'appKey=xxx&amp;appSecret=yyy'</span>
+
+<span class="c-comment"># 2. 带 token 调用被授权的接口</span>
+<span class="c-prompt">$</span> curl http://localhost:9089/api/device/list \
+    -H <span class="c-str">'Authorization: Bearer &lt;token&gt;'</span>
+
+<span class="c-comment"># 未授权 / 超限 / token 失效 → 各自返回对应状态码</span></code></pre>
+        <pre data-en class="code code-lg"><code><span class="c-comment"># 1. Exchange appKey / appSecret for a token</span>
+<span class="c-prompt">$</span> curl -X POST http://localhost:9089/open/app/token \
+    -d <span class="c-str">'appKey=xxx&amp;appSecret=yyy'</span>
+
+<span class="c-comment"># 2. Call an authorized endpoint with the token</span>
+<span class="c-prompt">$</span> curl http://localhost:9089/api/device/list \
+    -H <span class="c-str">'Authorization: Bearer &lt;token&gt;'</span>
+
+<span class="c-comment"># unauthorized / over limit / expired token → each returns its own status code</span></code></pre>
+      </div>
+      <div class="openapi-aside">
+        <h3><span data-zh>典型对接场景</span><span data-en>Typical integrations</span></h3>
+        <div class="chips">
+          <span data-zh>APP</span><span data-en>Mobile app</span>
+          <span data-zh>微信小程序</span><span data-en>WeChat mini-program</span>
+          <span data-zh>第三方系统</span><span data-en>Third-party systems</span>
+          <span data-zh>硬件网关</span><span data-en>Device gateways</span>
+          <span data-zh>合作方后台</span><span data-en>Partner portals</span>
+          <span data-zh>开放平台</span><span data-en>Open platform</span>
+        </div>
+        <p class="muted">
+          <span data-zh>每次调用都会记录来源 IP、请求参数、响应状态与耗时，可在后台按应用查询；开放接口的清单还能直接导出成文档交给对接方。</span>
+          <span data-en>Every call is logged with source IP, request params, response status and cost time, queryable per app; the endpoint list can be exported as docs for partners.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI DEV / SKILL ============ -->
+<section class="section" id="ai">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>AI 快速开发</span><span data-en>AI rapid development</span></span>
+      <h2><span data-zh>一个 skill，把 AI 变成你的开发团队</span><span data-en>One skill turns any AI agent into your dev team</span></h2>
+      <p>
+        <span data-zh><strong>gewumind-skill</strong> 把 GewuMind 的 AI 开发能力打包成任何 Agent 都能用的 skill，内置完整知识库与强制模板，走可验收的四阶段管线。</span>
+        <span data-en><strong>gewumind-skill</strong> packages GewuMind's AI development capability into a skill any agent can use, with a full knowledge base, enforced templates and a verifiable 4-stage pipeline.</span>
+      </p>
+    </div>
+
+    <div class="pipeline">
+      <div class="step">
+        <span class="step-no">01</span>
+        <h4><span data-zh>需求文档</span><span data-en>Requirements</span></h4>
+        <p><span data-zh>生成 <code>docs/requirement.md</code>，确认业务边界。</span><span data-en>Produce <code>docs/requirement.md</code> and confirm scope.</span></p>
+      </div>
+      <div class="step">
+        <span class="step-no">02</span>
+        <h4><span data-zh>设计文档</span><span data-en>Design docs</span></h4>
+        <p><span data-zh>产出 <code>ui / database / api</code>，经校验门退出门。</span><span data-en>Write UI / database / API docs, gated by a verifier.</span></p>
+      </div>
+      <div class="step">
+        <span class="step-no">03</span>
+        <h4><span data-zh>代码生成</span><span data-en>Code generation</span></h4>
+        <p><span data-zh>产出 SQL / magic-script / Vue SFC / 菜单字典。</span><span data-en>Generate SQL, magic-script, Vue SFCs, menus &amp; dictionaries.</span></p>
+      </div>
+      <div class="step">
+        <span class="step-no">04</span>
+        <h4><span data-zh>一键发布</span><span data-en>One-click publish</span></h4>
+        <p><span data-zh>通过 MCP <code>bundle_apply</code> 发布到后端。</span><span data-en>Publish to the backend via MCP <code>bundle_apply</code>.</span></p>
+      </div>
+    </div>
+
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3><span data-zh>适配任何 Agent</span><span data-en>Works with any agent</span></h3>
+        <p><span data-zh>支持 Claude Code、Cursor、opencode、deepseek-harness 及任意 MCP 客户端；无 MCP 时走 REST 契约。</span><span data-en>Supports Claude Code, Cursor, opencode, deepseek-harness and any MCP client; falls back to a REST contract without MCP.</span></p>
+        <div class="chips">
+          <span>Claude Code</span><span>Cursor</span><span>opencode</span>
+          <span>deepseek-harness</span><span>MCP</span>
+        </div>
+      </div>
+      <div class="ai-card code-card">
+        <h3><span data-zh>安装（以 Claude Code 为例）</span><span data-en>Install (Claude Code example)</span></h3>
+        <pre class="code"><code><span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
+
+<span class="c-prompt">$</span> claude mcp add --transport sse gewumind-boot \
+    http://localhost:9089/mcp</code></pre>
+        <p class="muted"><span data-zh>其他 MCP 客户端可把 <code>SKILL.md</code> 贴进项目 rules，stdio 用 <code>npx mcp-remote</code> 桥接。MCP 与发布接口都需要 <code>X-AI-Key</code>，开发模式启动时会自动生成并打印在日志里。</span><span data-en>For other clients, paste <code>SKILL.md</code> into project rules; bridge stdio with <code>npx mcp-remote</code>. Both MCP and the publish API need an <code>X-AI-Key</code>; in dev mode one is generated at startup and printed to the log.</span></p>
+      </div>
+    </div>
+
+    <div class="center">
+      <a class="btn btn-outline" href="https://github.com/gewumind/gewumind-skill" target="_blank" rel="noopener">
+        <span data-zh>查看 gewumind-skill</span><span data-en>Explore gewumind-skill</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section class="section section-alt" id="arch">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>架构</span><span data-en>Architecture</span></span>
+      <h2><span data-zh>AI 在前，内核在后</span><span data-en>AI up front, kernel behind</span></h2>
+    </div>
+
+    <div class="arch">
+      <div class="arch-row">
+        <div class="arch-node accent">
+          <b><span data-zh>你的 AI Agent</span><span data-en>Your AI agent</span></b>
+          <span data-zh>Claude Code · Cursor · opencode · deepseek-harness · 任意 MCP 客户端</span>
+          <span data-en>Claude Code · Cursor · opencode · deepseek-harness · any MCP client</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-row">
+        <div class="arch-node">
+          <b>gewumind-skill</b>
+          <span data-zh>四阶段管线 + 83 篇知识库 + 强制模板</span>
+          <span data-en>4-stage pipeline + 83 knowledge docs + enforced templates</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↓ MCP / REST</div>
+      <div class="arch-row">
+        <div class="arch-node primary">
+          <b>GewuMind Boot</b>
+          <span data-zh>magic-api 容器 · 页面组件 · 工作流 · 报表 · 权限 · AI</span>
+          <span data-en>magic-api container · page components · workflow · report · auth · AI</span>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-row arch-bases">
+        <div class="arch-base">MySQL</div>
+        <div class="arch-base">Redis</div>
+        <div class="arch-base">Kafka / MQTT</div>
+        <div class="arch-base">TCP</div>
+        <div class="arch-base">WS / SSE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO TUTORIALS ============ -->
+<section class="section" id="videos">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>视频教程</span><span data-en>Video tutorials</span></span>
+      <h2><span data-zh>跟着视频，5 分钟跑起来</span><span data-en>Watch it run in five minutes</span></h2>
+      <p><span data-zh>一条总览 + AI coding + 三种部署，中文旁白 + 字幕。点右侧任意一集切换。</span><span data-en>One overview, AI coding in practice, and three deployment paths. English narration with subtitles — pick an episode.</span></p>
+    </div>
+
+    <div class="video-layout">
+      <div class="video-main">
+        <div class="video-frame">
+          <video id="tutorialVideo" controls preload="none" playsinline
+                 poster="assets/video/posters/00-overview-16x9.png" data-poster-en="assets/video/en/posters/00-overview-16x9.png"
+                 src="assets/video/00-overview.mp4"></video>
+        </div>
+        <div class="video-meta">
+          <span class="video-ep" id="videoEp">EP 01</span>
+          <h3 id="videoTitle"><span data-zh>总览：你不想拥有一个编程大师吗？</span><span data-en>Overview: don't you want a coding master?</span></h3>
+          <p id="videoDesc"><span data-zh>为什么说它不是低代码，而是 AI coding：Agent 直接写代码、直接发布。</span><span data-en>Why it's AI coding, not another low-code platform — the agent writes and ships the code.</span></p>
+        </div>
+      </div>
+
+      <ol class="video-list" id="videoList">
+        <li><button class="video-item is-active" data-src="assets/video/00-overview.mp4" data-poster="assets/video/posters/00-overview-16x9.png" data-src-en="assets/video/en/00-overview.mp4" data-poster-en="assets/video/en/posters/00-overview-16x9.png" data-ep="EP 01"
+          data-zh-title="总览：你不想拥有一个编程大师吗？" data-en-title="Overview: don't you want a coding master?"
+          data-zh-desc="为什么说它不是低代码，而是 AI coding：Agent 直接写代码、直接发布。" data-en-desc="Why it's AI coding, not another low-code platform — the agent writes and ships the code.">
+          <span class="video-thumb"><img src="assets/video/posters/00-overview-16x9.png" alt="" /><span class="video-play">▶</span></span>
+          <span class="video-info"><span class="video-t"><span data-zh>总览 · 编程大师</span><span data-en>Overview · Coding master</span></span><span class="video-d" data-dur-zh="01:39" data-dur-en="01:25">01:39</span></span>
+        </button></li>
+        <li><button class="video-item" data-src="assets/video/04-ai.mp4" data-poster="assets/video/posters/04-ai-16x9.png" data-src-en="assets/video/en/04-ai.mp4" data-poster-en="assets/video/en/posters/04-ai-16x9.png" data-ep="EP 02"
+          data-zh-title="AI coding 实战：让 Agent 写设备管理模块" data-en-title="AI coding in practice: build a device module"
+          data-zh-desc="装 skill、接 MCP、说需求：四阶段生成并发布一个可用的设备管理模块。" data-en-desc="Install the skill, connect MCP, ask for a device module — four stages to a running app.">
+          <span class="video-thumb"><img src="assets/video/posters/04-ai-16x9.png" alt="" /><span class="video-play">▶</span></span>
+          <span class="video-info"><span class="video-t"><span data-zh>AI coding 实战</span><span data-en>AI coding in practice</span></span><span class="video-d" data-dur-zh="00:46" data-dur-en="00:38">00:46</span></span>
+        </button></li>
+        <li><button class="video-item" data-src="assets/video/01-release.mp4" data-poster="assets/video/posters/01-release-16x9.png" data-src-en="assets/video/en/01-release.mp4" data-poster-en="assets/video/en/posters/01-release-16x9.png" data-ep="EP 03"
+          data-zh-title="部署一：下载发行包直接用" data-en-title="Deploy 1: download the release and run"
+          data-zh-desc="从 Releases 下载、解压、建库、启动，无需 Maven / Node。" data-en-desc="Download, unzip, init the database, start — no Maven or Node.">
+          <span class="video-thumb"><img src="assets/video/posters/01-release-16x9.png" alt="" /><span class="video-play">▶</span></span>
+          <span class="video-info"><span class="video-t"><span data-zh>部署一 · 下载发行包</span><span data-en>Deploy 1 · Download &amp; run</span></span><span class="video-d" data-dur-zh="00:41" data-dur-en="00:33">00:41</span></span>
+        </button></li>
+        <li><button class="video-item" data-src="assets/video/02-source.mp4" data-poster="assets/video/posters/02-source-16x9.png" data-src-en="assets/video/en/02-source.mp4" data-poster-en="assets/video/en/posters/02-source-16x9.png" data-ep="EP 04"
+          data-zh-title="部署二：源码直接跑" data-en-title="Deploy 2: run from source"
+          data-zh-desc="克隆、打包、启动，适合要改内核的人。" data-en-desc="Clone, build, start — for people changing the kernel.">
+          <span class="video-thumb"><img src="assets/video/posters/02-source-16x9.png" alt="" /><span class="video-play">▶</span></span>
+          <span class="video-info"><span class="video-t"><span data-zh>部署二 · 源码直接跑</span><span data-en>Deploy 2 · From source</span></span><span class="video-d" data-dur-zh="00:34" data-dur-en="00:29">00:34</span></span>
+        </button></li>
+        <li><button class="video-item" data-src="assets/video/03-embed.mp4" data-poster="assets/video/posters/03-embed-16x9.png" data-src-en="assets/video/en/03-embed.mp4" data-poster-en="assets/video/en/posters/03-embed-16x9.png" data-ep="EP 05"
+          data-zh-title="部署三：嵌进已有工程" data-en-title="Deploy 3: embed into an existing app"
+          data-zh-desc="一个 Maven 依赖，把整套后台加进你的 Spring Boot 服务。" data-en-desc="One Maven dependency adds the whole backend to your Spring Boot service.">
+          <span class="video-thumb"><img src="assets/video/posters/03-embed-16x9.png" alt="" /><span class="video-play">▶</span></span>
+          <span class="video-info"><span class="video-t"><span data-zh>部署三 · 嵌进已有工程</span><span data-en>Deploy 3 · Embed</span></span><span class="video-d" data-dur-zh="00:25" data-dur-en="00:21">00:25</span></span>
+        </button></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUICK START ============ -->
+<section class="section" id="start">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>快速开始</span><span data-en>Quick start</span></span>
+      <h2><span data-zh>三步，跑起来</span><span data-en>Three steps and it runs</span></h2>
+      <p><span data-zh>只想跑起来做业务开发？直接下 <code>gewumind-boot-app</code> 发行包解压即用，无需 Maven / Node；想改内核再走下面的源码流程。前置条件：JDK 17、Maven 3.8+、MySQL 8。</span><span data-en>Prerequisites: JDK 17, Maven 3.8+, MySQL 8.</span></p>
+    </div>
+
+    <div class="start-grid">
+      <pre data-zh class="code code-lg"><code><span class="c-comment"># 1. 克隆 + 建库并导入基线（45 张表）</span>
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot.git
+<span class="c-prompt">$</span> cd gewumind-boot
+<span class="c-prompt">$</span> mysql -uroot -p -e "CREATE DATABASE gewumind-boot
+      DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci"
+<span class="c-prompt">$</span> mysql -uroot -p gewumind-boot &lt; db/init/01-baseline.sql
+
+<span class="c-comment"># 2. 注入数据库密码（仓库里不写死）</span>
+<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
+
+<span class="c-comment"># 3. 打包并启动（停止用 bash scripts/stop.sh）</span>
+<span class="c-prompt">$</span> mvn clean package -DskipTests
+<span class="c-prompt">$</span> bash scripts/start.sh</code></pre>
+      <pre data-en class="code code-lg"><code><span class="c-comment"># 1. Clone, create the database and import the baseline (45 tables)</span>
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot.git
+<span class="c-prompt">$</span> cd gewumind-boot
+<span class="c-prompt">$</span> mysql -uroot -p -e "CREATE DATABASE gewumind-boot
+      DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci"
+<span class="c-prompt">$</span> mysql -uroot -p gewumind-boot &lt; db/init/01-baseline.sql
+
+<span class="c-comment"># 2. Inject the database password (never hard-coded in the repo)</span>
+<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
+
+<span class="c-comment"># 3. Package and start (stop with bash scripts/stop.sh)</span>
+<span class="c-prompt">$</span> mvn clean package -DskipTests
+<span class="c-prompt">$</span> bash scripts/start.sh</code></pre>
+
+      <div class="start-info">
+        <div class="info-row"><span data-zh>后台</span><span data-en>Admin</span><code>http://localhost:9089</code></div>
+        <div class="info-row"><span>Magic-Web</span><code>http://localhost:9089/magic/web</code></div>
+        <div class="info-row"><span data-zh>默认账号</span><span data-en>Default login</span><code>admin / 123456</code></div>
+        <div class="info-row"><span>MySQL</span><code>localhost:3306 · gewumind-boot</code></div>
+        <p class="muted">
+          <span data-zh>改端口 <code>SERVER_PORT=9090 bash scripts/start.sh</code>；改数据库用环境变量 <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code> 覆盖。</span>
+          <span data-en>Change port with <code>SERVER_PORT=9090 bash scripts/start.sh</code>; override the datasource via <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code>.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="db-config">
+      <div class="db-config-head">
+        <h3><span data-zh>配置数据库</span><span data-en>Configure the database</span></h3>
+        <p>
+          <span data-zh>基线脚本不代劳建库：先用 <code>CREATE DATABASE</code> 建出 <code>gewumind-boot</code>（字符集 <code>utf8mb4</code>），再把 <code>db/init/01-baseline.sql</code> 导入进去 —— 图形化客户端的「运行 SQL 文件」或命令行都行，导入后是 45 张表加平台自带的菜单/角色/字典/页面组件。</span>
+          <span data-en>No bootstrap script creates the database for you: run <code>CREATE DATABASE</code> for <code>gewumind-boot</code> (charset <code>utf8mb4</code>) first, then import <code>db/init/01-baseline.sql</code> into it — a GUI client's "run SQL file" or the command line both work. You end up with 45 tables plus bundled menus, roles, dictionaries and page components.</span>
+        </p>
+      </div>
+      <div class="db-config-grid">
+        <pre data-zh class="code"><code><span class="c-comment"># application-dev.yml（dev profile 默认值）</span>
+spring:
+  datasource:
+    url: <span class="c-str">jdbc:mysql://localhost:3306/gewumind-boot?...</span>
+    username: <span class="c-str">root</span>
+    password: <span class="c-str">******</span>
+
+<span class="c-comment"># 环境变量覆盖（推荐用于部署）</span>
+<span class="c-prompt">$</span> <span class="c-str">SPRING_DATASOURCE_URL</span>=<span class="c-str">jdbc:mysql://db:3306/app</span> \
+  <span class="c-str">SPRING_DATASOURCE_USERNAME</span>=app \
+  <span class="c-str">SPRING_DATASOURCE_PASSWORD</span>=<span class="c-str">******</span> \
+  bash scripts/start.sh</code></pre>
+        <pre data-en class="code"><code><span class="c-comment"># application-dev.yml (dev profile defaults)</span>
+spring:
+  datasource:
+    url: <span class="c-str">jdbc:mysql://localhost:3306/gewumind-boot?...</span>
+    username: <span class="c-str">root</span>
+    password: <span class="c-str">******</span>
+
+<span class="c-comment"># override with environment variables (recommended for deployment)</span>
+<span class="c-prompt">$</span> <span class="c-str">SPRING_DATASOURCE_URL</span>=<span class="c-str">jdbc:mysql://db:3306/app</span> \
+  <span class="c-str">SPRING_DATASOURCE_USERNAME</span>=app \
+  <span class="c-str">SPRING_DATASOURCE_PASSWORD</span>=<span class="c-str">******</span> \
+  bash scripts/start.sh</code></pre>
+        <div class="db-config-note">
+          <p>
+            <span data-zh><strong>支持哪些数据库：目前仅 MySQL 8。</strong>发行包里只内置了 <code>mysql-connector-j</code> 一个 JDBC 驱动，建库基线也是 MySQL 语法。</span>
+            <span data-en><strong>Supported databases: MySQL 8 only.</strong> The distribution ships a single JDBC driver, <code>mysql-connector-j</code>, and the baseline schema is MySQL syntax.</span>
+          </p>
+          <p>
+            <span data-zh>要接 PostgreSQL / Oracle / SQL Server，需要自行添加对应驱动依赖，并把 <code>db/init/01-baseline.sql</code> 转成目标方言（表选项、字符集、自增与注释语法均不通用）。</span>
+            <span data-en>For PostgreSQL, Oracle or SQL Server, add the driver dependency yourself and port <code>db/init/01-baseline.sql</code> to that dialect (table options, charset, auto-increment and comment syntax are all MySQL-specific).</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section-alt" id="ecosystem">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>生态</span><span data-en>Ecosystem</span></span>
+      <h2><span data-zh>四件套，各司其职</span><span data-en>Four pieces, one story</span></h2>
+    </div>
+
+    <div class="grid grid-2 gap-lg">
+      <a class="eco" href="https://github.com/gewumind/gewumind-boot" target="_blank" rel="noopener">
+        <div class="eco-head"><span class="tag">Core</span><h3>GewuMind Boot</h3></div>
+        <p><span data-zh>AI 驱动的低代码后端容器，项目的运行内核。</span><span data-en>The AI-powered low-code backend container — the runtime kernel.</span></p>
+      </a>
+      <a class="eco" href="https://github.com/gewumind/gewumind-skill" target="_blank" rel="noopener">
+        <div class="eco-head"><span class="tag">Skill</span><h3>gewumind-skill</h3></div>
+        <p><span data-zh>装进任意 AI Agent 的开发技能：四阶段管线 + 知识库 + 强制模板。</span><span data-en>The dev skill you install into any AI agent: 4-stage pipeline + knowledge base + enforced templates.</span></p>
+      </a>
+      <article class="eco">
+        <div class="eco-head"><span class="tag">Upstream</span><h3>magic-api</h3></div>
+        <p><span data-zh>内核底座的来源，开源低代码接口引擎。</span><span data-en>The open-source low-code API engine this is built on.</span></p>
+      </article>
+      <a class="eco" href="https://github.com/gewumind" target="_blank" rel="noopener">
+        <div class="eco-head"><span class="tag">Community</span><h3><span data-zh>社区</span><span data-en>Community</span></h3></div>
+        <p><span data-zh>Star、Fork、提 Issue，一起把 GewuMind 做得更好。</span><span data-en>Star, fork and open issues — help make GewuMind better.</span></p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPOSITORY ============ -->
+<section class="section" id="repo">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>开源仓库</span><span data-en>Open source</span></span>
+      <h2><span data-zh>gewumind-boot · 一个仓库，直接可用</span><span data-en>gewumind-boot · one repo, ready to use</span></h2>
+      <p>
+        <span data-zh>这是承载内核的<strong>应用壳工程</strong>：内核以 jar 依赖的形式随仓库入库，配置、数据库、脚本工作区各归各位，<code>clone</code> 下来三条命令就能跑起一整套低代码后端。</span>
+        <span data-en>This is the <strong>application shell</strong> that hosts the kernel: the kernel ships as a jar dependency inside the repo, with config, database and script workspace in their proper places — three commands from clone to a running low-code backend.</span>
+      </p>
+    </div>
+
+    <div class="repo-grid">
+      <div class="repo-col">
+        <h3><span data-zh>仓库里有什么</span><span data-en>What's in the repo</span></h3>
+        <ul class="check">
+          <li><span data-zh><code>libs/</code> 内核 jar（thin jar + pom，标准 Maven 仓库布局，随工程入库）</span><span data-en><code>libs/</code> the kernel jar (thin jar + pom in a standard Maven layout, checked in)</span></li>
+          <li><span data-zh><code>data/magic-api/</code> 接口脚本与页面组件的工作区，改完即生效</span><span data-en><code>data/magic-api/</code> the workspace for API scripts and page components — edits take effect live</span></li>
+          <li><span data-zh><code>db/init/01-baseline.sql</code> 建库基线：43 张系统表 + 平台自带菜单/角色/字典/组件数据，自己建库后导入即可</span><span data-en><code>db/init/01-baseline.sql</code> the baseline: 43 system tables plus bundled menus, roles, dictionaries and page components — create the database yourself, then import this file</span></li>
+          <li><span data-zh><code>src/main/java/</code> 启动类与少量适配代码，业务逻辑不写在这里</span><span data-en><code>src/main/java/</code> the bootstrap class and a little glue — business logic does not live here</span></li>
+          <li><span data-zh><code>scripts/</code> 启停与证书脚本（Windows 同名 <code>.bat</code> 行为一致）</span><span data-en><code>scripts/</code> start/stop and certificate scripts, with matching Windows <code>.bat</code> equivalents</span></li>
+        </ul>
+      </div>
+      <div class="repo-col">
+        <h3><span data-zh>四种用法，随你挑</span><span data-en>Four ways to use it</span></h3>
+        <ul class="check">
+          <li><span data-zh><strong>下载发行包直接用</strong>：从 Releases 下载 <code>gewumind-boot-app</code>，解压后建库导入基线，<code>bash scripts/start.sh</code> 即跑，无需 Maven / Node</span><span data-en><strong>Download &amp; run</strong>: grab the <code>gewumind-boot-app</code> release, unzip, import the baseline, run <code>bash scripts/start.sh</code> — no Maven / Node required</span></li>
+          <li><span data-zh><strong>直接跑</strong>：clone 后建库 + 打包 + 启动，得到一个完整的低代码后端</span><span data-en><strong>Just run it</strong>: clone, init the database, package, start — a complete low-code backend</span></li>
+          <li><span data-zh><strong>嵌进已有工程</strong>：把 <code>com.gewumind:gewumind-boot</code> 作为 Maven 依赖加进你的 Spring Boot 服务</span><span data-en><strong>Embed it</strong>: add <code>com.gewumind:gewumind-boot</code> as a Maven dependency in your own Spring Boot service</span></li>
+          <li><span data-zh><strong>交给 AI</strong>：装上 gewumind-skill，让 Agent 按四阶段把需求变成能跑的应用</span><span data-en><strong>Let AI do it</strong>: install gewumind-skill and let an agent turn requirements into a running app</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="center gap-top">
+      <span class="badge"><span data-zh>github.com/gewumind/gewumind-boot</span><span data-en>github.com/gewumind/gewumind-boot</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDITIONS ============ -->
+<section class="section section-alt" id="license">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>版本与授权</span><span data-en>Editions &amp; license</span></span>
+      <h2><span data-zh>免费起步，按需升级</span><span data-en>Start free, upgrade when you need</span></h2>
+    </div>
+
+    <div class="editions">
+      <div class="edition">
+        <h3><span data-zh>免费版</span><span data-en>Free</span></h3>
+        <p class="price"><span data-zh>开源 · 永久</span><span data-en>Open · forever</span></p>
+        <ul class="check">
+          <li><span data-zh>系统设置 / 登录 / 密码策略</span><span data-en>System settings / login / password policy</span></li>
+          <li><span data-zh>用户、角色、菜单、字典</span><span data-en>Users, roles, menus, dictionaries</span></li>
+          <li><span data-zh>主题、水印、自动重启、多数据源</span><span data-en>Themes, watermark, auto-restart, multi-datasource</span></li>
+          <li><span data-zh>基础 CRUD 与页面组件</span><span data-en>Basic CRUD &amp; page components</span></li>
+          <li><span data-zh>开放接口网关（APP / 小程序 / 第三方对接）</span><span data-en>Open-API gateway (apps, mini-programs, partners)</span></li>
+        </ul>
+      </div>
+      <article class="card plan pro">
+        <div class="plan-badge"><span data-zh>商业版</span><span data-en>Commercial</span></div>
+        <h3><span data-zh>离线 License 解锁</span><span data-en>Unlocked by offline license</span></h3>
+        <ul class="check">
+          <li><span data-zh>SSO 单点登录</span><span data-en>SSO single sign-on</span></li>
+          <li><span data-zh>工作流引擎</span><span data-en>Workflow engine</span></li>
+          <li><span data-zh>模块管理</span><span data-en>Module management</span></li>
+          <li><span data-zh>Redis / Sa-Token 共享会话</span><span data-en>Redis / Sa-Token shared sessions</span></li>
+          <li><span data-zh>MQTT · Kafka · WebSocket · SSE · TCP</span><span data-en>MQTT · Kafka · WebSocket · SSE · TCP</span></li>
+        </ul>
+        <p class="price"><span data-zh>按机器计费 · 随部署规模与支持需求定制</span><span data-en>Per-machine pricing · scoped by deployment &amp; support</span></p>
+        <p class="muted"><span data-zh>30 天免费试用，License 由签发中心离线签发、绑定机器指纹。</span><span data-en>30-day free trial; licenses are issued offline and bound to a machine fingerprint.</span></p>
+        <p class="plan-cta">
+          <a class="btn btn-primary btn-sm" href="mailto:gewumind@foxmail.com?subject=GewuMind%20Boot%20%E5%95%86%E4%B8%9A%E7%89%88%E5%92%A8%E8%AF%A2">
+            <span data-zh>获取报价 / 申请试用</span><span data-en>Request a quote / trial</span>
+          </a>
+          <a class="btn btn-ghost btn-sm" href="mailto:gewumind@foxmail.com">
+            <span data-zh>gewumind@foxmail.com</span><span data-en>gewumind@foxmail.com</span>
+          </a>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="GewuMind" class="footer-logo" />
+      <p><span data-zh>格物致知 · AI 驱动的低代码后端容器</span><span data-en>Wisdom through knowledge · AI-powered low-code backend</span></p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5><span data-zh>项目</span><span data-en>Projects</span></h5>
+        <a href="https://github.com/gewumind/gewumind-boot" target="_blank" rel="noopener">gewumind-boot</a>
+        <a href="https://github.com/gewumind/gewumind-skill" target="_blank" rel="noopener">gewumind-skill</a>
+      </div>
+      <div>
+        <h5><span data-zh>资源</span><span data-en>Resources</span></h5>
+        <a href="#start"><span data-zh>快速开始</span><span data-en>Quick start</span></a>
+        <a href="#ai"><span data-zh>AI 开发</span><span data-en>AI development</span></a>
+        <a href="#features"><span data-zh>特性</span><span data-en>Features</span></a>
+      </div>
+      <div>
+        <h5><span data-zh>社区</span><span data-en>Community</span></h5>
+        <a href="https://github.com/gewumind" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>
+        <a href="https://ssssssss.org" target="_blank" rel="noopener">magic-api</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year">2026</span> GewuMind</span>
+    <span><span data-zh>内核基于 Apache-2.0 开源</span><span data-en>Core is open-sourced under Apache-2.0</span></span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
