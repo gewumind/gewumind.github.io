@@ -490,3 +490,12 @@ ul.check li::after {
   .video-layout { grid-template-columns: 1fr; gap: 22px; }
   .video-item { grid-template-columns: 108px 1fr; }
 }
+
+/* ---------- video external links ---------- */
+.video-external {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+}
