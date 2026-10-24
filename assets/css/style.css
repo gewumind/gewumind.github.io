@@ -143,6 +143,10 @@ html[data-lang="en"] .lang-en-label { color: var(--indigo-soft); font-weight: 70
 .hero h1 span[data-zh], .hero h1 span[data-en] { display: block; }
 .lead { color: var(--muted); font-size: 1.06rem; max-width: 560px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin: 26px 0 22px; }
+.hero-release { margin: 0 0 18px; font-size: 14px; color: var(--muted); }
+.hero-release a { color: var(--green); text-decoration: none; }
+.hero-release a:hover { text-decoration: underline; }
+.hero-release strong { color: var(--text); }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; }
 .hero-tags span {
   font-size: .78rem; color: var(--muted);
