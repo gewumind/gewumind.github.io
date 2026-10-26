@@ -85,8 +85,8 @@
       </div>
 
       <p class="hero-release">
-        <span data-zh><strong>v1.1.0</strong> · 发布失败自动回滚 / 运行时语言包 / skill 英文 · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v1.1.0">更新说明</a></span>
-        <span data-en><strong>v1.1.0</strong> · automatic rollback / runtime language packs / English skill · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v1.1.0">release notes</a></span>
+        <span data-zh><strong>v1.2.0</strong> · 完整英文版 / 中英双语同包 / 语言 profile 切换 · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v1.2.0">更新说明</a></span>
+        <span data-en><strong>v1.2.0</strong> · complete English edition / bilingual package / language profiles · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v1.2.0">release notes</a></span>
       </p>
 
       <div class="hero-tags">
@@ -172,7 +172,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </div>
         <h3><span data-zh>页面即组件文件</span><span data-en>Pages are component files</span></h3>
-        <p><span data-zh>页面以 <code>.ms</code> 组件文件存在于 <code>data/magic-api/component/</code>，后端启动时读取并注册为全局组件。改完文件、刷新页面就生效，不需要重新打包。</span><span data-en>Pages live as <code>.ms</code> component files under <code>data/magic-api/component/</code>; the backend reads and registers them as global components at startup. Edit a file, refresh — no repackaging.</span></p>
+        <p><span data-zh>页面以 <code>.ms</code> 组件文件存在于 <code>data/{zh,en}/magic-api/component/</code>，后端启动时读取并注册为全局组件。改完文件、刷新页面就生效，不需要重新打包。</span><span data-en>Pages live as <code>.ms</code> component files under <code>data/{zh,en}/magic-api/component/</code>; the backend reads and registers them as global components at startup. Edit a file, refresh — no repackaging.</span></p>
       </article>
       <article class="card">
         <div class="card-icon">
@@ -651,7 +651,7 @@ spring:
         <h3><span data-zh>仓库里有什么</span><span data-en>What's in the repo</span></h3>
         <ul class="check">
           <li><span data-zh><code>libs/</code> 内核 jar（thin jar + pom，标准 Maven 仓库布局，随工程入库）</span><span data-en><code>libs/</code> the kernel jar (thin jar + pom in a standard Maven layout, checked in)</span></li>
-          <li><span data-zh><code>data/magic-api/</code> 接口脚本与页面组件的工作区，改完即生效</span><span data-en><code>data/magic-api/</code> the workspace for API scripts and page components — edits take effect live</span></li>
+          <li><span data-zh><code>data/{zh,en}/magic-api/</code> 中英文接口脚本与页面组件工作区，改完即生效</span><span data-en><code>data/{zh,en}/magic-api/</code> the Chinese/English workspace for API scripts and page components — edits take effect live</span></li>
           <li><span data-zh><code>db/init/01-baseline.sql</code> 建库基线：43 张系统表 + 平台自带菜单/角色/字典/组件数据，自己建库后导入即可</span><span data-en><code>db/init/01-baseline.sql</code> the baseline: 43 system tables plus bundled menus, roles, dictionaries and page components — create the database yourself, then import this file</span></li>
           <li><span data-zh><code>src/main/java/</code> 启动类与少量适配代码，业务逻辑不写在这里</span><span data-en><code>src/main/java/</code> the bootstrap class and a little glue — business logic does not live here</span></li>
           <li><span data-zh><code>scripts/</code> 启停与证书脚本（Windows 同名 <code>.bat</code> 行为一致）</span><span data-en><code>scripts/</code> start/stop and certificate scripts, with matching Windows <code>.bat</code> equivalents</span></li>
