@@ -37,16 +37,22 @@ git push -u origin main
 ```
 gewumind-github-html/
 ├── index.html              # 单页（中英双语，data-zh / data-en）
-├── pricing.html            # 价格与授权档位
-├── terms.html              # 服务条款
-├── privacy.html            # 隐私政策
-├── license.html            # 软件授权协议
-├── contact.html            # 联系方式
+├── pricing.html            # 价格与授权档位（英文）
+├── pricing.zh.html         # 价格与授权档位（中文）
+├── terms.html              # 服务条款（英文）
+├── terms.zh.html           # 服务条款（中文）
+├── privacy.html            # 隐私政策（英文）
+├── privacy.zh.html         # 隐私政策（中文）
+├── license.html            # 软件授权协议（英文）
+├── license.zh.html         # 软件授权协议（中文）
+├── contact.html            # 联系方式（英文）
+├── contact.zh.html         # 联系方式（中文）
 ├── robots.txt
 ├── sitemap.xml
 ├── assets/
 │   ├── css/style.css
-│   ├── js/main.js          # 语言切换（localStorage 记忆）
+│   ├── js/main.js          # 首页语言切换（localStorage 记忆）
+│   ├── js/legal-lang.js    # 法律页中英文自动切换
 │   ├── logo.svg            # 完整 logo（含文字）
 │   └── logo-mark.svg       # 图标
 ├── favicon.ico
