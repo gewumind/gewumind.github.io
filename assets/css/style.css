@@ -29,6 +29,8 @@ html[data-lang="en"] [data-zh] { display: none !important; }
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+.section { scroll-margin-top: 84px; }
+@media (max-width: 960px) { .section { scroll-margin-top: 118px; } }
 
 body {
   margin: 0;
@@ -369,6 +371,7 @@ ul.check li::after {
 .plan-cta .btn { text-decoration: none; }
 .plan { position: relative; }
 .plan.pro { border-color: var(--indigo); background: linear-gradient(180deg, rgba(99,102,241,.12), var(--surface)); }
+.license-note { text-align: center; color: var(--muted); font-size: .9rem; margin: 24px 0 0; }
 .plan-badge {
   position: absolute; top: 18px; right: 20px;
   font-size: .74rem; font-weight: 700; color: #fff;
@@ -376,12 +379,67 @@ ul.check li::after {
   border-radius: 999px; padding: .28em .8em;
 }
 
+/* ---------- roadmap & releases ---------- */
+.roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.roadmap-item {
+  border: 1px solid var(--border-soft); border-radius: var(--radius);
+  background: var(--surface); padding: 26px;
+}
+.roadmap-item.is-next {
+  border-color: rgba(99, 102, 241, .55);
+  background: linear-gradient(180deg, rgba(99, 102, 241, .10), var(--surface));
+}
+.roadmap-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-bottom: 14px;
+}
+.roadmap-version { font-family: var(--mono); font-size: 1.3rem; font-weight: 700; color: #fff; }
+.roadmap-badge {
+  font-size: .72rem; font-weight: 600; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 999px; padding: .28em .7em;
+}
+.roadmap-badge.done {
+  color: var(--green); border-color: rgba(52, 211, 153, .45);
+  background: rgba(52, 211, 153, .10);
+}
+.roadmap-badge.next {
+  color: #c7d2fe; border-color: var(--indigo);
+  background: rgba(99, 102, 241, .12);
+}
+.roadmap-item h3 { font-size: 1.12rem; }
+.roadmap-item > p { color: var(--muted); font-size: .92rem; }
+.roadmap-item ul.check { margin-top: 14px; }
+
+.release-history { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-soft); }
+.release-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 8px;
+}
+.release-head h3 { margin: 0; }
+.release-head a { color: var(--green); font-size: .88rem; white-space: nowrap; }
+.release-head a:hover { text-decoration: underline; }
+.release-item {
+  display: grid; grid-template-columns: 92px 112px 1fr; gap: 14px;
+  align-items: start; padding: 16px 0; border-top: 1px solid var(--border-soft);
+}
+.release-version { font-family: var(--mono); color: #fff; }
+.release-date { color: var(--muted); font-size: .86rem; }
+.release-item p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+@media (max-width: 960px) {
+  .roadmap { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .release-item { grid-template-columns: 1fr; gap: 4px; }
+  .release-head { align-items: flex-start; flex-direction: column; gap: 6px; }
+}
+
 /* ---------- footer ---------- */
 .footer { background: #070b16; border-top: 1px solid var(--border-soft); padding: 54px 0 26px; }
 .footer-inner { display: grid; grid-template-columns: 1.4fr 2fr; gap: 40px; }
 .footer-logo { width: 190px; height: auto; margin-bottom: 12px; }
 .footer-brand p { color: var(--muted); font-size: .9rem; max-width: 320px; }
-.footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.footer-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .footer-links h5 { color: var(--text); font-size: .9rem; margin-bottom: 12px; }
 .footer-links a { display: block; color: var(--muted); font-size: .9rem; padding: 4px 0; }
 .footer-links a:hover { color: var(--indigo-soft); }
@@ -502,4 +560,53 @@ ul.check li::after {
   gap: 10px;
   justify-content: center;
   margin-top: 18px;
+}
+
+
+/* ---------- legal / pricing pages ---------- */
+.legal-main { padding: 56px 0 76px; }
+.legal-wrap { max-width: 860px; }
+.legal-kicker {
+  display: inline-block; margin-bottom: 12px; color: var(--indigo-soft);
+  font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+}
+.legal-title { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; }
+.legal-meta { color: var(--muted); font-size: .9rem; margin-bottom: 28px; }
+.legal-note {
+  border: 1px solid var(--border-soft); background: var(--surface);
+  border-radius: var(--radius); padding: 16px 18px; color: var(--muted);
+  font-size: .92rem; margin: 22px 0 28px;
+}
+.legal-wrap h2 { font-size: 1.28rem; margin: 34px 0 10px; }
+.legal-wrap h3 { font-size: 1.04rem; margin: 24px 0 8px; }
+.legal-wrap p, .legal-wrap li { color: var(--muted); font-size: .96rem; }
+.legal-wrap p { margin: 0 0 14px; }
+.legal-wrap ul, .legal-wrap ol { margin: 0 0 16px; padding-left: 22px; }
+.legal-wrap li { margin: 4px 0; }
+.legal-wrap a { color: var(--indigo-soft); }
+.legal-wrap strong { color: var(--text); }
+.legal-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: .92rem; }
+.legal-table th, .legal-table td {
+  text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-soft);
+  color: var(--muted); vertical-align: top;
+}
+.legal-table th { color: var(--text); background: rgba(255,255,255,.03); }
+.legal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 28px; }
+.price-card {
+  border: 1px solid var(--border-soft); border-radius: var(--radius);
+  background: var(--surface); padding: 26px;
+}
+.price-card.featured { border-color: var(--indigo); background: linear-gradient(180deg, rgba(99,102,241,.12), var(--surface)); }
+.price-card h2 { margin: 0 0 6px; font-size: 1.3rem; }
+.price-tag { font-size: 2rem; font-weight: 800; color: var(--text); margin: 14px 0 4px; }
+.price-tag small { font-size: .85rem; font-weight: 500; color: var(--muted); }
+.price-sub { color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+.price-card ul { list-style: none; margin: 0 0 20px; padding: 0; }
+.price-card li { color: var(--muted); font-size: .92rem; padding: 5px 0 5px 22px; position: relative; }
+.price-card li::before { content: "✓"; position: absolute; left: 0; color: var(--green); }
+.price-card .btn { width: 100%; text-align: center; }
+.price-foot { color: var(--muted); font-size: .86rem; margin-top: 18px; }
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; }
 }

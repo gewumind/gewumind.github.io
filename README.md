@@ -8,7 +8,7 @@ GewuMind（格物智）的官方网站 / GitHub Pages 落地页，介绍 **GewuM
 
 ```bash
 python3 -m http.server 4000
-# 打开 http://localhost:8000
+# 打开 http://localhost:4000
 ```
 
 ## 发布到 GitHub Pages
@@ -37,6 +37,13 @@ git push -u origin main
 ```
 gewumind-github-html/
 ├── index.html              # 单页（中英双语，data-zh / data-en）
+├── pricing.html            # 价格与授权档位
+├── terms.html              # 服务条款
+├── privacy.html            # 隐私政策
+├── license.html            # 软件授权协议
+├── contact.html            # 联系方式
+├── robots.txt
+├── sitemap.xml
 ├── assets/
 │   ├── css/style.css
 │   ├── js/main.js          # 语言切换（localStorage 记忆）
@@ -45,6 +52,14 @@ gewumind-github-html/
 ├── favicon.ico
 └── .nojekyll
 ```
+
+## 路线图与版本记录
+
+- 官网 `index.html` 的 `#roadmap` 区块同时维护**产品路线**与**版本记录**，面向用户，不写内部实现。
+- 发布新版本时，在 `#roadmap` 的版本记录里加一条，保留最近 3–4 个即可；完整历史链到 [GitHub Releases](https://github.com/gewumind/gewumind-boot/releases)。
+- 文案口径：2.x / 3.x 的**新增 AI 能力**属于商业版，和 SSO 一样通过**离线 License 解锁**，解锁后在配置中心开启；**原有免费功能在 2.x/3.x 继续免费**。路线图文案不要写价格或账单类字眼。
+- 2.x 的新增能力按用户价值写：知识库（客服与开发技能共用）、Skill 测试增强（自动生成并执行接口/权限/页面回归），不写内核版本、License 功能位等内部实现。
+- 路线图状态用「已发布 / 规划中 / 远期规划」，不写具体交付日期，避免变成承诺。
 
 ## 维护
 

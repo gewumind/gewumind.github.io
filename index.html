@@ -6,6 +6,9 @@
   <title data-i18n="GewuMind Boot · AI Dev Tool | Install the skill, let AI turn requirements into apps">GewuMind Boot · AI 开发工具 | 装上 skill，让 AI 把需求变成应用</title>
   <meta name="description" data-i18n="GewuMind is an AI dev tool: install gewumind-skill and let Claude Code / Cursor / opencode turn requirements into apps through a four-stage flow — requirements, design, code generation, publish — on top of the open-source low-code backend container GewuMind Boot." content="GewuMind（格物智）是 AI 开发工具：装上 gewumind-skill，让 Claude Code / Cursor / opencode 按「需求→设计→生成→发布」四阶段把需求变成应用；运行在开源的低代码后端容器 GewuMind Boot 之上。" />
   <meta name="keywords" content="GewuMind,格物智,low-code,低代码,magic-api,AI,后端容器,MCP,skill,opencode,Claude Code,Cursor" />
+  <link rel="canonical" href="https://gewumind.com/" />
+  <meta property="og:url" content="https://gewumind.com/" />
+  <meta property="og:site_name" content="GewuMind" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
@@ -39,6 +42,7 @@
       <a href="#ecosystem"><span data-zh>生态</span><span data-en>Ecosystem</span></a>
       <a href="#repo"><span data-zh>开源仓库</span><span data-en>Repo</span></a>
       <a href="#license"><span data-zh>版本与授权</span><span data-en>License</span></a>
+      <a href="#roadmap"><span data-zh>路线图</span><span data-en>Roadmap</span></a>
     </nav>
 
     <div class="nav-actions">
@@ -452,7 +456,7 @@
       <h2><span data-zh>跟着视频，5 分钟跑起来</span><span data-en>Watch it run in five minutes</span></h2>
       <p><span data-zh>一条总览 + AI coding + 三种部署，中文旁白 + 字幕。点右侧任意一集切换。</span><span data-en>One overview, AI coding in practice, and three deployment paths. English narration with subtitles — pick an episode.</span></p>
       <div class="video-external">
-        <a class="btn btn-outline btn-sm" href="https://www.bilibili.com/video/BV11AJd67EMF" target="_blank" rel="noopener">
+        <a class="btn btn-outline btn-sm" href="https://www.bilibili.com/video/BV1B7xK6LEEQ" target="_blank" rel="noopener">
           <span data-zh>在 B 站看总览</span><span data-en>Overview on Bilibili</span>
         </a>
         <a class="btn btn-outline btn-sm" href="https://youtu.be/hrjdcz6br34" target="_blank" rel="noopener">
@@ -705,17 +709,104 @@ spring:
           <li><span data-zh>Redis / Sa-Token 共享会话</span><span data-en>Redis / Sa-Token shared sessions</span></li>
           <li><span data-zh>MQTT · Kafka · WebSocket · SSE · TCP</span><span data-en>MQTT · Kafka · WebSocket · SSE · TCP</span></li>
         </ul>
-        <p class="price"><span data-zh>按机器计费 · 随部署规模与支持需求定制</span><span data-en>Per-machine pricing · scoped by deployment &amp; support</span></p>
+        <p class="price"><span data-zh>按机器授权 · 随部署规模与支持需求定制</span><span data-en>Per-machine licensing · scoped by deployment &amp; support</span></p>
         <p class="muted"><span data-zh>30 天免费试用，License 由签发中心离线签发、绑定机器指纹。</span><span data-en>30-day free trial; licenses are issued offline and bound to a machine fingerprint.</span></p>
         <p class="plan-cta">
-          <a class="btn btn-primary btn-sm" href="mailto:gewumind@foxmail.com?subject=GewuMind%20Boot%20%E5%95%86%E4%B8%9A%E7%89%88%E5%92%A8%E8%AF%A2">
-            <span data-zh>获取报价 / 申请试用</span><span data-en>Request a quote / trial</span>
+          <a class="btn btn-primary btn-sm" href="mailto:support@gewumind.com?subject=GewuMind%20Boot%20License">
+            <span data-zh>申请试用 / 了解授权</span><span data-en>Request a trial / licensing</span>
           </a>
-          <a class="btn btn-ghost btn-sm" href="mailto:gewumind@foxmail.com">
-            <span data-zh>gewumind@foxmail.com</span><span data-en>gewumind@foxmail.com</span>
+          <a class="btn btn-ghost btn-sm" href="/pricing.html">
+            <span data-zh>查看价格</span><span data-en>View pricing</span>
           </a>
         </p>
       </article>
+    </div>
+    <p class="license-note"><span data-zh>2.x / 3.x 新增 AI 能力同样通过离线 License 解锁，解锁后在配置中心开启；原有免费功能继续免费。</span><span data-en>New AI capabilities in 2.x / 3.x are unlocked by the same offline license and enabled in the config center; features that are free today stay free.</span></p>
+  </div>
+</section>
+
+<!-- ============ ROADMAP & RELEASES ============ -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>路线图与版本</span><span data-en>Roadmap &amp; releases</span></span>
+      <h2><span data-zh>下一步，让系统自己长出功能</span><span data-en>Next: a system that grows its own features</span></h2>
+      <p><span data-zh>1.x 持续维护；2.x 与 3.x 的新增 AI 能力属于商业版，和 SSO 一样通过离线 License 解锁；解锁后在配置中心开启。原有免费功能在 2.x/3.x 继续免费，不因升级缩水。计划会随反馈调整，不构成交付承诺。</span><span data-en>1.x keeps shipping. New AI capabilities in 2.x and 3.x are commercial capabilities, unlocked by an offline license just like SSO, then enabled in the config center. Features that are free today stay free in 2.x/3.x — upgrades never take them away. Plans may change with feedback and are not a delivery commitment.</span></p>
+    </div>
+
+    <div class="roadmap">
+      <article class="roadmap-item is-done">
+        <div class="roadmap-meta">
+          <span class="roadmap-version">1.x</span>
+          <span class="roadmap-badge done"><span data-zh>已发布</span><span data-en>Released</span></span>
+        </div>
+        <h3><span data-zh>稳定、双语、可维护</span><span data-en>Stable, bilingual, maintainable</span></h3>
+        <p><span data-zh>把一套能长期跑的后端底座打磨好：双语、在线开发、可视化管理和持续修复。</span><span data-en>A backend foundation built to last: bilingual, developed online, managed visually, and continuously maintained.</span></p>
+        <ul class="check">
+          <li><span data-zh>中文与英文同包发布，一个安装包切换语言</span><span data-en>Chinese and English in one package, switch by profile</span></li>
+          <li><span data-zh>在线写接口、改页面、断点调试，改完即生效</span><span data-en>Write APIs, edit pages and debug online — changes take effect immediately</span></li>
+          <li><span data-zh>工作流、报表、开放接口网关持续演进</span><span data-en>Workflows, reports and the Open API gateway keep improving</span></li>
+        </ul>
+      </article>
+
+      <article class="roadmap-item is-next">
+        <div class="roadmap-meta">
+          <span class="roadmap-version">2.x</span>
+          <span class="roadmap-badge next"><span data-zh>规划中</span><span data-en>Planned</span></span>
+        </div>
+        <h3><span data-zh>AI 客服：问得到，也答得准</span><span data-en>AI support: answers you can trust</span></h3>
+        <p><span data-zh>把系统里的数据变成可对话的客服，但只在你的权限内回答。每个结论都能回到具体接口。</span><span data-en>Turn your system data into a conversational support agent — within the caller's permissions, with every answer traceable to a real API.</span></p>
+        <ul class="check">
+          <li><span data-zh>内部 Chat + H5 网页客服，支持语音输入与播报</span><span data-en>Internal chat and an H5 web widget, with voice input and playback</span></li>
+          <li><span data-zh>回答只来自系统接口，不编造数字和记录</span><span data-en>Answers come only from system APIs — no invented numbers or records</span></li>
+          <li><span data-zh>没权限、查不到、不支持时直接说明</span><span data-en>Clear replies when access is denied, data is missing, or the question is unsupported</span></li>
+          <li><span data-zh>知识库：文档、业务规则、FAQ 可检索，客服与开发技能共用</span><span data-en>Knowledge base: searchable docs, business rules and FAQs shared by support and the dev agent</span></li>
+          <li><span data-zh>Skill 测试增强：自动生成并执行接口、权限、页面回归</span><span data-en>Skill testing: generate and run API, permission and UI regression tests</span></li>
+          <li><span data-zh>商业版能力，离线 License 解锁后在配置中心开启</span><span data-en>Commercial capability, unlocked by an offline license and enabled in the config center</span></li>
+        </ul>
+      </article>
+
+      <article class="roadmap-item">
+        <div class="roadmap-meta">
+          <span class="roadmap-version">3.x</span>
+          <span class="roadmap-badge"><span data-zh>远期规划</span><span data-en>Later</span></span>
+        </div>
+        <h3><span data-zh>智能体开发：说出需求，长出功能</span><span data-en>Agent development: describe it, ship it</span></h3>
+        <p><span data-zh>在 2.x 之上，用自然语言调整功能、创建功能；从需求到测试环境应用，再到人工确认发布。</span><span data-en>On top of 2.x, adjust and create features in natural language — from requirement to staging, then to a human-approved release.</span></p>
+        <ul class="check">
+          <li><span data-zh>需求 → 变更计划 → 测试环境应用 → 自动验证</span><span data-en>Requirement → change plan → staging → automated verification</span></li>
+          <li><span data-zh>接口、页面、菜单、字典一起生成</span><span data-en>APIs, pages, menus and dictionaries generated together</span></li>
+          <li><span data-zh>复用 2.x 知识库与测试：规划前查规范，发布前自动回归</span><span data-en>Reuses the 2.x knowledge base and tests: check conventions before planning, run regression before release</span></li>
+          <li><span data-zh>生产发布需人工确认，可回滚</span><span data-en>Production releases need human approval and can be rolled back</span></li>
+          <li><span data-zh>开发模式默认关闭，需单独离线 License 解锁</span><span data-en>Development mode is off by default and unlocked by a separate offline license</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="release-history">
+      <div class="release-head">
+        <h3><span data-zh>版本记录</span><span data-en>Release history</span></h3>
+        <a href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener">
+          <span data-zh>完整 Release →</span><span data-en>All releases →</span>
+        </a>
+      </div>
+      <div class="release-list">
+        <article class="release-item">
+          <span class="release-version">v1.2.0</span>
+          <span class="release-date">2026-10-26</span>
+          <p><span data-zh>完整英文版上线：菜单、表单、演示数据与提示信息均可英文；中英文同包发布，一个安装包切换语言。</span><span data-en>Full English edition: menus, forms, demo data and messages in English; both languages ship in one package.</span></p>
+        </article>
+        <article class="release-item">
+          <span class="release-version">v1.1.0</span>
+          <span class="release-date">2026-10-24</span>
+          <p><span data-zh>发布更安全：失败自动回滚；菜单与按钮权限随发布一起生效；界面支持中英文切换。</span><span data-en>Safer releases: automatic rollback on failure, permissions applied with each publish, and a bilingual UI.</span></p>
+        </article>
+        <article class="release-item">
+          <span class="release-version">v1.0.0</span>
+          <span class="release-date">2026-10-19</span>
+          <p><span data-zh>首个公开版本：低代码接口、动态组件、在线 IDE、工作流与开放接口网关。</span><span data-en>First public release: low-code APIs, dynamic components, online IDE, workflows and the Open API gateway.</span></p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -731,21 +822,29 @@ spring:
     </div>
     <div class="footer-links">
       <div>
-        <h5><span data-zh>项目</span><span data-en>Projects</span></h5>
-        <a href="https://github.com/gewumind/gewumind-boot" target="_blank" rel="noopener">gewumind-boot</a>
-        <a href="https://github.com/gewumind/gewumind-skill" target="_blank" rel="noopener">gewumind-skill</a>
+        <h5><span data-zh>产品</span><span data-en>Product</span></h5>
+        <a href="/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="/pricing.html"><span data-zh>价格</span><span data-en>Pricing</span></a>
+        <a href="/contact.html"><span data-zh>联系我们</span><span data-en>Contact</span></a>
+      </div>
+      <div>
+        <h5><span data-zh>法律</span><span data-en>Legal</span></h5>
+        <a href="/terms.html"><span data-zh>服务条款</span><span data-en>Terms of Service</span></a>
+        <a href="/privacy.html"><span data-zh>隐私政策</span><span data-en>Privacy Policy</span></a>
+        <a href="/license.html"><span data-zh>软件授权协议</span><span data-en>License Agreement</span></a>
       </div>
       <div>
         <h5><span data-zh>资源</span><span data-en>Resources</span></h5>
         <a href="#start"><span data-zh>快速开始</span><span data-en>Quick start</span></a>
-        <a href="#ai"><span data-zh>AI 开发</span><span data-en>AI development</span></a>
-        <a href="#features"><span data-zh>特性</span><span data-en>Features</span></a>
+        <a href="#roadmap"><span data-zh>路线图与版本</span><span data-en>Roadmap &amp; releases</span></a>
+        <a href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener"><span data-zh>版本下载</span><span data-en>Downloads</span></a>
       </div>
       <div>
         <h5><span data-zh>社区</span><span data-en>Community</span></h5>
         <a href="https://github.com/gewumind" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>
-        <a href="https://ssssssss.org" target="_blank" rel="noopener">magic-api</a>
+        <a href="https://github.com/gewumind/gewumind-boot" target="_blank" rel="noopener">gewumind-boot</a>
+        <a href="https://github.com/gewumind/gewumind-skill" target="_blank" rel="noopener">gewumind-skill</a>
+        <a href="mailto:support@gewumind.com">support@gewumind.com</a>
       </div>
     </div>
   </div>
