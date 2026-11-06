@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="GewuMind Boot · AI Dev Tool | Install the skill, let AI turn requirements into apps">GewuMind Boot · AI 开发工具 | 装上 skill，让 AI 把需求变成应用</title>
-  <meta name="description" data-i18n="GewuMind is an AI dev tool: install gewumind-skill and let Claude Code / Cursor / opencode turn requirements into apps through a four-stage flow — requirements, design, code generation, publish — on top of the open-source low-code backend container GewuMind Boot." content="GewuMind（格物智）是 AI 开发工具：装上 gewumind-skill，让 Claude Code / Cursor / opencode 按「需求→设计→生成→发布」四阶段把需求变成应用；运行在开源的低代码后端容器 GewuMind Boot 之上。" />
-  <meta name="keywords" content="GewuMind,格物智,low-code,低代码,magic-api,AI,后端容器,MCP,skill,opencode,Claude Code,Cursor" />
+  <title data-i18n="GewuMind Boot · AI Dev + AI Support | From requirements to running apps">GewuMind Boot · AI 开发与 AI 客服 | 从需求到可运行应用</title>
+  <meta name="description" data-i18n="GewuMind is an AI dev tool and runtime AI customer service platform: install gewumind-skill to turn requirements into apps, then add 2.x AI support, knowledge base and H5 chat on top of the open-source low-code backend container GewuMind Boot." content="GewuMind（格物智）是 AI 开发工具与 AI 客服平台：装上 gewumind-skill，让 Claude Code / Cursor / opencode 按「需求→设计→生成→发布」四阶段把需求变成应用；2.x 还提供 AI 客服、知识库和 H5 嵌入，运行在开源的低代码后端容器 GewuMind Boot 之上。" />
+  <meta name="keywords" content="GewuMind,格物智,low-code,低代码,magic-api,AI,AI客服,知识库,H5客服,后端容器,MCP,skill,opencode,Claude Code,Cursor" />
   <link rel="canonical" href="https://gewumind.com/" />
   <meta property="og:url" content="https://gewumind.com/" />
   <meta property="og:site_name" content="GewuMind" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <meta property="og:title" data-i18n="GewuMind Boot · AI Dev Tool" content="GewuMind Boot · AI 开发工具" />
-  <meta property="og:description" data-i18n="Install gewumind-skill and let any AI agent complete the four stages from requirements to publish, on top of an open-source low-code backend container." content="装上 gewumind-skill，让任意 AI Agent 四阶段完成需求到发布。运行在开源低代码后端容器之上。" />
+  <meta property="og:title" data-i18n="GewuMind Boot · AI Dev + AI Support" content="GewuMind Boot · AI 开发与 AI 客服" />
+  <meta property="og:description" data-i18n="Install gewumind-skill for AI development, then use 2.x AI support, knowledge base and H5 chat on an open-source low-code backend container." content="装上 gewumind-skill 做 AI 开发；2.x 还提供 AI 客服、知识库和 H5 客服，运行在开源低代码后端容器之上。" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/social-preview.png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" data-i18n="GewuMind Boot · AI dev tool · open-source kernel" content="GewuMind Boot · AI 开发工具 · 开源内核" />
+  <meta property="og:image:alt" data-i18n="GewuMind Boot · AI dev tool · open-source kernel" content="GewuMind Boot · AI 开发 + AI 客服 · 开源内核" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -37,6 +37,7 @@
       <a href="#features"><span data-zh>特性</span><span data-en>Features</span></a>
       <a href="#openapi"><span data-zh>开放接口</span><span data-en>Open API</span></a>
       <a href="#ai"><span data-zh>AI 开发</span><span data-en>AI Dev</span></a>
+      <a href="#ai-service"><span data-zh>AI 客服</span><span data-en>AI Support</span></a>
       <a href="#videos"><span data-zh>视频教程</span><span data-en>Videos</span></a>
       <a href="#start"><span data-zh>快速开始</span><span data-en>Start</span></a>
       <a href="#ecosystem"><span data-zh>生态</span><span data-en>Ecosystem</span></a>
@@ -68,16 +69,16 @@
     <div class="hero-copy">
       <span class="pill">
         <span class="dot"></span>
-        <span data-zh>AI 开发工具 · 开源内核</span>
-        <span data-en>AI development tool · Open Core</span>
+        <span data-zh>AI 开发 + AI 客服 · 开源内核</span>
+        <span data-en>AI dev + AI support · Open Core</span>
       </span>
       <h1>
         <span data-zh>装上 skill，<br />让 AI 把需求变成应用</span>
         <span data-en>Install the skill,<br />let AI turn ideas into apps</span>
       </h1>
       <p class="lead">
-        <span data-zh>GewuMind Boot（格物智）是一套 <strong>AI 开发工具</strong>：装上 <strong>gewumind-skill</strong>，你手上的 Claude Code / Cursor / opencode 就获得完整的后端开发能力，按「需求 → 设计 → 生成 → 发布」四阶段交付应用。它跑在一个 <strong>低代码后端容器</strong> 上——HTTP 接口用脚本编写、页面用组件文件维护、菜单/字典/配置全部在线管理。</span>
-        <span data-en>GewuMind Boot is an <strong>AI development tool</strong>: install <strong>gewumind-skill</strong> and your Claude Code / Cursor / opencode gains full backend development capability, delivering apps through a 4-stage pipeline — requirements → design → generation → publish. It runs on a <strong>low-code backend container</strong>: HTTP APIs as scripts, pages kept as component files, menus/dictionaries/config managed online.</span>
+        <span data-zh>GewuMind Boot（格物智）是一套 <strong>AI 开发工具</strong>：装上 <strong>gewumind-skill</strong>，你手上的 Claude Code / Cursor / opencode 就获得完整的后端开发能力，按「需求 → 设计 → 生成 → 发布」四阶段交付应用。它跑在一个 <strong>低代码后端容器</strong> 上——HTTP 接口用脚本编写、页面用组件文件维护、菜单/字典/配置全部在线管理。2.x 还把同一套可信 AI 用在 AI 客服、知识库和 H5 嵌入上。</span>
+        <span data-en>GewuMind Boot is an <strong>AI development tool</strong>: install <strong>gewumind-skill</strong> and your Claude Code / Cursor / opencode gains full backend development capability, delivering apps through a 4-stage pipeline — requirements → design → generation → publish. It runs on a <strong>low-code backend container</strong>: HTTP APIs as scripts, pages kept as component files, menus/dictionaries/config managed online. 2.x also applies the same trusted AI to customer support, a knowledge base and H5 chat.</span>
       </p>
 
       <div class="hero-cta">
@@ -90,8 +91,8 @@
       </div>
 
       <p class="hero-release">
-        <span data-zh><strong>v1.2.0</strong> · 完整英文版 / 中英双语同包 / 语言 profile 切换 · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v1.2.0">更新说明</a></span>
-        <span data-en><strong>v1.2.0</strong> · complete English edition / bilingual package / language profiles · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v1.2.0">release notes</a></span>
+        <span data-zh><strong>v2.2.0</strong> · H5 AI 客服 + 转人工 + 知识库 + skill 测试 · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v2.2.0">更新说明</a></span>
+        <span data-en><strong>v2.2.0</strong> · H5 AI support + human handoff + knowledge base + skill testing · <a href="https://github.com/gewumind/gewumind-boot/releases/tag/v2.2.0">release notes</a></span>
       </p>
 
       <div class="hero-tags">
@@ -150,7 +151,7 @@
   <div class="container stats">
     <div class="stat"><b>3</b><span data-zh>步跑起后端</span><span data-en>steps to run</span></div>
     <div class="stat"><b>4</b><span data-zh>阶段 AI 管线</span><span data-en>stage pipeline</span></div>
-    <div class="stat"><b>83</b><span data-zh>篇 AI 知识库</span><span data-en>AI knowledge docs</span></div>
+    <div class="stat"><b>90</b><span data-zh>篇 AI 知识库</span><span data-en>AI knowledge docs</span></div>
     <div class="stat"><b>∞</b><span data-zh>个 AI Agent 可接入</span><span data-en>AI agents supported</span></div>
   </div>
 </section>
@@ -400,6 +401,72 @@
       <a class="btn btn-outline" href="https://github.com/gewumind/gewumind-skill" target="_blank" rel="noopener">
         <span data-zh>查看 gewumind-skill</span><span data-en>Explore gewumind-skill</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2.x AI SUPPORT ============ -->
+<section class="section" id="ai-service">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker"><span data-zh>2.x · AI 客服</span><span data-en>2.x · Runtime AI</span></span>
+      <h2><span data-zh>AI 不只会写代码，也能直接接待客户</span><span data-en>AI that answers customers, not just code</span></h2>
+      <p>
+        <span data-zh>2.x 把可信 AI 从开发阶段带进运行阶段：2.0 做权限内数据问答，2.1 加知识库和浏览器语音，2.2 把客服嵌进对外 H5，并支持转人工工单。</span>
+        <span data-en>2.x brings trusted AI from development into runtime: 2.0 adds permission-scoped data answers, 2.1 adds the knowledge base and browser voice, and 2.2 embeds support into external H5 pages with human handoff tickets.</span>
+      </p>
+    </div>
+
+    <div class="grid grid-3 gap-lg">
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>
+        </div>
+        <h3><span data-zh>可信数据问答（2.0）</span><span data-en>Trusted data answers (2.0)</span></h3>
+        <p><span data-zh>模型不碰数据库，只调用登记过的接口；权限、数据范围、敏感字段脱敏和答案后检四层防护。</span><span data-en>The model never touches the database — it calls registered APIs only, with permissions, data scope, field masking and answer verification.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h6"/><path d="M16 16l3 2-3 2z"/></svg>
+        </div>
+        <h3><span data-zh>知识库（2.1）</span><span data-en>Knowledge base (2.1)</span></h3>
+        <p><span data-zh>Markdown / 纯文本 / URL / 在线编辑，按 AI 角色和组织授权；回答带引用，客服与 skill 共用同一知识源。</span><span data-en>Markdown, plain text, URL and online editing, scoped by AI role and organization; answers carry citations and share one source with the skill.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>
+        </div>
+        <h3><span data-zh>浏览器语音（2.1）</span><span data-en>Browser voice (2.1)</span></h3>
+        <p><span data-zh>Chrome / Edge 支持语音输入与播报，可随时打断；不支持时自动降级为文字，不上传音频。</span><span data-en>Voice input and playback on Chrome / Edge, interruptible at any time; unsupported browsers fall back to text and audio is not uploaded.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4M7 13h6"/><path d="M16 8v8M20 10v4"/></svg>
+        </div>
+        <h3><span data-zh>H5 对外客服（2.2）</span><span data-en>External H5 support (2.2)</span></h3>
+        <p><span data-zh><code>h5-widget.js</code> 一行嵌入手机浏览器 / 微信 webview；访客无需登录，支持匿名或手机号身份，按渠道配置品牌与可用工具。</span><span data-en>Embed <code>h5-widget.js</code> in a phone browser or WeChat webview; visitors need no login, can use anonymous or phone identity, and each channel gets its own brand and tool whitelist.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v10H9l-5 4z"/><path d="M8 10h8M8 13h5"/><circle cx="17" cy="17" r="3"/><path d="M17 14v3l2 1"/></svg>
+        </div>
+        <h3><span data-zh>转人工工单（2.2）</span><span data-en>Human handoff tickets (2.2)</span></h3>
+        <p><span data-zh>访客点「转人工」后落工单并通知坐席，管理端处理；排队、工作时间和坐席实时接管留 2.3。</span><span data-en>Visitors can hand off to a human, creating a ticket and notifying agents for admin-side handling; queueing, office hours and live takeover are planned for 2.3.</span></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4z"/><path d="M8 9l2 2-2 2M12 15h4"/></svg>
+        </div>
+        <h3><span data-zh>Skill 测试增强（2.2）</span><span data-en>Skill testing (2.2)</span></h3>
+        <p><span data-zh>5 个自动化脚本覆盖测试计划、接口、权限、UI 冒烟和回归；一份 <code>tests/plan.json</code> 驱动，越权泄漏会阻止发布。</span><span data-en>Five automation scripts cover test plans, APIs, permissions, UI smoke and regression; one <code>tests/plan.json</code> drives them, and permission leaks block publishing.</span></p>
+      </article>
+    </div>
+
+    <p class="license-note"><span data-zh>2.x AI 能力通过离线 License 解锁：AI_CHAT_INTERNAL、AI_KB、AI_H5；原有免费功能继续免费。转人工排队、服务端语音、PDF/DOCX 和 H5 SSO 留待 2.3。</span><span data-en>2.x AI capabilities are unlocked by the offline license: AI_CHAT_INTERNAL, AI_KB and AI_H5. Features that were free stay free. Handoff queueing, server-side voice, PDF/DOCX and H5 SSO are planned for 2.3.</span></p>
+
+    <div class="center">
+      <a class="btn btn-primary" href="/pricing.html"><span data-zh>查看 2.x 授权</span><span data-en>View 2.x licensing</span></a>
+      <a class="btn btn-outline" href="https://github.com/gewumind/gewumind-boot/releases/tag/v2.2.0" target="_blank" rel="noopener"><span data-zh>2.2.0 发布说明</span><span data-en>2.2.0 release notes</span></a>
     </div>
   </div>
 </section>
@@ -657,7 +724,7 @@ spring:
         <ul class="check">
           <li><span data-zh><code>libs/</code> 内核 jar（thin jar + pom，标准 Maven 仓库布局，随工程入库）</span><span data-en><code>libs/</code> the kernel jar (thin jar + pom in a standard Maven layout, checked in)</span></li>
           <li><span data-zh><code>data/{zh,en}/magic-api/</code> 中英文接口脚本与页面组件工作区，改完即生效</span><span data-en><code>data/{zh,en}/magic-api/</code> the Chinese/English workspace for API scripts and page components — edits take effect live</span></li>
-          <li><span data-zh><code>db/init/01-baseline.sql</code> 建库基线：43 张系统表 + 平台自带菜单/角色/字典/组件数据，自己建库后导入即可</span><span data-en><code>db/init/01-baseline.sql</code> the baseline: 43 system tables plus bundled menus, roles, dictionaries and page components — create the database yourself, then import this file</span></li>
+          <li><span data-zh><code>db/init/01-baseline.sql</code> 建库基线：45 张系统表 + 平台自带菜单/角色/字典/组件数据，自己建库后导入即可</span><span data-en><code>db/init/01-baseline.sql</code> the baseline: 45 system tables plus bundled menus, roles, dictionaries and page components — create the database yourself, then import this file</span></li>
           <li><span data-zh><code>src/main/java/</code> 启动类与少量适配代码，业务逻辑不写在这里</span><span data-en><code>src/main/java/</code> the bootstrap class and a little glue — business logic does not live here</span></li>
           <li><span data-zh><code>scripts/</code> 启停与证书脚本（Windows 同名 <code>.bat</code> 行为一致）</span><span data-en><code>scripts/</code> start/stop and certificate scripts, with matching Windows <code>.bat</code> equivalents</span></li>
         </ul>
@@ -708,8 +775,9 @@ spring:
           <li><span data-zh>模块管理</span><span data-en>Module management</span></li>
           <li><span data-zh>Redis / Sa-Token 共享会话</span><span data-en>Redis / Sa-Token shared sessions</span></li>
           <li><span data-zh>MQTT · Kafka · WebSocket · SSE · TCP</span><span data-en>MQTT · Kafka · WebSocket · SSE · TCP</span></li>
+          <li><span data-zh>2.x AI 客服 · 知识库 · H5 客服</span><span data-en>2.x AI support · knowledge base · H5 support</span></li>
         </ul>
-        <p class="price"><span data-zh>按机器授权 · 随部署规模与支持需求定制</span><span data-en>Per-machine licensing · scoped by deployment &amp; support</span></p>
+        <p class="price"><span data-zh>单机 / 年 · 1.x 首发 399 起 · 2.x 首发 799 起</span><span data-en>Per machine / year · 1.x from 399 · 2.x from 799</span></p>
         <p class="muted"><span data-zh>30 天免费试用，License 由签发中心离线签发、绑定机器指纹。</span><span data-en>30-day free trial; licenses are issued offline and bound to a machine fingerprint.</span></p>
         <p class="plan-cta">
           <a class="btn btn-primary btn-sm" href="mailto:support@gewumind.com?subject=GewuMind%20Boot%20License">
@@ -721,7 +789,7 @@ spring:
         </p>
       </article>
     </div>
-    <p class="license-note"><span data-zh>2.x / 3.x 新增 AI 能力同样通过离线 License 解锁，解锁后在配置中心开启；原有免费功能继续免费。</span><span data-en>New AI capabilities in 2.x / 3.x are unlocked by the same offline license and enabled in the config center; features that are free today stay free.</span></p>
+    <p class="license-note"><span data-zh>2.x AI 能力（AI 客服、知识库、H5 客服）已发布，通过离线 License 解锁；3.x 智能体开发规划中。原有免费功能继续免费。</span><span data-en>2.x AI capabilities (AI support, knowledge base, H5 support) are released and unlocked by the offline license; 3.x agent development is planned. Features that are free today stay free.</span></p>
   </div>
 </section>
 
@@ -730,8 +798,8 @@ spring:
   <div class="container">
     <div class="section-head">
       <span class="kicker"><span data-zh>路线图与版本</span><span data-en>Roadmap &amp; releases</span></span>
-      <h2><span data-zh>下一步，让系统自己长出功能</span><span data-en>Next: a system that grows its own features</span></h2>
-      <p><span data-zh>1.x 持续维护；2.x 与 3.x 的新增 AI 能力属于商业版，和 SSO 一样通过离线 License 解锁；解锁后在配置中心开启。原有免费功能在 2.x/3.x 继续免费，不因升级缩水。计划会随反馈调整，不构成交付承诺。</span><span data-en>1.x keeps shipping. New AI capabilities in 2.x and 3.x are commercial capabilities, unlocked by an offline license just like SSO, then enabled in the config center. Features that are free today stay free in 2.x/3.x — upgrades never take them away. Plans may change with feedback and are not a delivery commitment.</span></p>
+      <h2><span data-zh>1.x 稳定，2.x 已发布，3.x 在路上</span><span data-en>1.x stable, 2.x released, 3.x ahead</span></h2>
+      <p><span data-zh>1.x 持续维护；2.x 已发布到 2.2.0：2.0 可信数据问答，2.1 知识库 + 浏览器语音，2.2 H5 对外客服 + 转人工 + 品牌渠道 + skill 测试。2.x AI 能力通过离线 License 解锁，原有免费功能继续免费；3.x 智能体开发仍在规划中。</span><span data-en>1.x keeps shipping. 2.x is now at 2.2.0: trusted data answers in 2.0, knowledge base + browser voice in 2.1, and external H5 support + human handoff + channel branding + skill testing in 2.2. 2.x AI capabilities are unlocked by the offline license; existing free features stay free. 3.x agent development is still planned.</span></p>
     </div>
 
     <div class="roadmap">
@@ -749,20 +817,21 @@ spring:
         </ul>
       </article>
 
-      <article class="roadmap-item is-next">
+      <article class="roadmap-item is-done">
         <div class="roadmap-meta">
           <span class="roadmap-version">2.x</span>
-          <span class="roadmap-badge next"><span data-zh>规划中</span><span data-en>Planned</span></span>
+          <span class="roadmap-badge done"><span data-zh>已发布 v2.2.0</span><span data-en>Released v2.2.0</span></span>
         </div>
-        <h3><span data-zh>AI 客服：问得到，也答得准</span><span data-en>AI support: answers you can trust</span></h3>
-        <p><span data-zh>把系统里的数据变成可对话的客服，但只在你的权限内回答。每个结论都能回到具体接口。</span><span data-en>Turn your system data into a conversational support agent — within the caller's permissions, with every answer traceable to a real API.</span></p>
+        <h3><span data-zh>可信 AI 客服从后台走到 H5</span><span data-en>Trusted AI support, from admin to H5</span></h3>
+        <p><span data-zh>先用权限内数据问答把“答得准”做扎实，再加知识库、语音、对外 H5 和转人工工单。</span><span data-en>Start with permission-scoped data answers, then add the knowledge base, voice, external H5 and human handoff.</span></p>
         <ul class="check">
-          <li><span data-zh>内部 Chat + H5 网页客服，支持语音输入与播报</span><span data-en>Internal chat and an H5 web widget, with voice input and playback</span></li>
-          <li><span data-zh>回答只来自系统接口，不编造数字和记录</span><span data-en>Answers come only from system APIs — no invented numbers or records</span></li>
-          <li><span data-zh>没权限、查不到、不支持时直接说明</span><span data-en>Clear replies when access is denied, data is missing, or the question is unsupported</span></li>
-          <li><span data-zh>知识库：文档、业务规则、FAQ 可检索，客服与开发技能共用</span><span data-en>Knowledge base: searchable docs, business rules and FAQs shared by support and the dev agent</span></li>
-          <li><span data-zh>Skill 测试增强：自动生成并执行接口、权限、页面回归</span><span data-en>Skill testing: generate and run API, permission and UI regression tests</span></li>
-          <li><span data-zh>商业版能力，离线 License 解锁后在配置中心开启</span><span data-en>Commercial capability, unlocked by an offline license and enabled in the config center</span></li>
+          <li><span data-zh>2.0 数据问答：模型只调接口，不碰数据库，四层防护</span><span data-en>2.0 data answers: the model calls APIs only, never the database, with four layers of protection</span></li>
+          <li><span data-zh>2.1 知识库：Markdown / 文本 / URL / 在线编辑，ACL + 引用，客服与 skill 共用</span><span data-en>2.1 knowledge base: Markdown, text, URL and online editing, with ACL, citations and one source for support and the skill</span></li>
+          <li><span data-zh>2.1 浏览器语音：输入 / 播报 / 打断，不支持时降级文字</span><span data-en>2.1 browser voice: input, playback and interruption, falling back to text when unsupported</span></li>
+          <li><span data-zh>2.2 H5 客服：h5-widget.js、匿名/手机号身份、渠道品牌与工具白名单</span><span data-en>2.2 H5 support: h5-widget.js, anonymous/phone identity, channel branding and tool whitelist</span></li>
+          <li><span data-zh>2.2 转人工 v1：工单 + 通知 + 管理端处理</span><span data-en>2.2 human handoff v1: tickets, notifications and admin-side handling</span></li>
+          <li><span data-zh>2.2 skill 测试：API / 权限 / UI / 回归，越权泄漏阻止发布</span><span data-en>2.2 skill testing: API, permission, UI and regression checks; permission leaks block publishing</span></li>
+          <li><span data-zh>已知边界：排队/坐席接管、服务端语音、PDF/DOCX、H5 SSO 留 2.3</span><span data-en>Known boundaries: queueing/live takeover, server-side voice, PDF/DOCX and H5 SSO are planned for 2.3</span></li>
         </ul>
       </article>
 
@@ -792,19 +861,24 @@ spring:
       </div>
       <div class="release-list">
         <article class="release-item">
+          <span class="release-version">v2.2.0</span>
+          <span class="release-date">2026-11-06</span>
+          <p><span data-zh>H5 对外客服、转人工工单、渠道品牌配置；skill 测试增强，越权泄漏阻止发布。</span><span data-en>External H5 support, human handoff tickets and channel branding; skill testing blocks publishing on permission leaks.</span></p>
+        </article>
+        <article class="release-item">
+          <span class="release-version">v2.1.0</span>
+          <span class="release-date">2026-11-05</span>
+          <p><span data-zh>知识库 v1：Markdown/文本/URL 导入、ACL、引用；内部 Chat 增加浏览器语音输入与播报。</span><span data-en>Knowledge base v1 with Markdown/text/URL import, ACL and citations; internal chat gains browser voice input and playback.</span></p>
+        </article>
+        <article class="release-item">
+          <span class="release-version">v2.0.0</span>
+          <span class="release-date">2026-11-04</span>
+          <p><span data-zh>可信数据问答：模型按权限选接口、执行工具、脱敏字段、校验答案，不直接访问数据库。</span><span data-en>Trusted data answers: the model selects permitted APIs, runs tools, masks fields and verifies answers without direct database access.</span></p>
+        </article>
+        <article class="release-item">
           <span class="release-version">v1.2.0</span>
           <span class="release-date">2026-10-26</span>
-          <p><span data-zh>完整英文版上线：菜单、表单、演示数据与提示信息均可英文；中英文同包发布，一个安装包切换语言。</span><span data-en>Full English edition: menus, forms, demo data and messages in English; both languages ship in one package.</span></p>
-        </article>
-        <article class="release-item">
-          <span class="release-version">v1.1.0</span>
-          <span class="release-date">2026-10-24</span>
-          <p><span data-zh>发布更安全：失败自动回滚；菜单与按钮权限随发布一起生效；界面支持中英文切换。</span><span data-en>Safer releases: automatic rollback on failure, permissions applied with each publish, and a bilingual UI.</span></p>
-        </article>
-        <article class="release-item">
-          <span class="release-version">v1.0.0</span>
-          <span class="release-date">2026-10-19</span>
-          <p><span data-zh>首个公开版本：低代码接口、动态组件、在线 IDE、工作流与开放接口网关。</span><span data-en>First public release: low-code APIs, dynamic components, online IDE, workflows and the Open API gateway.</span></p>
+          <p><span data-zh>完整英文版上线：菜单、表单、演示数据与提示信息均可英文；中英文同包发布。</span><span data-en>Full English edition: menus, forms, demo data and messages in English; both languages ship in one package.</span></p>
         </article>
       </div>
     </div>

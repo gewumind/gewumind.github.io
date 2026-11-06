@@ -2,7 +2,7 @@
 
 GewuMind（格物智）的官方网站 / GitHub Pages 落地页，介绍 **GewuMind Boot**（AI 驱动的低代码后端容器，完整开源）与 **gewumind-skill**（可装进任意 AI Agent 的开发技能）。
 
-纯静态单页，**零构建**：`index.html` + `assets/`（CSS / JS / logo），直接部署即可。
+纯静态多页，**零构建**：`index.html`、价格/法务页面 + `assets/`（CSS / JS / logo），直接部署即可。
 
 ## 本地预览
 
@@ -30,7 +30,7 @@ git push -u origin main
 
 **方式 B：普通项目仓库**（例如 `homepage`），推送后在仓库
 `Settings → Pages` → Source 选 `Deploy from a branch`，分支 `main`、目录 `/ (root)`。
-最终地址为 `https://gewumind.github.io/homepage/`（`.nojekyll` 已就位，避免 Jekyll 处理）。
+最终地址为 `https://gewumind.github.io/homepage/`（`.nojekyll` 已就位，避免 Jekyll 处理）。生产域名为 `https://gewumind.com`。
 
 ## 目录
 
@@ -61,10 +61,10 @@ gewumind-github-html/
 
 ## 路线图与版本记录
 
-- 官网 `index.html` 的 `#roadmap` 区块同时维护**产品路线**与**版本记录**，面向用户，不写内部实现。
+- 官网 `index.html` 的 `#roadmap` 区块同时维护**产品路线**与**版本记录**，面向用户，不写内部实现。2.x 已发布到 2.2.0，3.x 仍为规划。
 - 发布新版本时，在 `#roadmap` 的版本记录里加一条，保留最近 3–4 个即可；完整历史链到 [GitHub Releases](https://github.com/gewumind/gewumind-boot/releases)。
-- 文案口径：2.x / 3.x 的**新增 AI 能力**属于商业版，和 SSO 一样通过**离线 License 解锁**，解锁后在配置中心开启；**原有免费功能在 2.x/3.x 继续免费**。路线图文案不要写价格或账单类字眼。
-- 2.x 的新增能力按用户价值写：知识库（客服与开发技能共用）、Skill 测试增强（自动生成并执行接口/权限/页面回归），不写内核版本、License 功能位等内部实现。
+- 文案口径：2.x 的**新增 AI 能力**属于商业版，通过**离线 License 解锁**，解锁后在配置中心开启；**原有免费功能继续免费**。3.x 仍为规划。路线图文案不要写价格或账单类字眼。
+- 2.x 已发布：2.0 权限内数据问答、2.1 知识库 + 浏览器语音、2.2 H5 对外客服 + 转人工 + 渠道品牌 + Skill 测试。按用户价值写，不写内核版本、License 功能位等内部实现。
 - 路线图状态用「已发布 / 规划中 / 远期规划」，不写具体交付日期，避免变成承诺。
 
 ## 维护
