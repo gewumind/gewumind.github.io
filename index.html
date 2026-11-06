@@ -82,17 +82,20 @@
       </p>
 
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#start">
-          <span data-zh>5 分钟上手</span><span data-en>Get started in 5 min</span>
+        <a class="btn btn-primary" href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener">
+          <span data-zh>下载试用</span><span data-en>Download trial</span>
         </a>
-        <a class="btn btn-outline" href="https://github.com/gewumind/gewumind-boot" target="_blank" rel="noopener">
-          <span data-zh>查看源码</span><span data-en>View source</span>
+        <a class="btn btn-outline" href="https://gitee.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener">
+          <span data-zh>Gitee 下载</span><span data-en>Download on Gitee</span>
+        </a>
+        <a class="btn btn-outline" href="#start">
+          <span data-zh>5 分钟上手</span><span data-en>Get started in 5 min</span>
         </a>
       </div>
 
       <p class="hero-release">
-        <span data-zh><strong>v2.2.0</strong> · H5 AI 客服 + 转人工 + 知识库 + skill 测试 · <a href="/pricing.html">获取授权</a></span>
-        <span data-en><strong>v2.2.0</strong> · H5 AI support + human handoff + knowledge base + skill testing · <a href="/pricing.html">Get a license</a></span>
+        <span data-zh><strong>v2.2.0</strong> · H5 AI 客服 + 转人工 + 知识库 + skill 测试 · <a href="https://github.com/gewumind/gewumind-boot/releases">下载</a> · <a href="/pricing.html">获取授权</a></span>
+        <span data-en><strong>v2.2.0</strong> · H5 AI support + human handoff + knowledge base + skill testing · <a href="https://github.com/gewumind/gewumind-boot/releases">Download</a> · <a href="/pricing.html">Get a license</a></span>
       </p>
 
       <div class="hero-tags">
@@ -561,7 +564,7 @@
         </button></li>
         <li><button class="video-item" data-src="assets/video/01-release.mp4" data-poster="assets/video/posters/01-release-16x9.png" data-src-en="assets/video/en/01-release.mp4" data-poster-en="assets/video/en/posters/01-release-16x9.png" data-ep="EP 03"
           data-zh-title="部署一：下载发行包直接用" data-en-title="Deploy 1: download the release and run"
-          data-zh-desc="购买后从面包多 / Creem 获取发行包，解压、建库、启动，无需 Maven / Node。" data-en-desc="Get the release package from Mianbaoduo / Creem after purchase, unzip, init the database and start — no Maven or Node.">
+          data-zh-desc="从 GitHub / Gitee 下载发行包，解压、建库、启动，无需 Maven / Node。" data-en-desc="Download the release from GitHub / Gitee, unzip, init the database and start — no Maven or Node.">
           <span class="video-thumb"><img src="assets/video/posters/01-release-16x9.png" alt="" /><span class="video-play">▶</span></span>
           <span class="video-info"><span class="video-t"><span data-zh>部署一 · 下载发行包</span><span data-en>Deploy 1 · Download &amp; run</span></span><span class="video-d" data-dur-zh="00:41" data-dur-en="00:33">00:41</span></span>
         </button></li>
@@ -588,7 +591,12 @@
     <div class="section-head">
       <span class="kicker"><span data-zh>快速开始</span><span data-en>Quick start</span></span>
       <h2><span data-zh>三步，跑起来</span><span data-en>Three steps and it runs</span></h2>
-      <p><span data-zh>只想跑起来做业务开发？购买授权后从面包多 / Creem 获取 <code>gewumind-boot-app</code> 发行包，解压即用，无需 Maven / Node；想改内核再走下面的源码流程。前置条件：JDK 17、Maven 3.8+、MySQL 8。</span><span data-en>For business development, get the <code>gewumind-boot-app</code> release package from Mianbaoduo / Creem after purchasing a license, then unzip and run — no Maven or Node required. Use the source flow below only if you need to change the kernel. Prerequisites: JDK 17, Maven 3.8+, MySQL 8.</span></p>
+      <p><span data-zh>想直接跑业务开发？从 GitHub / Gitee 下载 <code>gewumind-boot-app</code> 试用/基础发行包，解压即用，无需 Maven / Node；商用能力购买 1.x / 2.x 商业授权解锁。想改内核再走下面的源码流程。前置条件：JDK 17、Maven 3.8+、MySQL 8。</span><span data-en>For business development, download the trial/basic <code>gewumind-boot-app</code> release from GitHub or Gitee and unzip it — no Maven or Node required. Commercial capabilities are unlocked with a 1.x or 2.x license. Use the source flow below only if you need to change the kernel. Prerequisites: JDK 17, Maven 3.8+, MySQL 8.</span></p>
+    </div>
+
+    <div class="center" style="margin:0 0 18px">
+      <a class="btn btn-primary" href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener">GitHub 下载 / GitHub downloads</a>
+      <a class="btn btn-outline" href="https://gitee.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener">Gitee 下载 / Gitee downloads</a>
     </div>
 
     <div class="start-grid">
@@ -732,7 +740,7 @@ spring:
       <div class="repo-col">
         <h3><span data-zh>四种用法，随你挑</span><span data-en>Four ways to use it</span></h3>
         <ul class="check">
-          <li><span data-zh><strong>下载发行包直接用</strong>：购买后从面包多 / Creem 获取 <code>gewumind-boot-app</code>，解压后建库导入基线，<code>bash scripts/start.sh</code> 即跑，无需 Maven / Node</span><span data-en><strong>Download &amp; run</strong>: get the <code>gewumind-boot-app</code> release from Mianbaoduo / Creem after purchase, unzip, import the baseline and run <code>bash scripts/start.sh</code> — no Maven / Node required</span></li>
+          <li><span data-zh><strong>下载发行包直接用</strong>：从 GitHub / Gitee Releases 下载 <code>gewumind-boot-app</code>，解压后建库导入基线，<code>bash scripts/start.sh</code> 即跑，无需 Maven / Node</span><span data-en><strong>Download &amp; run</strong>: get the <code>gewumind-boot-app</code> release from GitHub / Gitee Releases, unzip, import the baseline and run <code>bash scripts/start.sh</code> — no Maven / Node required</span></li>
           <li><span data-zh><strong>直接跑</strong>：clone 后建库 + 打包 + 启动，得到一个完整的低代码后端</span><span data-en><strong>Just run it</strong>: clone, init the database, package, start — a complete low-code backend</span></li>
           <li><span data-zh><strong>嵌进已有工程</strong>：把 <code>com.gewumind:gewumind-boot</code> 作为 Maven 依赖加进你的 Spring Boot 服务</span><span data-en><strong>Embed it</strong>: add <code>com.gewumind:gewumind-boot</code> as a Maven dependency in your own Spring Boot service</span></li>
           <li><span data-zh><strong>交给 AI</strong>：装上 gewumind-skill，让 Agent 按四阶段把需求变成能跑的应用</span><span data-en><strong>Let AI do it</strong>: install gewumind-skill and let an agent turn requirements into a running app</span></li>
@@ -855,8 +863,8 @@ spring:
     <div class="release-history">
       <div class="release-head">
         <h3><span data-zh>版本记录</span><span data-en>Release history</span></h3>
-        <a href="/pricing.html">
-          <span data-zh>获取版本 →</span><span data-en>Get releases →</span>
+        <a href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener">
+          <span data-zh>下载版本 →</span><span data-en>Download releases →</span>
         </a>
       </div>
       <div class="release-list">
@@ -910,8 +918,9 @@ spring:
       <div>
         <h5><span data-zh>资源</span><span data-en>Resources</span></h5>
         <a href="#start"><span data-zh>快速开始</span><span data-en>Quick start</span></a>
-        <a href="#roadmap"><span data-zh>路线图与版本</span><span data-en>Roadmap &amp; releases</span></a>
-        <a href="/pricing.html"><span data-zh>授权与下载</span><span data-en>Licensing &amp; downloads</span></a>
+        <a href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener"><span data-zh>GitHub 下载</span><span data-en>GitHub downloads</span></a>
+        <a href="https://gitee.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener"><span data-zh>Gitee 下载</span><span data-en>Gitee downloads</span></a>
+        <a href="/pricing.html"><span data-zh>商业授权</span><span data-en>Licensing</span></a>
       </div>
       <div>
         <h5><span data-zh>社区</span><span data-en>Community</span></h5>
