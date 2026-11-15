@@ -96,8 +96,8 @@ code {
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; flex-shrink: 0; }
 .brand-mark { width: 34px; height: 27px; }
 .brand-text strong { color: var(--indigo-soft); font-weight: 800; }
-/* 英文标签比中文长一截（8 项 ≈723px vs 565px），这里用 flex:1 + 溢出滚动兜底，
-   保证极端情况下是「可横滑」而不是把品牌/语言切换挤变形 */
+/* 桌面端保持 overflow: visible，避免「更多」下拉被裁切；
+   1200px 以下导航换行显示 */
 .nav-links {
   display: flex; gap: 17px; margin-left: 6px;
   flex: 1 1 auto; min-width: 0;
