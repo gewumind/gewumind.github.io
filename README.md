@@ -54,7 +54,8 @@ gewumind-github-html/
 ├── contact.zh.html         # 联系方式（中文）
 ├── install.html            # 安装器下载与使用说明（英文）
 ├── install.zh.html         # 安装器下载与使用说明（中文）
-├── install.sh              # Linux/macOS 菜单式安装脚本
+├── install.sh              # Linux/macOS 中文菜单式安装脚本
+├── install-en.sh           # Linux/macOS English menu installer
 ├── success.html            # Creem 付款成功后的授权申请说明（英文）
 ├── success.zh.html         # Creem 付款成功后的授权申请说明（中文）
 ├── downloads/              # 安装器二进制（Linux / Windows / macOS）+ SHA256SUMS
