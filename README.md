@@ -4,6 +4,11 @@ GewuMind（格物智）的官方网站 / GitHub Pages 落地页，介绍 **GewuM
 
 纯静态多页，**零构建**：`index.html`、价格/法务页面 + `assets/`（CSS / JS / logo），直接部署即可。
 
+## 在线体验
+
+- 中文：<http://47.117.145.234:34567> · `admin / 123456`
+- English：<http://47.117.145.234:34568> · `admin / 123456`
+
 ## 本地预览
 
 ```bash
