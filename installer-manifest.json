@@ -12,7 +12,11 @@
           "size": 98152516,
           "mirrors": [
             {
-              "source": "release",
+              "source": "gitee",
+              "url": "https://gitee.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-app-2.3.0-zh-min.tar.gz"
+            },
+            {
+              "source": "github",
               "url": "https://github.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-app-2.3.0-zh-min.tar.gz"
             }
           ]
@@ -22,7 +26,11 @@
           "size": 98137097,
           "mirrors": [
             {
-              "source": "release",
+              "source": "gitee",
+              "url": "https://gitee.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-app-2.3.0-en-min.tar.gz"
+            },
+            {
+              "source": "github",
               "url": "https://github.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-app-2.3.0-en-min.tar.gz"
             }
           ]
@@ -34,7 +42,11 @@
           "size": 137886,
           "mirrors": [
             {
-              "source": "release",
+              "source": "gitee",
+              "url": "https://gitee.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-db-2.3.0-zh.tar.gz"
+            },
+            {
+              "source": "github",
               "url": "https://github.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-db-2.3.0-zh.tar.gz"
             }
           ]
@@ -44,7 +56,11 @@
           "size": 33682,
           "mirrors": [
             {
-              "source": "release",
+              "source": "gitee",
+              "url": "https://gitee.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-db-2.3.0-en.tar.gz"
+            },
+            {
+              "source": "github",
               "url": "https://github.com/gewumind/gewumind-boot/releases/download/v2.3.0/gewumind-boot-db-2.3.0-en.tar.gz"
             }
           ]
