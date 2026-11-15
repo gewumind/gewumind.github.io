@@ -106,6 +106,26 @@ code {
 .nav-links::-webkit-scrollbar { display: none; }
 .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 500; transition: color .15s; white-space: nowrap; }
 .nav-links a:hover { color: var(--text); }
+.nav-more { position: relative; flex-shrink: 0; }
+.nav-more summary {
+  list-style: none; cursor: pointer; color: var(--muted);
+  font-size: .9rem; font-weight: 500; white-space: nowrap;
+}
+.nav-more summary::-webkit-details-marker { display: none; }
+.nav-more summary::after { content: " ▾"; font-size: .75em; opacity: .7; }
+.nav-more[open] summary, .nav-more summary:hover { color: var(--text); }
+.nav-more-menu {
+  position: absolute; top: calc(100% + 10px); left: 0; z-index: 60;
+  min-width: 190px; padding: 8px;
+  display: flex; flex-direction: column; gap: 2px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; box-shadow: var(--shadow);
+}
+.nav-more-menu a {
+  display: block; padding: 7px 10px; border-radius: 6px;
+  color: var(--muted); font-size: .85rem; white-space: nowrap;
+}
+.nav-more-menu a:hover { color: var(--text); background: rgba(99,102,241,.12); }
 .nav-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .lang-switch {
   font-family: var(--font);
@@ -427,6 +447,18 @@ ul.check li::after {
 .release-date { color: var(--muted); font-size: .86rem; }
 .release-item p { margin: 0; color: var(--muted); font-size: .92rem; }
 
+@media (max-width: 1200px) {
+  .nav-inner { flex-wrap: wrap; height: auto; padding: 10px 0; row-gap: 6px; }
+  .nav-links {
+    order: 3; width: 100%; margin-left: 0; gap: 12px 16px;
+    flex-wrap: wrap; overflow: visible; padding-bottom: 2px;
+  }
+  .nav-more[open] .nav-more-menu {
+    position: static; min-width: 0; padding: 4px 0 4px 14px;
+    background: transparent; border: 0; box-shadow: none;
+  }
+}
+
 @media (max-width: 960px) {
   .roadmap { grid-template-columns: 1fr; }
 }
@@ -457,11 +489,13 @@ ul.check li::after {
   /* 窄屏不隐藏导航：另起一行，横向可滑动 */
   .nav-inner { flex-wrap: wrap; height: auto; padding: 10px 0; row-gap: 6px; }
   .nav-links {
-    order: 3; width: 100%; margin-left: 0; gap: 16px;
-    overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
-    -webkit-overflow-scrolling: touch;
+    order: 3; width: 100%; margin-left: 0; gap: 12px 16px;
+    flex-wrap: wrap; overflow: visible; padding-bottom: 2px;
   }
-  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-more[open] .nav-more-menu {
+    position: static; min-width: 0; padding: 4px 0 4px 14px;
+    background: transparent; border: 0; box-shadow: none;
+  }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .grid-3, .pipeline { grid-template-columns: 1fr 1fr; }
   .start-grid, .ai-grid, .footer-inner, .openapi-flow, .db-config-grid { grid-template-columns: 1fr; }
