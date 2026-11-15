@@ -101,9 +101,8 @@ code {
 .nav-links {
   display: flex; gap: 17px; margin-left: 6px;
   flex: 1 1 auto; min-width: 0;
-  overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  overflow: visible;
 }
-.nav-links::-webkit-scrollbar { display: none; }
 .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 500; transition: color .15s; white-space: nowrap; }
 .nav-links a:hover { color: var(--text); }
 .nav-more { position: relative; flex-shrink: 0; }
