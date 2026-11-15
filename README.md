@@ -81,6 +81,7 @@ gewumind-github-html/
 
 - 文案改 `index.html`：`<span data-zh>…</span><span data-en>…</span>` 成对出现。
 - 安装器更新：重新构建 `gw-installer-*` 后同步到 `downloads/`，更新 `downloads/SHA256SUMS.txt`，并同步 `install.html` / `install.zh.html` 中的版本说明。
+- 发布新版本时更新根目录 `installer-manifest.json`；安装器从 `https://gewumind.com/installer-manifest.json` 读取版本下拉，不写死版本。
 - 配色改 `assets/css/style.css` 顶部 `:root` 变量（主色 `--indigo`）。
 - 后续新增案例项目时，在 `#ecosystem` 区块加一张卡片即可。
 
