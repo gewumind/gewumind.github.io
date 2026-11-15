@@ -43,8 +43,7 @@
 
     <h2>1. 三个 ID</h2>
     <p>Creem 成功页 URL 同时包含 Checkout ID、Order ID 和 Product ID，请全部保留：</p>
-    <p><strong>Checkout ID：</strong> <code id="checkoutId">—</code>
-      <button class="btn btn-ghost btn-sm" id="copyOrder" type="button">复制 Checkout ID</button></p>
+    <p><strong>Checkout ID：</strong> <code id="checkoutId">—</code></p>
     <p><strong>Order ID：</strong> <code id="orderId">—</code></p>
     <p><strong>Product ID：</strong> <code id="productId">—</code></p>
     <p class="muted">Order Number（<code>ORD-...</code>）在 Creem 收据里，邮件中填写；它不能替代 Checkout ID 查单。</p>
@@ -70,6 +69,7 @@ License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     <p class="muted">Checkout / Order / Product ID 可从本页复制；Order Number 从 Creem 收据复制；授权申请码从配置中心复制完整 GW1|H|...。</p>
     <p>
       <button class="btn btn-ghost btn-sm" id="copyEmail" type="button">复制邮件内容</button>
+      <button class="btn btn-ghost btn-sm" id="downloadEmail" type="button">下载授权邮件信息 (.txt)</button>
       <a class="btn btn-primary" id="mailRequest" href="mailto:gewumind@foxmail.com?subject=GewuMind%20Boot%202.x%20%E6%8E%88%E6%9D%83%E7%94%B3%E8%AF%B7">发送授权申请</a>
     </p>
 
@@ -135,14 +135,6 @@ License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     return Promise.resolve();
   }
 
-  document.getElementById('copyOrder').addEventListener('click', function () {
-    if (!checkoutId) return;
-    copyText(checkoutId);
-    this.textContent = '已复制';
-    var btn = this;
-    setTimeout(function () { btn.textContent = '复制 Checkout ID'; }, 1500);
-  });
-
   var body = 'Checkout ID: ' + checkoutId + '\nOrder ID: ' + orderId +
     '\nOrder Number: ' + '\nProduct ID: ' + productId +
     '\nPlatform: Creem\nLicense request code: ';
@@ -155,6 +147,18 @@ License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     this.textContent = '已复制';
     var btn = this;
     setTimeout(function () { btn.textContent = '复制邮件内容'; }, 1500);
+  });
+
+  document.getElementById('downloadEmail').addEventListener('click', function () {
+    var blob = new Blob([body], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'gewumind-license-request-' + (checkoutId || 'request') + '.txt';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
   });
 
   // Cached legal-lang.js fallback: keep checkout/order/product IDs on language switch.
