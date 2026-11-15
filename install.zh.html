@@ -41,7 +41,7 @@
       安装器负责环境检测、空库校验、数据库初始化、JRE 准备、服务注册、升级和卸载。
       应用包和数据库包从 <a href="https://github.com/gewumind/gewumind-boot/releases">GitHub</a> 或
       <a href="https://gitee.com/gewumind/gewumind-boot/releases">Gitee Releases</a> 下载。
-      当前安装器覆盖 1.2.2 / 2.0.0 / 2.2.0；2.3.0 发布后再加入 manifest。
+      当前安装器覆盖 2.0.0 / 2.2.0 / 2.3.0。
     </div>
 
     <h2>先选安装方式</h2>
@@ -116,12 +116,12 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     </p>
 
     <h2>方式二：命令行安装</h2>
-    <p>下载应用最小包和数据库包后，以 2.2.0 中文版为例：</p>
+    <p>下载应用最小包和数据库包后，以 2.3.0 中文版为例：</p>
     <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
-  --version 2.2.0 \
+  --version 2.3.0 \
   --lang zh \
-  --app-package ./gewumind-boot-app-2.2.0-zh-min.tar.gz \
-  --db-package ./gewumind-boot-db-2.2.0-zh.tar.gz \
+  --app-package ./gewumind-boot-app-2.3.0-zh-min.tar.gz \
+  --db-package ./gewumind-boot-db-2.3.0-zh.tar.gz \
   --install-dir /opt/gewumind-boot \
   --server-port 9089 \
   --db-host 127.0.0.1 --db-port 3306 \
@@ -129,7 +129,7 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     <p>数据库密码会交互询问，输入时不回显；也可以使用 <code>GW_DB_PASSWORD</code> 环境变量。</p>
     <p>也可让安装器按 manifest 自动下载应用包和数据库包：</p>
     <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
-  --version 2.2.0 --lang zh --source auto \
+  --version 2.3.0 --lang zh --source auto \
   --db-name gewumind-boot --db-user root</code></pre>
 
     <h2>安装后</h2>
@@ -143,9 +143,9 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     <h2>升级与卸载</h2>
     <pre class="code"><code># 升级前先备份数据库
 sudo ./gw-installer-linux-amd64 upgrade \
-  --version 2.2.0 \
-  --app-package ./gewumind-boot-app-2.2.0-zh-min.tar.gz \
-  --db-package ./gewumind-boot-db-2.2.0-zh.tar.gz
+  --version 2.3.0 \
+  --app-package ./gewumind-boot-app-2.3.0-zh-min.tar.gz \
+  --db-package ./gewumind-boot-db-2.3.0-zh.tar.gz
 
 # 卸载：保留数据库
 sudo ./gw-installer-linux-amd64 uninstall</code></pre>

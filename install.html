@@ -42,7 +42,7 @@
       service registration, upgrades and uninstall. Download the application and database packages from
       <a href="https://github.com/gewumind/gewumind-boot/releases">GitHub</a> or
       <a href="https://gitee.com/gewumind/gewumind-boot/releases">Gitee Releases</a>.
-      The current installer covers 1.2.2 / 2.0.0 / 2.2.0; 2.3.0 will be added to the manifest after release.
+      The current installer covers 2.0.0 / 2.2.0 / 2.3.0.
     </div>
 
     <h2>Choose an installation path</h2>
@@ -117,12 +117,12 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     </p>
 
     <h2>Option 2: command line</h2>
-    <p>After downloading the minimal application package and database package, for 2.2.0 Chinese:</p>
+    <p>After downloading the minimal application package and database package, for 2.3.0 Chinese:</p>
     <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
-  --version 2.2.0 \
+  --version 2.3.0 \
   --lang zh \
-  --app-package ./gewumind-boot-app-2.2.0-zh-min.tar.gz \
-  --db-package ./gewumind-boot-db-2.2.0-zh.tar.gz \
+  --app-package ./gewumind-boot-app-2.3.0-zh-min.tar.gz \
+  --db-package ./gewumind-boot-db-2.3.0-zh.tar.gz \
   --install-dir /opt/gewumind-boot \
   --server-port 9089 \
   --db-host 127.0.0.1 --db-port 3306 \
@@ -130,7 +130,7 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     <p>The database password is prompted without echo; you can also provide <code>GW_DB_PASSWORD</code>.</p>
     <p>To let the installer fetch both packages through the manifest:</p>
     <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
-  --version 2.2.0 --lang zh --source auto \
+  --version 2.3.0 --lang zh --source auto \
   --db-name gewumind-boot --db-user root</code></pre>
 
     <h2>After installation</h2>
@@ -144,9 +144,9 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     <h2>Upgrade and uninstall</h2>
     <pre class="code"><code># Back up the database before upgrading
 sudo ./gw-installer-linux-amd64 upgrade \
-  --version 2.2.0 \
-  --app-package ./gewumind-boot-app-2.2.0-zh-min.tar.gz \
-  --db-package ./gewumind-boot-db-2.2.0-zh.tar.gz
+  --version 2.3.0 \
+  --app-package ./gewumind-boot-app-2.3.0-zh-min.tar.gz \
+  --db-package ./gewumind-boot-db-2.3.0-zh.tar.gz
 
 # Uninstall; keep the database
 sudo ./gw-installer-linux-amd64 uninstall</code></pre>

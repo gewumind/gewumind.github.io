@@ -95,8 +95,8 @@
       </div>
 
       <p class="hero-release">
-        <span data-zh><strong>v2.2.0</strong> · H5 AI 客服 + 转人工 + 知识库 + skill 测试 · <a href="https://github.com/gewumind/gewumind-boot/releases">下载</a> · <a href="/pricing.html">获取授权</a></span>
-        <span data-en><strong>v2.2.0</strong> · H5 AI support + human handoff + knowledge base + skill testing · <a href="https://github.com/gewumind/gewumind-boot/releases">Download</a> · <a href="/pricing.html">Get a license</a></span>
+        <span data-zh><strong>v2.3.0</strong> · AI 客服 + 三档授权 + 中英文 + 安装器交付 · <a href="https://github.com/gewumind/gewumind-boot/releases">下载</a> · <a href="/pricing.html">获取授权</a></span>
+        <span data-en><strong>v2.3.0</strong> · AI support + three editions + bilingual + installer delivery · <a href="https://github.com/gewumind/gewumind-boot/releases">Download</a> · <a href="/pricing.html">Get a license</a></span>
       </p>
 
       <div class="hero-tags">
@@ -416,8 +416,8 @@
       <span class="kicker"><span data-zh>2.x · AI 客服</span><span data-en>2.x · Runtime AI</span></span>
       <h2><span data-zh>AI 不只会写代码，也能直接接待客户</span><span data-en>AI that answers customers, not just code</span></h2>
       <p>
-        <span data-zh>2.x 把可信 AI 从开发阶段带进运行阶段：2.0 做权限内数据问答，2.1 加知识库和浏览器语音，2.2 把客服嵌进对外 H5，并支持转人工工单。</span>
-        <span data-en>2.x brings trusted AI from development into runtime: 2.0 adds permission-scoped data answers, 2.1 adds the knowledge base and browser voice, and 2.2 embeds support into external H5 pages with human handoff tickets.</span>
+        <span data-zh>2.3.0 是 AI 客服与授权交付版本：可信数据问答、只读工具目录、AI 角色与数据范围、知识库、对外 H5。模型不直接访问数据库，答案来自授权接口，服务端做权限、脱敏和逐项校验。</span>
+        <span data-en>2.3.0 is the AI support and license-delivery release: trusted data answers, a read-only tool catalog, AI roles and data scopes, knowledge base and external H5. The model never touches the database; answers come from governed APIs with server-side permissions, masking and verification.</span>
       </p>
     </div>
 
@@ -464,9 +464,16 @@
         <h3><span data-zh>Skill 测试增强（2.2）</span><span data-en>Skill testing (2.2)</span></h3>
         <p><span data-zh>5 个自动化脚本覆盖测试计划、接口、权限、UI 冒烟和回归；一份 <code>tests/plan.json</code> 驱动，越权泄漏会阻止发布。</span><span data-en>Five automation scripts cover test plans, APIs, permissions, UI smoke and regression; one <code>tests/plan.json</code> drives them, and permission leaks block publishing.</span></p>
       </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/><path d="M16 16h4M18 14v4"/></svg>
+        </div>
+        <h3><span data-zh>2.3.0 交付与授权</span><span data-en>2.3.0 delivery &amp; editions</span></h3>
+        <p><span data-zh>中英文同包、独立语言库；标准版 / 旗舰版三档授权；跨平台安装器负责环境检测、空库校验、数据库初始化和升级。</span><span data-en>Bilingual packages with separate language data; Basic, Standard and Enterprise editions; a cross-platform installer handles environment checks, empty-database validation, schema import and upgrades.</span></p>
+      </article>
     </div>
 
-    <p class="license-note"><span data-zh>2.x AI 能力通过离线 License 解锁：AI_CHAT_INTERNAL、AI_KB、AI_H5；原有免费功能继续免费。转人工排队、服务端语音、PDF/DOCX 和 H5 SSO 留待 2.3。</span><span data-en>2.x AI capabilities are unlocked by the offline license: AI_CHAT_INTERNAL, AI_KB and AI_H5. Features that were free stay free. Handoff queueing, server-side voice, PDF/DOCX and H5 SSO are planned for 2.3.</span></p>
+    <p class="license-note"><span data-zh>2.3.0 提供三档授权：基础版免费；标准版包含除 AI 外的全部商业能力；旗舰版包含 AI 客服、知识库和 H5。原有免费功能继续免费。当前已停止销售和维护 1.x。</span><span data-en>2.3.0 ships three editions: Basic is free; Standard includes every commercial capability except AI; Enterprise adds AI support, knowledge base and H5. Existing free features stay free. 1.x is end-of-life.</span></p>
 
     <div class="center">
       <a class="btn btn-primary" href="/pricing.html"><span data-zh>查看 2.x 授权</span><span data-en>View 2.x licensing</span></a>
@@ -592,7 +599,7 @@
     <div class="section-head">
       <span class="kicker"><span data-zh>快速开始</span><span data-en>Quick start</span></span>
       <h2><span data-zh>三步，跑起来</span><span data-en>Three steps and it runs</span></h2>
-      <p><span data-zh>想直接跑业务开发？从 GitHub / Gitee 下载 <code>gewumind-boot-app</code> 试用/基础发行包，解压即用，无需 clone 源码、Maven 或 Node；商用能力购买 1.x / 2.x 商业授权解锁。只有二次开发、修改内核或深度定制才需要 clone 源码并走下面的源码流程，前置条件：JDK 17、Maven 3.8+、MySQL 8。</span><span data-en>For business development, download the trial/basic <code>gewumind-boot-app</code> release from GitHub or Gitee and unzip it — no source clone, Maven, or Node required. Commercial capabilities are unlocked with a 1.x or 2.x license. Clone the source and use the source flow below only for custom development or kernel changes. Prerequisites: JDK 17, Maven 3.8+, MySQL 8.</span></p>
+      <p><span data-zh>想直接跑业务开发？从 GitHub / Gitee 下载 <code>gewumind-boot-app</code> 2.3.0 发行包，解压即用，无需 clone 源码、Maven 或 Node；商用能力购买 2.x 商业授权解锁。只有二次开发、修改内核或深度定制才需要 clone 源码并走下面的源码流程，前置条件：JDK 17、Maven 3.8+、MySQL 8。</span><span data-en>For business development, download the <code>gewumind-boot-app</code> 2.3.0 release from GitHub or Gitee and unzip it — no source clone, Maven, or Node required. Commercial capabilities are unlocked with a 2.x license. Clone the source and use the source flow below only for custom development or kernel changes. Prerequisites: JDK 17, Maven 3.8+, MySQL 8.</span></p>
     </div>
 
     <div class="center" style="margin:0 0 18px">
@@ -763,42 +770,52 @@ spring:
       <h2><span data-zh>免费起步，按需升级</span><span data-en>Start free, upgrade when you need</span></h2>
     </div>
 
-    <div class="editions">
+    <div class="editions editions-3">
       <div class="edition">
-        <h3><span data-zh>免费版</span><span data-en>Free</span></h3>
+        <h3><span data-zh>基础版</span><span data-en>Basic</span></h3>
         <p class="price"><span data-zh>开源 · 永久</span><span data-en>Open · forever</span></p>
         <ul class="check">
           <li><span data-zh>系统设置 / 登录 / 密码策略</span><span data-en>System settings / login / password policy</span></li>
-          <li><span data-zh>用户、角色、菜单、字典</span><span data-en>Users, roles, menus, dictionaries</span></li>
+          <li><span data-zh>用户、角色、菜单、字典、组织机构</span><span data-en>Users, roles, menus, dictionaries, organizations</span></li>
           <li><span data-zh>主题、水印、自动重启、多数据源</span><span data-en>Themes, watermark, auto-restart, multi-datasource</span></li>
-          <li><span data-zh>基础 CRUD 与页面组件</span><span data-en>Basic CRUD &amp; page components</span></li>
-          <li><span data-zh>开放接口网关（APP / 小程序 / 第三方对接）</span><span data-en>Open-API gateway (apps, mini-programs, partners)</span></li>
+          <li><span data-zh>基础 CRUD、页面组件、开放接口</span><span data-en>Basic CRUD, page components, Open API</span></li>
+          <li><span data-zh>社区支持</span><span data-en>Community support</span></li>
         </ul>
+        <p class="plan-cta"><a class="btn btn-primary btn-sm" href="/install.html"><span data-zh>下载 2.3.0</span><span data-en>Download 2.3.0</span></a></p>
       </div>
-      <article class="card plan pro">
-        <div class="plan-badge"><span data-zh>商业版</span><span data-en>Commercial</span></div>
-        <h3><span data-zh>离线 License 解锁</span><span data-en>Unlocked by offline license</span></h3>
+      <article class="card plan">
+        <div class="plan-badge"><span data-zh>标准版</span><span data-en>Standard</span></div>
+        <h3><span data-zh>除 AI 外全部商业能力</span><span data-en>All commercial capabilities except AI</span></h3>
         <ul class="check">
-          <li><span data-zh>SSO 单点登录</span><span data-en>SSO single sign-on</span></li>
-          <li><span data-zh>工作流引擎</span><span data-en>Workflow engine</span></li>
-          <li><span data-zh>模块管理</span><span data-en>Module management</span></li>
-          <li><span data-zh>Redis / Sa-Token 共享会话</span><span data-en>Redis / Sa-Token shared sessions</span></li>
-          <li><span data-zh>MQTT · Kafka · WebSocket · SSE · TCP</span><span data-en>MQTT · Kafka · WebSocket · SSE · TCP</span></li>
-          <li><span data-zh>2.x AI 客服 · 知识库 · H5 客服</span><span data-en>2.x AI support · knowledge base · H5 support</span></li>
+          <li><span data-zh>模块管理、工作流、SSO</span><span data-en>Module management, workflow, SSO</span></li>
+          <li><span data-zh>Redis、MQTT、Kafka、SSE、TCP、WebSocket</span><span data-en>Redis, MQTT, Kafka, SSE, TCP, WebSocket</span></li>
+          <li><span data-zh>报表、开放接口、2.x patch 更新</span><span data-en>Reports, Open API, 2.x patches</span></li>
+          <li><span data-zh>离线授权、邮件支持</span><span data-en>Offline license, email support</span></li>
         </ul>
-        <p class="price"><span data-zh>单机 / 年 · 1.x 首发 399 起 · 2.x 首发 799 起</span><span data-en>Per machine / year · 1.x from 399 · 2.x from 799</span></p>
-        <p class="muted"><span data-zh>30 天免费试用，License 由签发中心离线签发、绑定机器指纹。</span><span data-en>30-day free trial; licenses are issued offline and bound to a machine fingerprint.</span></p>
+        <p class="price"><span data-zh>单机 / 年 · 799 CNY / 129 USD 起</span><span data-en>Per machine / year · from 799 CNY / 129 USD</span></p>
         <p class="plan-cta">
-          <a class="btn btn-primary btn-sm" href="mailto:support@gewumind.com?subject=GewuMind%20Boot%20License">
-            <span data-zh>申请试用 / 了解授权</span><span data-en>Request a trial / licensing</span>
-          </a>
-          <a class="btn btn-ghost btn-sm" href="/pricing.html">
-            <span data-zh>查看价格</span><span data-en>View pricing</span>
-          </a>
+          <a class="btn btn-primary btn-sm" href="https://mbd.pub/o/bread/YZaWl5lsag==" target="_blank" rel="noopener"><span data-zh>面包多购买</span><span data-en>Buy with CNY</span></a>
+          <a class="btn btn-ghost btn-sm" href="https://www.creem.io/product/prod_1oxfqJvBWhi14cASP1EF5j" target="_blank" rel="noopener"><span data-zh>Creem 购买</span><span data-en>Buy with USD</span></a>
+        </p>
+      </article>
+      <article class="card plan pro">
+        <div class="plan-badge"><span data-zh>旗舰版</span><span data-en>Enterprise</span></div>
+        <h3><span data-zh>AI 客服 + 知识库 + H5</span><span data-en>AI support + knowledge base + H5</span></h3>
+        <ul class="check">
+          <li><span data-zh>标准版全部能力</span><span data-en>Everything in Standard</span></li>
+          <li><span data-zh>可信数据问答、只读工具目录</span><span data-en>Trusted data answers, read-only tool catalog</span></li>
+          <li><span data-zh>AI 角色、数据范围、知识库引用</span><span data-en>AI roles, data scopes, knowledge citations</span></li>
+          <li><span data-zh>对外 H5 客服 + 转人工工单</span><span data-en>External H5 support + human handoff tickets</span></li>
+          <li><span data-zh>离线授权、邮件支持</span><span data-en>Offline license, email support</span></li>
+        </ul>
+        <p class="price"><span data-zh>单机 / 年 · 1,599 CNY / 249 USD 起</span><span data-en>Per machine / year · from 1,599 CNY / 249 USD</span></p>
+        <p class="plan-cta">
+          <a class="btn btn-primary btn-sm" href="https://mbd.pub/o/bread/YZaWl5lsaw==" target="_blank" rel="noopener"><span data-zh>面包多购买</span><span data-en>Buy with CNY</span></a>
+          <a class="btn btn-ghost btn-sm" href="https://www.creem.io/product/prod_ny41sK4odYG1gp0EOYmoy" target="_blank" rel="noopener"><span data-zh>Creem 购买</span><span data-en>Buy with USD</span></a>
         </p>
       </article>
     </div>
-    <p class="license-note"><span data-zh>2.x AI 能力（AI 客服、知识库、H5 客服）已发布，通过离线 License 解锁；3.x 智能体开发规划中。原有免费功能继续免费。</span><span data-en>2.x AI capabilities (AI support, knowledge base, H5 support) are released and unlocked by the offline license; 3.x agent development is planned. Features that are free today stay free.</span></p>
+    <p class="license-note"><span data-zh>2.3.0 三档授权：基础版免费；标准版 799 CNY / 129 USD 起；旗舰版 1,599 CNY / 249 USD 起。单机 / 年，同一机器码不限实例。1.x 已停止销售与维护。</span><span data-en>2.3.0 editions: Basic free; Standard from 799 CNY / 129 USD; Enterprise from 1,599 CNY / 249 USD. One machine / year with unlimited instances. 1.x is end-of-life.</span></p>
   </div>
 </section>
 
@@ -807,40 +824,28 @@ spring:
   <div class="container">
     <div class="section-head">
       <span class="kicker"><span data-zh>路线图与版本</span><span data-en>Roadmap &amp; releases</span></span>
-      <h2><span data-zh>1.x 稳定，2.x 已发布，3.x 在路上</span><span data-en>1.x stable, 2.x released, 3.x ahead</span></h2>
-      <p><span data-zh>1.x 持续维护；2.x 已发布到 2.2.0：2.0 可信数据问答，2.1 知识库 + 浏览器语音，2.2 H5 对外客服 + 转人工 + 品牌渠道 + skill 测试。2.x AI 能力通过离线 License 解锁，原有免费功能继续免费；3.x 智能体开发仍在规划中。</span><span data-en>1.x keeps shipping. 2.x is now at 2.2.0: trusted data answers in 2.0, knowledge base + browser voice in 2.1, and external H5 support + human handoff + channel branding + skill testing in 2.2. 2.x AI capabilities are unlocked by the offline license; existing free features stay free. 3.x agent development is still planned.</span></p>
+      <h2><span data-zh>2.x 已发布 2.3.0，3.x 在路上</span><span data-en>2.x is at 2.3.0, 3.x ahead</span></h2>
+      <p><span data-zh>2.3.0 是 AI 客服与授权交付版本：AI 会话、只读工具目录、AI 角色与数据范围、知识库、H5 渠道中英文可用；新增基础版 / 标准版 / 旗舰版三档授权和跨平台安装器。1.x 已停止销售与维护，3.x 智能体开发仍在规划中。</span><span data-en>2.3.0 is the AI support and license-delivery release: AI chat, a read-only tool catalog, AI roles and data scopes, knowledge base and H5 channels in Chinese and English; it adds Basic / Standard / Enterprise editions and a cross-platform installer. 1.x is end-of-life; 3.x agent development is still planned.</span></p>
     </div>
 
     <div class="roadmap">
       <article class="roadmap-item is-done">
         <div class="roadmap-meta">
-          <span class="roadmap-version">1.x</span>
-          <span class="roadmap-badge done"><span data-zh>已发布</span><span data-en>Released</span></span>
-        </div>
-        <h3><span data-zh>稳定、双语、可维护</span><span data-en>Stable, bilingual, maintainable</span></h3>
-        <p><span data-zh>把一套能长期跑的后端底座打磨好：双语、在线开发、可视化管理和持续修复。</span><span data-en>A backend foundation built to last: bilingual, developed online, managed visually, and continuously maintained.</span></p>
-        <ul class="check">
-          <li><span data-zh>中文与英文同包发布，一个安装包切换语言</span><span data-en>Chinese and English in one package, switch by profile</span></li>
-          <li><span data-zh>在线写接口、改页面、断点调试，改完即生效</span><span data-en>Write APIs, edit pages and debug online — changes take effect immediately</span></li>
-          <li><span data-zh>工作流、报表、开放接口网关持续演进</span><span data-en>Workflows, reports and the Open API gateway keep improving</span></li>
-        </ul>
-      </article>
-
-      <article class="roadmap-item is-done">
-        <div class="roadmap-meta">
           <span class="roadmap-version">2.x</span>
-          <span class="roadmap-badge done"><span data-zh>已发布 v2.2.0</span><span data-en>Released v2.2.0</span></span>
+          <span class="roadmap-badge done"><span data-zh>已发布 v2.3.0</span><span data-en>Released v2.3.0</span></span>
         </div>
-        <h3><span data-zh>可信 AI 客服从后台走到 H5</span><span data-en>Trusted AI support, from admin to H5</span></h3>
-        <p><span data-zh>先用权限内数据问答把“答得准”做扎实，再加知识库、语音、对外 H5 和转人工工单。</span><span data-en>Start with permission-scoped data answers, then add the knowledge base, voice, external H5 and human handoff.</span></p>
+        <h3><span data-zh>AI 客服与授权交付版</span><span data-en>AI support and license delivery</span></h3>
+        <p><span data-zh>模型只调授权接口、不碰数据库；服务端做权限、脱敏和答案校验。2.3.0 同时提供中英文、三档授权和安装器交付。</span><span data-en>The model calls governed APIs only, never the database; the server enforces permissions, masking and answer verification. 2.3.0 also ships bilingual data, three editions and installer delivery.</span></p>
         <ul class="check">
+          <li><span data-zh>2.3 AI 客服：可信问答、工具目录、AI 角色与数据范围、知识库、H5</span><span data-en>2.3 AI support: trusted answers, tool catalog, AI roles and data scopes, knowledge base and H5</span></li>
+          <li><span data-zh>2.3 交付：中英文同包、三档授权、跨平台安装器</span><span data-en>2.3 delivery: bilingual packages, three editions and a cross-platform installer</span></li>
           <li><span data-zh>2.0 数据问答：模型只调接口，不碰数据库，四层防护</span><span data-en>2.0 data answers: the model calls APIs only, never the database, with four layers of protection</span></li>
           <li><span data-zh>2.1 知识库：Markdown / 文本 / URL / 在线编辑，ACL + 引用，客服与 skill 共用</span><span data-en>2.1 knowledge base: Markdown, text, URL and online editing, with ACL, citations and one source for support and the skill</span></li>
           <li><span data-zh>2.1 浏览器语音：输入 / 播报 / 打断，不支持时降级文字</span><span data-en>2.1 browser voice: input, playback and interruption, falling back to text when unsupported</span></li>
           <li><span data-zh>2.2 H5 客服：h5-widget.js、匿名/手机号身份、渠道品牌与工具白名单</span><span data-en>2.2 H5 support: h5-widget.js, anonymous/phone identity, channel branding and tool whitelist</span></li>
           <li><span data-zh>2.2 转人工 v1：工单 + 通知 + 管理端处理</span><span data-en>2.2 human handoff v1: tickets, notifications and admin-side handling</span></li>
           <li><span data-zh>2.2 skill 测试：API / 权限 / UI / 回归，越权泄漏阻止发布</span><span data-en>2.2 skill testing: API, permission, UI and regression checks; permission leaks block publishing</span></li>
-          <li><span data-zh>已知边界：排队/坐席接管、服务端语音、PDF/DOCX、H5 SSO 留 2.3</span><span data-en>Known boundaries: queueing/live takeover, server-side voice, PDF/DOCX and H5 SSO are planned for 2.3</span></li>
+
         </ul>
       </article>
 
@@ -870,6 +875,11 @@ spring:
       </div>
       <div class="release-list">
         <article class="release-item">
+          <span class="release-version">v2.3.0</span>
+          <span class="release-date">2026-11-15</span>
+          <p><span data-zh>AI 客服与授权交付版：工具目录、AI 角色、知识库、H5 客服；中英文、三档授权、跨平台安装器。</span><span data-en>AI support and license delivery: tool catalog, AI roles, knowledge base and H5 support; bilingual, three editions and a cross-platform installer.</span></p>
+        </article>
+        <article class="release-item">
           <span class="release-version">v2.2.0</span>
           <span class="release-date">2026-11-06</span>
           <p><span data-zh>H5 对外客服、转人工工单、渠道品牌配置；skill 测试增强，越权泄漏阻止发布。</span><span data-en>External H5 support, human handoff tickets and channel branding; skill testing blocks publishing on permission leaks.</span></p>
@@ -883,11 +893,6 @@ spring:
           <span class="release-version">v2.0.0</span>
           <span class="release-date">2026-11-04</span>
           <p><span data-zh>可信数据问答：模型按权限选接口、执行工具、脱敏字段、校验答案，不直接访问数据库。</span><span data-en>Trusted data answers: the model selects permitted APIs, runs tools, masks fields and verifies answers without direct database access.</span></p>
-        </article>
-        <article class="release-item">
-          <span class="release-version">v1.2.0</span>
-          <span class="release-date">2026-10-26</span>
-          <p><span data-zh>完整英文版上线：菜单、表单、演示数据与提示信息均可英文；中英文同包发布。</span><span data-en>Full English edition: menus, forms, demo data and messages in English; both languages ship in one package.</span></p>
         </article>
       </div>
     </div>
