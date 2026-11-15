@@ -118,46 +118,34 @@
     <div class="hero-visual">
       <div class="mock">
         <div class="mock-bar"><i></i><i></i><i></i><span class="mock-title">gewumind-boot</span></div>
-        <pre class="mock-body" data-zh><code><span class="c-comment"># 1. 装上 gewumind-skill</span>
+        <pre class="mock-body" data-zh><code><span class="c-comment"># 1. 安装 2.3.0</span>
+<span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install.sh -o install.sh
+<span class="c-prompt">$</span> sudo bash install.sh
+
+<span class="c-comment"># 2. 装上 gewumind-skill</span>
 <span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
-
-<span class="c-comment"># 2. 跑起后端容器</span>
-<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot
-<span class="c-prompt">$</span> cd gewumind-boot
-<span class="c-prompt">$</span> mysql -h127.0.0.1 -uroot -p gewumind-boot \
-      &lt; db/init/01-baseline.sql
-<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
-<span class="c-prompt">$</span> mvn clean package -DskipTests
-<span class="c-prompt">$</span> bash scripts/start.sh
-
-<span class="c-ok">✔</span> 后台     http://localhost:9089   （admin / 123456）
-<span class="c-ok">✔</span> Magic-Web http://localhost:9089/magic/web
 
 <span class="c-comment"># 3. 对 AI Agent 说：</span>
-<span class="c-str">"用 gewumind-boot 做一个设备管理模块，
-  发布到 localhost:9089"</span>
+<span class="c-str">"用 gewumind-boot 做一个设备管理模块"</span>
 
-<span class="c-ai">→ 需求 → 设计文档 → 生成代码 → 一键发布</span></code></pre>
-        <pre class="mock-body" data-en><code><span class="c-comment"># 1. Install gewumind-skill</span>
+<span class="c-ai">→ 需求 → 设计文档 → 生成代码 → 一键发布</span>
+
+<span class="c-ok">✔</span> 后台     http://localhost:9089   （admin / 123456）
+<span class="c-ok">✔</span> Magic-Web http://localhost:9089/magic/web</code></pre>
+        <pre class="mock-body" data-en><code><span class="c-comment"># 1. Install 2.3.0</span>
+<span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install-en.sh -o install-en.sh
+<span class="c-prompt">$</span> sudo bash install-en.sh
+
+<span class="c-comment"># 2. Install gewumind-skill</span>
 <span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
 
-<span class="c-comment"># 2. Run the backend container</span>
-<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot
-<span class="c-prompt">$</span> cd gewumind-boot
-<span class="c-prompt">$</span> mysql -h127.0.0.1 -uroot -p gewumind-boot \
-      &lt; db/init/01-baseline.sql
-<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
-<span class="c-prompt">$</span> mvn clean package -DskipTests
-<span class="c-prompt">$</span> bash scripts/start.sh
-
-<span class="c-ok">✔</span> Admin     http://localhost:9089   (admin / 123456)
-<span class="c-ok">✔</span> Magic-Web http://localhost:9089/magic/web
-
 <span class="c-comment"># 3. Tell your AI Agent:</span>
-<span class="c-str">"Build a device management module with gewumind-boot,
-  then publish it to localhost:9089"</span>
+<span class="c-str">"Use gewumind-boot to build a device management module"</span>
 
-<span class="c-ai">→ Requirements → Design docs → Code → One-click publish</span></code></pre>
+<span class="c-ai">→ requirements → design → code → publish</span>
+
+<span class="c-ok">✔</span> Admin      http://localhost:9089   (admin / 123456)
+<span class="c-ok">✔</span> Magic-Web  http://localhost:9089/magic/web</code></pre>
       </div>
     </div>
   </div>
@@ -602,40 +590,34 @@
     <div class="section-head">
       <span class="kicker"><span data-zh>快速开始</span><span data-en>Quick start</span></span>
       <h2><span data-zh>三步，跑起来</span><span data-en>Three steps and it runs</span></h2>
-      <p><span data-zh>想直接跑业务开发？从 GitHub / Gitee 下载 <code>gewumind-boot-app</code> 2.3.0 发行包，解压即用，无需 clone 源码、Maven 或 Node；商用能力购买 2.x 商业授权解锁。只有二次开发、修改内核或深度定制才需要 clone 源码并走下面的源码流程，前置条件：JDK 17、Maven 3.8+、MySQL 8。</span><span data-en>For business development, download the <code>gewumind-boot-app</code> 2.3.0 release from GitHub or Gitee and unzip it — no source clone, Maven, or Node required. Commercial capabilities are unlocked with a 2.x license. Clone the source and use the source flow below only for custom development or kernel changes. Prerequisites: JDK 17, Maven 3.8+, MySQL 8.</span></p>
+      <p><span data-zh>直接安装用安装器：下载 Linux / Windows / macOS 安装器，准备一个空库，按向导完成。无需 clone 源码、Maven 或 Node。只有二次开发、修改内核或深度定制才需要 clone 源码。</span><span data-en>Install with the installer: download the Linux, Windows or macOS installer, prepare an empty database and follow the wizard. No source clone, Maven or Node required. Clone the source only for custom development or kernel changes.</span></p>
     </div>
 
     <div class="center" style="margin:0 0 18px">
-      <a class="btn btn-primary" href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener">GitHub 下载 / GitHub downloads</a>
+      <a class="btn btn-primary" href="/install.html">下载安装器 / Download installer</a>
     </div>
 
     <div class="start-grid">
-      <pre data-zh class="code code-lg"><code><span class="c-comment"># 1. 克隆 + 建库并导入基线（45 张表）</span>
-<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot.git
-<span class="c-prompt">$</span> cd gewumind-boot
+      <pre data-zh class="code code-lg"><code><span class="c-comment"># 1. 创建空库</span>
 <span class="c-prompt">$</span> mysql -uroot -p -e "CREATE DATABASE gewumind-boot
       DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci"
-<span class="c-prompt">$</span> mysql -uroot -p gewumind-boot &lt; db/init/01-baseline.sql
 
-<span class="c-comment"># 2. 注入数据库密码（仓库里不写死）</span>
-<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
+<span class="c-comment"># 2. 运行安装脚本，选择「交互式命令行安装」</span>
+<span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install.sh -o install.sh
+<span class="c-prompt">$</span> sudo bash install.sh
 
-<span class="c-comment"># 3. 打包并启动（停止用 bash scripts/stop.sh）</span>
-<span class="c-prompt">$</span> mvn clean package -DskipTests
-<span class="c-prompt">$</span> bash scripts/start.sh</code></pre>
-      <pre data-en class="code code-lg"><code><span class="c-comment"># 1. Clone, create the database and import the baseline (45 tables)</span>
-<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-boot.git
-<span class="c-prompt">$</span> cd gewumind-boot
+<span class="c-comment"># 3. 装上 skill，开始让 AI 交付</span>
+<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot</code></pre>
+      <pre data-en class="code code-lg"><code><span class="c-comment"># 1. Create an empty database</span>
 <span class="c-prompt">$</span> mysql -uroot -p -e "CREATE DATABASE gewumind-boot
       DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci"
-<span class="c-prompt">$</span> mysql -uroot -p gewumind-boot &lt; db/init/01-baseline.sql
 
-<span class="c-comment"># 2. Inject the database password (never hard-coded in the repo)</span>
-<span class="c-prompt">$</span> export SPRING_DATASOURCE_PASSWORD='******'
+<span class="c-comment"># 2. Run the installer script and choose Interactive CLI install</span>
+<span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install-en.sh -o install-en.sh
+<span class="c-prompt">$</span> sudo bash install-en.sh
 
-<span class="c-comment"># 3. Package and start (stop with bash scripts/stop.sh)</span>
-<span class="c-prompt">$</span> mvn clean package -DskipTests
-<span class="c-prompt">$</span> bash scripts/start.sh</code></pre>
+<span class="c-comment"># 3. Install the skill and let AI deliver</span>
+<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot</code></pre>
 
       <div class="start-info">
         <div class="info-row"><span data-zh>后台</span><span data-en>Admin</span><code>http://localhost:9089</code></div>
@@ -643,8 +625,8 @@
         <div class="info-row"><span data-zh>默认账号</span><span data-en>Default login</span><code>admin / 123456</code></div>
         <div class="info-row"><span>MySQL</span><code>localhost:3306 · gewumind-boot</code></div>
         <p class="muted">
-          <span data-zh>改端口 <code>SERVER_PORT=9090 bash scripts/start.sh</code>；改数据库用环境变量 <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code> 覆盖。</span>
-          <span data-en>Change port with <code>SERVER_PORT=9090 bash scripts/start.sh</code>; override the datasource via <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code>.</span>
+          <span data-zh>直接安装时端口和数据库在安装器中设置；源码运行/二次开发时可使用 <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code> 覆盖。</span>
+          <span data-en>With the installer, set the port and database in the wizard; for source builds or custom development, override <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code>.</span>
         </p>
       </div>
     </div>
@@ -653,8 +635,8 @@
       <div class="db-config-head">
         <h3><span data-zh>配置数据库</span><span data-en>Configure the database</span></h3>
         <p>
-          <span data-zh>基线脚本不代劳建库：先用 <code>CREATE DATABASE</code> 建出 <code>gewumind-boot</code>（字符集 <code>utf8mb4</code>），再把 <code>db/init/01-baseline.sql</code> 导入进去 —— 图形化客户端的「运行 SQL 文件」或命令行都行，导入后是 45 张表加平台自带的菜单/角色/字典/页面组件。</span>
-          <span data-en>No bootstrap script creates the database for you: run <code>CREATE DATABASE</code> for <code>gewumind-boot</code> (charset <code>utf8mb4</code>) first, then import <code>db/init/01-baseline.sql</code> into it — a GUI client's "run SQL file" or the command line both work. You end up with 45 tables plus bundled menus, roles, dictionaries and page components.</span>
+          <span data-zh>基线脚本不代劳建库：先用 <code>CREATE DATABASE</code> 建出 <code>gewumind-boot</code>（字符集 <code>utf8mb4</code>），再把 <code>db/releases/2.3.0/zh/full.sql</code> 导入进去 —— 图形化客户端的「运行 SQL 文件」或命令行都行，导入后是 63 张表加平台自带的菜单/角色/字典/页面组件。</span>
+          <span data-en>No bootstrap script creates the database for you: run <code>CREATE DATABASE</code> for <code>gewumind-boot</code> (charset <code>utf8mb4</code>) first, then import <code>db/releases/2.3.0/zh/full.sql</code> into it — a GUI client's "run SQL file" or the command line both work. You end up with 63 tables plus bundled menus, roles, dictionaries and page components.</span>
         </p>
       </div>
       <div class="db-config-grid">
@@ -688,8 +670,8 @@ spring:
             <span data-en><strong>Supported databases: MySQL 8 only.</strong> The distribution ships a single JDBC driver, <code>mysql-connector-j</code>, and the baseline schema is MySQL syntax.</span>
           </p>
           <p>
-            <span data-zh>要接 PostgreSQL / Oracle / SQL Server，需要自行添加对应驱动依赖，并把 <code>db/init/01-baseline.sql</code> 转成目标方言（表选项、字符集、自增与注释语法均不通用）。</span>
-            <span data-en>For PostgreSQL, Oracle or SQL Server, add the driver dependency yourself and port <code>db/init/01-baseline.sql</code> to that dialect (table options, charset, auto-increment and comment syntax are all MySQL-specific).</span>
+            <span data-zh>要接 PostgreSQL / Oracle / SQL Server，需要自行添加对应驱动依赖，并把 <code>db/releases/2.3.0/zh/full.sql</code> 转成目标方言（表选项、字符集、自增与注释语法均不通用）。</span>
+            <span data-en>For PostgreSQL, Oracle or SQL Server, add the driver dependency yourself and port <code>db/releases/2.3.0/zh/full.sql</code> to that dialect (table options, charset, auto-increment and comment syntax are all MySQL-specific).</span>
           </p>
         </div>
       </div>
@@ -742,7 +724,7 @@ spring:
         <ul class="check">
           <li><span data-zh><code>libs/</code> 内核 jar（thin jar + pom，标准 Maven 仓库布局，随工程入库）</span><span data-en><code>libs/</code> the kernel jar (thin jar + pom in a standard Maven layout, checked in)</span></li>
           <li><span data-zh><code>data/{zh,en}/magic-api/</code> 中英文接口脚本与页面组件工作区，改完即生效</span><span data-en><code>data/{zh,en}/magic-api/</code> the Chinese/English workspace for API scripts and page components — edits take effect live</span></li>
-          <li><span data-zh><code>db/init/01-baseline.sql</code> 建库基线：45 张系统表 + 平台自带菜单/角色/字典/组件数据，自己建库后导入即可</span><span data-en><code>db/init/01-baseline.sql</code> the baseline: 45 system tables plus bundled menus, roles, dictionaries and page components — create the database yourself, then import this file</span></li>
+          <li><span data-zh><code>db/releases/2.3.0/zh/full.sql</code> 建库基线：63 张系统表 + 平台自带菜单/角色/字典/组件数据，自己建库后导入即可</span><span data-en><code>db/releases/2.3.0/zh/full.sql</code> the baseline: 63 system tables plus bundled menus, roles, dictionaries and page components — create the database yourself, then import this file</span></li>
           <li><span data-zh><code>src/main/java/</code> 启动类与少量适配代码，业务逻辑不写在这里</span><span data-en><code>src/main/java/</code> the bootstrap class and a little glue — business logic does not live here</span></li>
           <li><span data-zh><code>scripts/</code> 启停与证书脚本（Windows 同名 <code>.bat</code> 行为一致）</span><span data-en><code>scripts/</code> start/stop and certificate scripts, with matching Windows <code>.bat</code> equivalents</span></li>
         </ul>
@@ -750,7 +732,7 @@ spring:
       <div class="repo-col">
         <h3><span data-zh>四种用法，随你挑</span><span data-en>Four ways to use it</span></h3>
         <ul class="check">
-          <li><span data-zh><strong>下载发行包直接用</strong>：从 GitHub / Gitee Releases 下载 <code>gewumind-boot-app</code>，解压后建库导入基线，<code>bash scripts/start.sh</code> 即跑，无需 Maven / Node</span><span data-en><strong>Download &amp; run</strong>: get the <code>gewumind-boot-app</code> release from GitHub / Gitee Releases, unzip, import the baseline and run <code>bash scripts/start.sh</code> — no Maven / Node required</span></li>
+          <li><span data-zh><strong>直接安装</strong>：从官网下载安装器，准备空库后按向导完成，无需 Maven / Node</span><span data-en><strong>Install directly</strong>: download the installer from the website, prepare an empty database and follow the wizard — no Maven / Node required</span></li>
           <li><span data-zh><strong>直接跑</strong>：clone 后建库 + 打包 + 启动，得到一个完整的低代码后端</span><span data-en><strong>Just run it</strong>: clone, init the database, package, start — a complete low-code backend</span></li>
           <li><span data-zh><strong>嵌进已有工程</strong>：把 <code>com.gewumind:gewumind-boot</code> 作为 Maven 依赖加进你的 Spring Boot 服务</span><span data-en><strong>Embed it</strong>: add <code>com.gewumind:gewumind-boot</code> as a Maven dependency in your own Spring Boot service</span></li>
           <li><span data-zh><strong>交给 AI</strong>：装上 gewumind-skill，让 Agent 按四阶段把需求变成能跑的应用</span><span data-en><strong>Let AI do it</strong>: install gewumind-skill and let an agent turn requirements into a running app</span></li>
