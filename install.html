@@ -134,6 +134,10 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     </p>
 
     <h2>Option 2: command line</h2>
+    <h3>Check the environment first</h3>
+    <pre class="code"><code>sudo ./gw-installer-linux-amd64 check --check-db \
+  --db-host 127.0.0.1 --db-port 3306 \
+  --db-name gewumind-boot --db-user root</code></pre>
     <p>After downloading the minimal application package and database package, for 2.3.0 Chinese:</p>
     <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
   --version 2.3.0 \
@@ -154,6 +158,7 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     <ul>
       <li>The admin UI defaults to <code>http://server-ip:9089</code>, login <code>admin / 123456</code>.</li>
       <li>Linux registers a systemd service and enables it at boot.</li>
+      <li>Check status: <code>./gw-installer-linux-amd64 status --install-dir /opt/gewumind-boot</code></li>
       <li>Commercial features are activated via Configuration → Upload license file. Copy the license request code first.</li>
       <li>For demos, switch to the <code>demo</code> profile; switch back to <code>online</code> before uploading a license.</li>
     </ul>

@@ -133,6 +133,10 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     </p>
 
     <h2>方式二：命令行安装</h2>
+    <h3>先检查环境</h3>
+    <pre class="code"><code>sudo ./gw-installer-linux-amd64 check --check-db \
+  --db-host 127.0.0.1 --db-port 3306 \
+  --db-name gewumind-boot --db-user root</code></pre>
     <p>下载应用最小包和数据库包后，以 2.3.0 中文版为例：</p>
     <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
   --version 2.3.0 \
@@ -153,6 +157,7 @@ sudo ./gw-installer-linux-amd64 gui</code></pre>
     <ul>
       <li>后台地址默认是 <code>http://服务器IP:9089</code>，默认账号 <code>admin / 123456</code>。</li>
       <li>Linux 默认注册 systemd 服务并开机自启。</li>
+      <li>查看状态：<code>./gw-installer-linux-amd64 status --install-dir /opt/gewumind-boot</code></li>
       <li>商业能力通过「配置中心 → 上传授权文件」激活；先复制授权申请码再申请。</li>
       <li>演示环境可切换 <code>demo</code> profile；上传授权文件前要切回 <code>online</code>。</li>
     </ul>
