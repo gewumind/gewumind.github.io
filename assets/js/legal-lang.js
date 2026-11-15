@@ -26,6 +26,10 @@
   document.addEventListener('click', function (event) {
     var link = event.target.closest('[data-lang-link]');
     if (!link) return;
+    var href = link.getAttribute('href');
+    if (href && href.charAt(0) !== '#' && href.indexOf('?') < 0 && href.indexOf('#') < 0) {
+      link.setAttribute('href', href + window.location.search + window.location.hash);
+    }
     try {
       localStorage.setItem(KEY, link.getAttribute('data-lang-link'));
     } catch (e) {}

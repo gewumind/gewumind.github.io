@@ -12,7 +12,7 @@
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/legal-lang.js"></script>
+  <script src="assets/js/legal-lang.js?v=20261115b"></script>
   <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -156,6 +156,15 @@ License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     var btn = this;
     setTimeout(function () { btn.textContent = '复制邮件内容'; }, 1500);
   });
+
+  // Cached legal-lang.js fallback: keep checkout/order/product IDs on language switch.
+  var langLinks = document.querySelectorAll('[data-lang-link]');
+  for (var li = 0; li < langLinks.length; li++) {
+    var lh = langLinks[li].getAttribute('href');
+    if (lh && lh.indexOf('?') < 0 && lh.indexOf('#') < 0) {
+      langLinks[li].setAttribute('href', lh + window.location.search + window.location.hash);
+    }
+  }
 })();
 </script>
 </body>
