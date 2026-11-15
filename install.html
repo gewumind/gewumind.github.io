@@ -92,6 +92,17 @@
       The Windows binaries are not code-signed, so SmartScreen may warn; verify the SHA256 first.
     </p>
 
+    <h2>Default install directory</h2>
+    <table class="legal-table">
+      <thead><tr><th>Platform</th><th>Default directory</th></tr></thead>
+      <tbody>
+        <tr><td>Linux</td><td><code>/opt/gewumind-boot</code> as root; <code>~/gewumind-boot</code> for a normal user</td></tr>
+        <tr><td>Windows</td><td><code>C:\gewumind-boot</code></td></tr>
+        <tr><td>macOS</td><td><code>/usr/local/gewumind-boot</code> as root; <code>~/gewumind-boot</code> for a normal user</td></tr>
+      </tbody>
+    </table>
+    <p>For an existing JVM or a local JRE archive, use the directory/file picker buttons or type the path directly.</p>
+
     <h2>Prerequisites</h2>
     <ul>
       <li>MySQL 5.7+ / 8.0+, MySQL 8 recommended. The database must already exist and be empty.</li>

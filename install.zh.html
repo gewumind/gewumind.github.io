@@ -91,6 +91,17 @@
       Windows 二进制未做代码签名，SmartScreen 可能提示；请先用 SHA256 校验。
     </p>
 
+    <h2>默认安装目录</h2>
+    <table class="legal-table">
+      <thead><tr><th>平台</th><th>默认目录</th></tr></thead>
+      <tbody>
+        <tr><td>Linux</td><td><code>/opt/gewumind-boot</code>（root）；普通用户为 <code>~/gewumind-boot</code></td></tr>
+        <tr><td>Windows</td><td><code>C:\gewumind-boot</code></td></tr>
+        <tr><td>macOS</td><td><code>/usr/local/gewumind-boot</code>（root）；普通用户为 <code>~/gewumind-boot</code></td></tr>
+      </tbody>
+    </table>
+    <p>已有 JVM 路径和本地 JRE 包都可以在界面中点击「选择目录」/「选择文件」，也可以直接输入路径。</p>
+
     <h2>前置条件</h2>
     <ul>
       <li>MySQL 5.7+ / 8.0+，推荐 MySQL 8；数据库必须存在且为空库。</li>
