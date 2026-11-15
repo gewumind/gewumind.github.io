@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment received · GewuMind Boot</title>
+  <meta name="description" content="GewuMind Boot license purchase received. Copy your Creem checkout ID and license request code, then email support to receive your offline license file." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://gewumind.com/success.html" />
+  <link rel="alternate" hreflang="en" href="https://gewumind.com/success.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://gewumind.com/success.zh.html" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/legal-lang.js"></script>
+  <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img src="assets/logo-mark.svg" alt="GewuMind" class="brand-mark" /><span class="brand-text">Gewu<strong>Mind</strong> Boot</span></a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/install.html">Installer</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-ghost btn-sm" href="/success.zh.html" data-lang-link="zh">中文</a></div>
+  </div>
+</header>
+
+<main class="legal-main">
+  <div class="container legal-wrap">
+    <span class="legal-kicker">Order received</span>
+    <h1 class="legal-title">Payment received</h1>
+    <p class="legal-meta">Next step: send us your checkout ID and license request code.</p>
+
+    <div class="legal-note">
+      This purchase is a <strong>commercial license</strong>, not an instant software download.
+      The software itself is available from the <a href="/install.html">installer page</a>.
+      We issue your offline <code>license.json</code> after matching the payment to your machine request.
+    </div>
+
+    <h2>1. Your order reference</h2>
+    <p>Creem returns the checkout ID in the success URL. Keep it for the license email:</p>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0 16px">
+      <code id="checkoutId" style="font-size:1rem">Loading…</code>
+      <button class="btn btn-ghost btn-sm" id="copyOrder" type="button">Copy order ID</button>
+    </div>
+    <p class="muted">If the ID is not shown, copy the order ID from your Creem receipt.</p>
+
+    <h2>2. Copy the license request code</h2>
+    <p>
+      Open the installed GewuMind Boot admin UI and go to <strong>Configuration → License</strong>.
+      Click <strong>Copy request</strong>. It produces a code like:
+    </p>
+    <pre class="code"><code>GW1|H|b63f549d2f23e0193f760ade394f2160</code></pre>
+    <p>Keep the whole code. Do not send only the 32-character machine code.</p>
+
+    <h2>3. Send the license request</h2>
+    <p>Email the following to <a href="mailto:support@gewumind.com">support@gewumind.com</a>:</p>
+    <pre class="code"><code>Order ID: ch_example123456
+Platform: Creem
+Version: 2.x
+License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
+    <p class="muted">Replace the example order ID with your checkout_id (starts with ch_) and replace the request code with the full GW1|H|... code copied from the product.</p>
+    <p>
+      <a class="btn btn-primary" id="mailRequest" href="mailto:support@gewumind.com?subject=GewuMind%20Boot%202.x%20license%20request">Email license request</a>
+    </p>
+
+    <h2>4. Receive and activate</h2>
+    <ol>
+      <li>We verify the Creem payment and issue <code>license.json</code>.</li>
+      <li>You receive it by email, normally within one business day.</li>
+      <li>In <strong>Configuration → License</strong>, click <strong>Upload license file</strong> and select the JSON file.</li>
+      <li>Activation takes effect immediately; a restart is only needed for services that were already enabled.</li>
+    </ol>
+
+    <h2>What the license covers</h2>
+    <ul>
+      <li>One machine code; unlimited GewuMind Boot instances on that machine.</li>
+      <li>One year from issuance.</li>
+      <li>Commercial capabilities for the purchased 2.x line, including AI support, knowledge base and H5 support.</li>
+      <li>Offline activation; no vendor connection is required at runtime.</li>
+    </ul>
+    <p>
+      Not included: hosting, custom development, 1.x, additional machines, or cross-major-version use.
+      See <a href="/license.html">License Agreement</a> and <a href="/terms.html">Terms of Service</a>.
+    </p>
+
+    <div class="legal-actions">
+      <a class="btn" href="/install.html">Installation guide</a>
+      <a class="btn" href="/pricing.html">Pricing</a>
+      <a class="btn" href="/contact.html">Contact support</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="GewuMind" class="footer-logo" />
+      <p>Wisdom through knowledge · AI-powered low-code backend</p>
+    </div>
+    <div class="footer-links">
+      <div><h5>Product</h5><a href="/">Home</a><a href="/install.html">Installer</a><a href="/pricing.html">Pricing</a><a href="/contact.html">Contact</a></div>
+      <div><h5>Legal</h5><a href="/terms.html">Terms of Service</a><a href="/privacy.html">Privacy Policy</a><a href="/license.html">License Agreement</a></div>
+      <div><h5>Resources</h5><a href="/install.html">Installer downloads</a><a href="https://github.com/gewumind/gewumind-boot/releases">GitHub downloads</a><a href="https://gitee.com/gewumind/gewumind-boot/releases">Gitee downloads</a></div>
+      <div><h5>Community</h5><a href="https://github.com/gewumind">GitHub</a><a href="https://github.com/gewumind/gewumind-boot">gewumind-boot</a><a href="https://github.com/gewumind/gewumind-skill">gewumind-skill</a><a href="mailto:support@gewumind.com">support@gewumind.com</a></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 GewuMind</span><span>Core is open-sourced under Apache-2.0</span></div>
+</footer>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('checkout_id') || params.get('order_id') || '';
+  var idEl = document.getElementById('checkoutId');
+  if (id) idEl.textContent = id;
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    return Promise.resolve();
+  }
+
+  document.getElementById('copyOrder').addEventListener('click', function () {
+    if (!id) return;
+    copyText(id);
+    this.textContent = 'Copied';
+    var btn = this;
+    setTimeout(function () { btn.textContent = 'Copy order ID'; }, 1500);
+  });
+
+  if (id) {
+    var body = 'Order ID: ' + id + '\nPlatform: Creem\nVersion: 2.x\nLicense request code: ';
+    document.getElementById('mailRequest').href = 'mailto:support@gewumind.com?subject=' +
+      encodeURIComponent('GewuMind Boot 2.x license request') + '&body=' + encodeURIComponent(body);
+  }
+})();
+</script>
+</body>
+</html>

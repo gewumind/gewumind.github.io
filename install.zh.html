@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>安装器 · GewuMind Boot</title>
+  <meta name="description" content="GewuMind Boot 跨平台安装器下载与使用说明：Linux、Windows、macOS，支持 GUI 和 CLI、JRE 自动准备、空库校验、数据库初始化、systemd 服务和升级。" />
+  <link rel="canonical" href="https://gewumind.com/install.zh.html" />
+  <link rel="alternate" hreflang="en" href="https://gewumind.com/install.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://gewumind.com/install.zh.html" />
+  <meta property="og:url" content="https://gewumind.com/install.zh.html" />
+  <meta property="og:site_name" content="GewuMind" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/legal-lang.js"></script>
+  <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img src="assets/logo-mark.svg" alt="GewuMind" class="brand-mark" /><span class="brand-text">Gewu<strong>Mind</strong> Boot</span></a>
+    <nav class="nav-links">
+      <a href="/">首页</a>
+      <a href="/install.zh.html">安装器</a>
+      <a href="/pricing.zh.html">价格</a>
+      <a href="/license.zh.html">授权</a>
+      <a href="/contact.zh.html">联系</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-ghost btn-sm" href="/install.html" data-lang-link="en">English</a></div>
+  </div>
+</header>
+
+<main class="legal-main">
+  <div class="container legal-wrap">
+    <span class="legal-kicker">安装器</span>
+    <h1 class="legal-title">安装 GewuMind Boot</h1>
+    <p class="legal-meta">安装器 v0.1.0 · Linux / Windows / macOS · GUI + CLI</p>
+
+    <div class="legal-note">
+      安装器负责环境检测、空库校验、数据库初始化、JRE 准备、服务注册、升级和卸载。
+      应用包和数据库包从 <a href="https://github.com/gewumind/gewumind-boot/releases">GitHub</a> 或
+      <a href="https://gitee.com/gewumind/gewumind-boot/releases">Gitee Releases</a> 下载。
+      当前安装器覆盖 1.2.2 / 2.0.0 / 2.2.0；2.3.0 发布后再加入 manifest。
+    </div>
+
+    <h2>先选安装方式</h2>
+    <table class="legal-table">
+      <thead><tr><th>方式</th><th>适合场景</th><th>需要 clone 源码</th><th>你需要准备</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>直接安装</strong></td>
+          <td>试用、生产部署、只需要运行现成版本</td>
+          <td>不需要</td>
+          <td>安装器 + 对应版本的应用包和数据库包</td>
+        </tr>
+        <tr>
+          <td><strong>二次开发</strong></td>
+          <td>修改内核、增加自定义能力、深度定制</td>
+          <td>需要</td>
+          <td><code>git clone gewumind-boot</code>、JDK 17、Maven 3.8+、MySQL 8</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>直接安装不需要 clone 源码，也不需要 Maven / Node。</strong>
+      安装器只负责安装已经构建好的发行包，不会替你拉取源码或编译内核。
+    </p>
+    <p>
+      二次开发请从源码仓库开始：
+      <a href="https://github.com/gewumind/gewumind-boot">github.com/gewumind/gewumind-boot</a>，
+      修改后自行构建发行包；安装器可用于安装你构建出来的包。
+    </p>
+
+    <h2>下载安装器</h2>
+    <table class="legal-table">
+      <thead><tr><th>系统</th><th>架构</th><th>下载</th></tr></thead>
+      <tbody>
+        <tr><td>Linux</td><td>x86_64</td><td><a href="downloads/gw-installer-linux-amd64" download>gw-installer-linux-amd64</a></td></tr>
+        <tr><td>Linux</td><td>arm64</td><td><a href="downloads/gw-installer-linux-arm64" download>gw-installer-linux-arm64</a></td></tr>
+        <tr><td>Windows</td><td>x86_64</td><td><a href="downloads/gw-installer-windows-amd64.exe" download>gw-installer-windows-amd64.exe</a></td></tr>
+        <tr><td>Windows</td><td>arm64</td><td><a href="downloads/gw-installer-windows-arm64.exe" download>gw-installer-windows-arm64.exe</a></td></tr>
+        <tr><td>macOS</td><td>Intel</td><td><a href="downloads/gw-installer-darwin-amd64" download>gw-installer-darwin-amd64</a></td></tr>
+        <tr><td>macOS</td><td>Apple Silicon</td><td><a href="downloads/gw-installer-darwin-arm64" download>gw-installer-darwin-arm64</a></td></tr>
+      </tbody>
+    </table>
+    <p>
+      校验文件：<a href="downloads/SHA256SUMS.txt">SHA256SUMS.txt</a>。
+      Windows 二进制未做代码签名，SmartScreen 可能提示；请先用 SHA256 校验。
+    </p>
+
+    <h2>前置条件</h2>
+    <ul>
+      <li>MySQL 5.7+ / 8.0+，推荐 MySQL 8；数据库必须存在且为空库。</li>
+      <li>Java 17+。没有时安装器可下载 Temurin JRE 17，或使用 <code>--java-home</code> / <code>--jvm-archive</code>。</li>
+      <li>Linux 安装 systemd 服务需要 root；Windows 需要管理员权限。</li>
+      <li>建议至少 2GB 可用磁盘。</li>
+    </ul>
+
+    <h2>先创建空库</h2>
+    <pre class="code"><code>CREATE DATABASE `gewumind-boot`
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</code></pre>
+    <p>安装器不会创建数据库，也不会覆盖非空库。确认表数为 0：</p>
+    <pre class="code"><code>SELECT COUNT(*) FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'gewumind-boot';</code></pre>
+
+    <h2>方式一：图形安装向导</h2>
+    <p>Linux / macOS：</p>
+    <pre class="code"><code>chmod +x gw-installer-linux-amd64
+sudo ./gw-installer-linux-amd64 gui</code></pre>
+    <p>Windows：双击 <code>gw-installer-windows-amd64.exe</code>，或在管理员终端运行：</p>
+    <pre class="code"><code>gw-installer-windows-amd64.exe gui</code></pre>
+    <p>
+      GUI 默认只监听 <code>127.0.0.1</code>，终端会输出带 token 的本地地址。
+      安装在远程服务器时，请通过 SSH 端口转发访问，不要直接把安装器端口暴露到公网。
+    </p>
+
+    <h2>方式二：命令行安装</h2>
+    <p>下载应用最小包和数据库包后，以 2.2.0 中文版为例：</p>
+    <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
+  --version 2.2.0 \
+  --lang zh \
+  --app-package ./gewumind-boot-app-2.2.0-zh-min.tar.gz \
+  --db-package ./gewumind-boot-db-2.2.0-zh.tar.gz \
+  --install-dir /opt/gewumind-boot \
+  --server-port 9089 \
+  --db-host 127.0.0.1 --db-port 3306 \
+  --db-name gewumind-boot --db-user root</code></pre>
+    <p>数据库密码会交互询问，输入时不回显；也可以使用 <code>GW_DB_PASSWORD</code> 环境变量。</p>
+    <p>也可让安装器按 manifest 自动下载应用包和数据库包：</p>
+    <pre class="code"><code>sudo ./gw-installer-linux-amd64 install \
+  --version 2.2.0 --lang zh --source auto \
+  --db-name gewumind-boot --db-user root</code></pre>
+
+    <h2>安装后</h2>
+    <ul>
+      <li>后台地址默认是 <code>http://服务器IP:9089</code>，默认账号 <code>admin / 123456</code>。</li>
+      <li>Linux 默认注册 systemd 服务并开机自启。</li>
+      <li>商业能力通过「配置中心 → 上传授权文件」激活；先复制授权申请码再申请。</li>
+      <li>演示环境可切换 <code>demo</code> profile；上传授权文件前要切回 <code>online</code>。</li>
+    </ul>
+
+    <h2>升级与卸载</h2>
+    <pre class="code"><code># 升级前先备份数据库
+sudo ./gw-installer-linux-amd64 upgrade \
+  --version 2.2.0 \
+  --app-package ./gewumind-boot-app-2.2.0-zh-min.tar.gz \
+  --db-package ./gewumind-boot-db-2.2.0-zh.tar.gz
+
+# 卸载：保留数据库
+sudo ./gw-installer-linux-amd64 uninstall</code></pre>
+    <p>升级会保留 License、data 和配置；卸载默认删除安装目录但保留数据库。</p>
+
+    <h2>验证与说明</h2>
+    <p>
+      Linux 已完成真实安装、升级、卸载验证；Windows Service 与 macOS launchd 已完成适配和交叉编译，
+      尚未在真实 Windows / macOS 机器上验收。遇到问题时请附上系统版本、安装器版本和日志。
+    </p>
+    <p>
+      详细参数和更多示例见安装器帮助：
+      <code>gw-installer --help</code>、<code>gw-installer install --help</code>。
+    </p>
+
+    <div class="legal-actions">
+      <a class="btn" href="/pricing.zh.html">价格与授权</a>
+      <a class="btn" href="/license.zh.html">软件授权协议</a>
+      <a class="btn" href="/contact.zh.html">联系支持</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="GewuMind" class="footer-logo" />
+      <p>格物致知 · AI 驱动的低代码后端容器</p>
+    </div>
+    <div class="footer-links">
+      <div><h5>产品</h5><a href="/">首页</a><a href="/install.zh.html">安装器</a><a href="/pricing.zh.html">价格</a><a href="/contact.zh.html">联系我们</a></div>
+      <div><h5>法律</h5><a href="/terms.zh.html">服务条款</a><a href="/privacy.zh.html">隐私政策</a><a href="/license.zh.html">软件授权协议</a></div>
+      <div><h5>资源</h5><a href="/#start">快速开始</a><a href="/install.zh.html">安装器下载</a><a href="https://github.com/gewumind/gewumind-boot/releases">GitHub 下载</a><a href="https://gitee.com/gewumind/gewumind-boot/releases">Gitee 下载</a></div>
+      <div><h5>社区</h5><a href="https://github.com/gewumind">GitHub</a><a href="https://github.com/gewumind/gewumind-boot">gewumind-boot</a><a href="https://github.com/gewumind/gewumind-skill">gewumind-skill</a><a href="mailto:support@gewumind.com">support@gewumind.com</a></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 GewuMind</span><span>内核基于 Apache-2.0 开源</span></div>
+</footer>
+</body>
+</html>

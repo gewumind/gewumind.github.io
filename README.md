@@ -47,6 +47,11 @@ gewumind-github-html/
 ├── license.zh.html         # 软件授权协议（中文）
 ├── contact.html            # 联系方式（英文）
 ├── contact.zh.html         # 联系方式（中文）
+├── install.html            # 安装器下载与使用说明（英文）
+├── install.zh.html         # 安装器下载与使用说明（中文）
+├── success.html            # Creem 付款成功后的授权申请说明（英文）
+├── success.zh.html         # Creem 付款成功后的授权申请说明（中文）
+├── downloads/              # 安装器二进制（Linux / Windows / macOS）+ SHA256SUMS
 ├── robots.txt
 ├── sitemap.xml
 ├── assets/
@@ -70,6 +75,7 @@ gewumind-github-html/
 ## 维护
 
 - 文案改 `index.html`：`<span data-zh>…</span><span data-en>…</span>` 成对出现。
+- 安装器更新：重新构建 `gw-installer-*` 后同步到 `downloads/`，更新 `downloads/SHA256SUMS.txt`，并同步 `install.html` / `install.zh.html` 中的版本说明。
 - 配色改 `assets/css/style.css` 顶部 `:root` 变量（主色 `--indigo`）。
 - 后续新增案例项目时，在 `#ecosystem` 区块加一张卡片即可。
 
