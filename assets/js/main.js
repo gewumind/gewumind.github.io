@@ -65,6 +65,17 @@
     });
   }
 
+  // Close the "More" dropdown after choosing an item or clicking outside.
+  document.addEventListener('click', function (event) {
+    var more = document.querySelector('details.nav-more');
+    if (!more) return;
+    if (event.target.closest('.nav-more-menu a')) {
+      more.open = false;
+      return;
+    }
+    if (!event.target.closest('details.nav-more')) more.open = false;
+  });
+
   var year = document.getElementById('year');
   if (year) { year.textContent = String(new Date().getFullYear()); }
 
