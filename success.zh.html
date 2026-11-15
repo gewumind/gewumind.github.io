@@ -41,13 +41,15 @@
       <code>license.json</code>。
     </div>
 
-    <h2>1. 订单号</h2>
-    <p>Creem 支付成功后会把 checkout ID 放在成功页 URL 中。申请授权时需要提供：</p>
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0 16px">
-      <code id="checkoutId" style="font-size:1rem">加载中…</code>
-      <button class="btn btn-ghost btn-sm" id="copyOrder" type="button">复制订单号</button>
-    </div>
-    <p class="muted">如果页面没有显示，请从 Creem 付款收据中复制订单号。</p>
+    <h2>1. 三个 ID</h2>
+    <p>Creem 成功页 URL 同时包含 Checkout ID、Order ID 和 Product ID，请全部保留：</p>
+    <p><strong>Checkout ID：</strong> <code id="checkoutId">—</code>
+      <button class="btn btn-ghost btn-sm" id="copyOrder" type="button">复制 Checkout ID</button></p>
+    <p><strong>Order ID：</strong> <code id="orderId">—</code></p>
+    <p><strong>Product ID：</strong> <code id="productId">—</code></p>
+    <p class="muted">Order Number（<code>ORD-...</code>）在 Creem 收据里，邮件中填写；它不能替代 Checkout ID 查单。</p>
+    <p class="muted"><strong>Checkout ID 在哪里？</strong> 它只在付款成功页 URL 里；请从地址栏找 <code>checkout_id=ch_...</code>。</p>
+    <p class="muted">面包多没有这种自定义成功页：在面包多订单详情复制订单号即可，不需要 Checkout ID / Product ID。</p>
 
     <h2>2. 复制授权申请码</h2>
     <p>
@@ -58,14 +60,17 @@
     <p>请发送完整申请码，不要只发 32 位机器码。</p>
 
     <h2>3. 发送授权申请</h2>
-    <p>把下面内容发送到 <a href="mailto:support@gewumind.com">support@gewumind.com</a>：</p>
-    <pre class="code"><code>订单号：ch_example123456
-购买平台：Creem
-版本：2.x
-授权申请码：GW1|H|0123456789abcdef0123456789abcdef</code></pre>
-    <p class="muted">把上面的订单号替换成你自己的 checkout_id（ch_ 开头），授权申请码替换成页面复制的完整 GW1|H|...。</p>
+    <p>把下面内容发送到 <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>：</p>
+    <pre class="code"><code id="emailTemplate">Checkout ID: ch_X8pCjFEIyklTDPrYPZMbo
+Order ID: ord_6oucvXvxW51RDRM1D4vuDh
+Order Number: ORD-1A1DED462565DD84
+Product ID: prod_1Tv4fHoNoI88dKrVOsj1Mg
+Platform: Creem
+License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
+    <p class="muted">Checkout / Order / Product ID 可从本页复制；Order Number 从 Creem 收据复制；授权申请码从配置中心复制完整 GW1|H|...。</p>
     <p>
-      <a class="btn btn-primary" id="mailRequest" href="mailto:support@gewumind.com?subject=GewuMind%20Boot%202.x%20%E6%8E%88%E6%9D%83%E7%94%B3%E8%AF%B7">发送授权申请</a>
+      <button class="btn btn-ghost btn-sm" id="copyEmail" type="button">复制邮件内容</button>
+      <a class="btn btn-primary" id="mailRequest" href="mailto:gewumind@foxmail.com?subject=GewuMind%20Boot%202.x%20%E6%8E%88%E6%9D%83%E7%94%B3%E8%AF%B7">发送授权申请</a>
     </p>
 
     <h2>4. 接收并激活</h2>
@@ -115,9 +120,12 @@
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
-  var id = params.get('checkout_id') || params.get('order_id') || '';
-  var idEl = document.getElementById('checkoutId');
-  if (id) idEl.textContent = id;
+  var checkoutId = params.get('checkout_id') || '';
+  var orderId = params.get('order_id') || '';
+  var productId = params.get('product_id') || '';
+  document.getElementById('checkoutId').textContent = checkoutId || '— 请从地址栏复制';
+  document.getElementById('orderId').textContent = orderId || '—';
+  document.getElementById('productId').textContent = productId || '—';
 
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
@@ -128,18 +136,26 @@
   }
 
   document.getElementById('copyOrder').addEventListener('click', function () {
-    if (!id) return;
-    copyText(id);
+    if (!checkoutId) return;
+    copyText(checkoutId);
     this.textContent = '已复制';
     var btn = this;
-    setTimeout(function () { btn.textContent = '复制订单号'; }, 1500);
+    setTimeout(function () { btn.textContent = '复制 Checkout ID'; }, 1500);
   });
 
-  if (id) {
-    var body = '订单号：' + id + '\n购买平台：Creem\n版本：2.x\n授权申请码：';
-    document.getElementById('mailRequest').href = 'mailto:support@gewumind.com?subject=' +
-      encodeURIComponent('GewuMind Boot 2.x 授权申请') + '&body=' + encodeURIComponent(body);
-  }
+  var body = 'Checkout ID: ' + checkoutId + '\nOrder ID: ' + orderId +
+    '\nOrder Number: ' + '\nProduct ID: ' + productId +
+    '\nPlatform: Creem\nLicense request code: ';
+  var templateEl = document.getElementById('emailTemplate');
+  if (templateEl) templateEl.textContent = body;
+  document.getElementById('mailRequest').href = 'mailto:gewumind@foxmail.com?subject=' +
+    encodeURIComponent('GewuMind Boot 2.x 授权申请') + '&body=' + encodeURIComponent(body);
+  document.getElementById('copyEmail').addEventListener('click', function () {
+    copyText(body);
+    this.textContent = '已复制';
+    var btn = this;
+    setTimeout(function () { btn.textContent = '复制邮件内容'; }, 1500);
+  });
 })();
 </script>
 </body>

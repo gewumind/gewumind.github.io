@@ -30,4 +30,20 @@
       localStorage.setItem(KEY, link.getAttribute('data-lang-link'));
     } catch (e) {}
   });
+
+  // Preserve query parameters (e.g. Creem checkout_id) when switching language.
+  function preserveQueryOnLangLinks() {
+    var links = document.querySelectorAll('[data-lang-link]');
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href');
+      if (!href || href.charAt(0) === '#') continue;
+      if (href.indexOf('?') >= 0 || href.indexOf('#') >= 0) continue;
+      links[i].setAttribute('href', href + window.location.search + window.location.hash);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', preserveQueryOnLangLinks);
+  } else {
+    preserveQueryOnLangLinks();
+  }
 })();

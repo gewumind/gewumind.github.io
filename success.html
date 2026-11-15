@@ -41,13 +41,15 @@
       We issue your offline <code>license.json</code> after matching the payment to your machine request.
     </div>
 
-    <h2>1. Your order reference</h2>
-    <p>Creem returns the checkout ID in the success URL. Keep it for the license email:</p>
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0 16px">
-      <code id="checkoutId" style="font-size:1rem">Loading…</code>
-      <button class="btn btn-ghost btn-sm" id="copyOrder" type="button">Copy order ID</button>
-    </div>
-    <p class="muted">If the ID is not shown, copy the order ID from your Creem receipt.</p>
+    <h2>1. Three IDs</h2>
+    <p>The Creem success URL contains Checkout ID, Order ID and Product ID. Keep all three:</p>
+    <p><strong>Checkout ID:</strong> <code id="checkoutId">—</code>
+      <button class="btn btn-ghost btn-sm" id="copyOrder" type="button">Copy Checkout ID</button></p>
+    <p><strong>Order ID:</strong> <code id="orderId">—</code></p>
+    <p><strong>Product ID:</strong> <code id="productId">—</code></p>
+    <p class="muted">Order Number (<code>ORD-...</code>) is on the Creem receipt. Include it in the email; it cannot replace Checkout ID for lookup.</p>
+    <p class="muted"><strong>Where is the Checkout ID?</strong> It is only in the success-page URL: look for <code>checkout_id=ch_...</code> in the address bar.</p>
+    <p class="muted">Mianbaoduo has no custom success page: copy the order number from its order details; no Checkout ID or Product ID is needed.</p>
 
     <h2>2. Copy the license request code</h2>
     <p>
@@ -58,14 +60,17 @@
     <p>Keep the whole code. Do not send only the 32-character machine code.</p>
 
     <h2>3. Send the license request</h2>
-    <p>Email the following to <a href="mailto:support@gewumind.com">support@gewumind.com</a>:</p>
-    <pre class="code"><code>Order ID: ch_example123456
+    <p>Email the following to <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>:</p>
+    <pre class="code"><code id="emailTemplate">Checkout ID: ch_X8pCjFEIyklTDPrYPZMbo
+Order ID: ord_6oucvXvxW51RDRM1D4vuDh
+Order Number: ORD-1A1DED462565DD84
+Product ID: prod_1Tv4fHoNoI88dKrVOsj1Mg
 Platform: Creem
-Version: 2.x
 License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
-    <p class="muted">Replace the example order ID with your checkout_id (starts with ch_) and replace the request code with the full GW1|H|... code copied from the product.</p>
+    <p class="muted">Copy Checkout / Order / Product ID from this page; copy Order Number from the Creem receipt; copy the full GW1|H|... request code from GewuMind Boot.</p>
     <p>
-      <a class="btn btn-primary" id="mailRequest" href="mailto:support@gewumind.com?subject=GewuMind%20Boot%202.x%20license%20request">Email license request</a>
+      <button class="btn btn-ghost btn-sm" id="copyEmail" type="button">Copy email template</button>
+      <a class="btn btn-primary" id="mailRequest" href="mailto:gewumind@foxmail.com?subject=GewuMind%20Boot%202.x%20license%20request">Email license request</a>
     </p>
 
     <h2>4. Receive and activate</h2>
@@ -115,9 +120,12 @@ License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
-  var id = params.get('checkout_id') || params.get('order_id') || '';
-  var idEl = document.getElementById('checkoutId');
-  if (id) idEl.textContent = id;
+  var checkoutId = params.get('checkout_id') || '';
+  var orderId = params.get('order_id') || '';
+  var productId = params.get('product_id') || '';
+  document.getElementById('checkoutId').textContent = checkoutId || '— copy from the address bar';
+  document.getElementById('orderId').textContent = orderId || '—';
+  document.getElementById('productId').textContent = productId || '—';
 
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
@@ -128,18 +136,26 @@ License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
   }
 
   document.getElementById('copyOrder').addEventListener('click', function () {
-    if (!id) return;
-    copyText(id);
+    if (!checkoutId) return;
+    copyText(checkoutId);
     this.textContent = 'Copied';
     var btn = this;
-    setTimeout(function () { btn.textContent = 'Copy order ID'; }, 1500);
+    setTimeout(function () { btn.textContent = 'Copy Checkout ID'; }, 1500);
   });
 
-  if (id) {
-    var body = 'Order ID: ' + id + '\nPlatform: Creem\nVersion: 2.x\nLicense request code: ';
-    document.getElementById('mailRequest').href = 'mailto:support@gewumind.com?subject=' +
-      encodeURIComponent('GewuMind Boot 2.x license request') + '&body=' + encodeURIComponent(body);
-  }
+  var body = 'Checkout ID: ' + checkoutId + '\nOrder ID: ' + orderId +
+    '\nOrder Number: ' + '\nProduct ID: ' + productId +
+    '\nPlatform: Creem\nLicense request code: ';
+  var templateEl = document.getElementById('emailTemplate');
+  if (templateEl) templateEl.textContent = body;
+  document.getElementById('mailRequest').href = 'mailto:gewumind@foxmail.com?subject=' +
+    encodeURIComponent('GewuMind Boot 2.x license request') + '&body=' + encodeURIComponent(body);
+  document.getElementById('copyEmail').addEventListener('click', function () {
+    copyText(body);
+    this.textContent = 'Copied';
+    var btn = this;
+    setTimeout(function () { btn.textContent = 'Copy email template'; }, 1500);
+  });
 })();
 </script>
 </body>

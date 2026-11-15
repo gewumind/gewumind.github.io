@@ -584,6 +584,23 @@ ul.check li::after {
 .legal-wrap ul, .legal-wrap ol { margin: 0 0 16px; padding-left: 22px; }
 .legal-wrap li { margin: 4px 0; }
 .legal-wrap a { color: var(--indigo-soft); }
+.legal-wrap .btn {
+  color: var(--text);
+  background: rgba(99,102,241,.10);
+  border-color: var(--border);
+}
+.legal-wrap .btn:hover { background: rgba(99,102,241,.18); }
+.legal-wrap .btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--indigo-soft), var(--indigo-strong));
+  border-color: transparent;
+}
+.legal-wrap .btn-primary:hover { background: linear-gradient(135deg, #93a0ff, var(--indigo)); }
+.legal-wrap .btn-outline {
+  color: var(--text);
+  background: transparent;
+  border-color: var(--border);
+}
 .legal-wrap strong { color: var(--text); }
 .legal-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: .92rem; }
 .legal-table th, .legal-table td {
