@@ -50,7 +50,9 @@
     <p>我们通常 1 个工作日内回复，支持中文和英文。</p>
 
     <h2>授权申请格式</h2>
-    <p>请发送到 <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>，并严格使用下面的固定格式，标签不要改：</p>
+    <p>请发送到 <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>，标签不要改。</p>
+
+    <h3>Creem 购买后</h3>
     <pre class="code"><code>Checkout ID：ch_example123456
 Order ID：ord_example123
 Order Number：ORD-EXAMPLE123
@@ -58,14 +60,20 @@ Product ID：prod_example123
 购买平台：Creem
 授权申请码：GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     <p>
-      Creem 的订单号填 <code>checkout_id</code>（以 <code>ch_</code> 开头），不要填商品 ID。
+      Creem 查单使用 <code>Checkout ID</code>（以 <code>ch_</code> 开头），不是 <code>ORD-...</code> 或商品 ID。
+      <code>Order ID</code>、<code>Order Number</code>、<code>Product ID</code> 是辅助信息。
       授权申请码在 GewuMind Boot「配置中心 → 授权」点击「复制授权申请」获得，必须发送完整的
       <code>GW1|H|...</code>，不要只发 32 位机器码。
     </p>
+
+    <h3>面包多购买后</h3>
+    <p>面包多没有自定义成功页。登录面包多，打开「我的订单 / 已购内容」→ 订单详情，复制订单号。</p>
+    <pre class="code"><code>订单号：MB123456789
+购买平台：面包多
+授权申请码：GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     <p>
-      标签不要改，一行一个字段。邮件客户端把换行挤在一起时，可以用 <code>|</code> 分隔写成一行，顺序不变。
-      缺标签或格式不对时自动系统无法处理，会回复模板要求补齐。一个订单只绑定一个机器码和一条版本线。
-      面包多没有自定义成功页：在面包多订单详情复制订单号，邮件写“订单号 / 购买平台：面包多 / 授权申请码”，不需要 Checkout ID 或 Product ID。
+      面包多不需要 Checkout ID、Order ID 或 Product ID。标签不要改，一行一个字段。
+      邮件客户端合并换行时，可以用 <code>|</code> 分隔写成一行，顺序不变。
     </p>
 
     <h2>退款</h2>

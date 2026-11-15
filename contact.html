@@ -50,7 +50,9 @@
     <p>We usually reply within one business day. Support is provided in Chinese and English.</p>
 
     <h2>License request format</h2>
-    <p>Send the request to <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a> using exactly this format. Do not change the labels.</p>
+    <p>Send the request to <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>. Do not change the labels.</p>
+
+    <h3>After a Creem purchase</h3>
     <pre class="code"><code>Checkout ID: ch_example123456
 Order ID: ord_example123
 Order Number: ORD-EXAMPLE123
@@ -58,15 +60,20 @@ Product ID: prod_example123
 Platform: Creem
 License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     <p>
-      For Creem, use the checkout ID (starts with <code>ch_</code>), not the product ID.
+      Creem lookup uses the Checkout ID (starts with <code>ch_</code>), not <code>ORD-...</code> or the product ID.
+      Order ID, Order Number and Product ID are supporting identifiers.
       Get the license request code from GewuMind Boot → Configuration → License → Copy request.
       Send the whole <code>GW1|H|...</code> code, not just the 32-character machine code.
     </p>
+
+    <h3>After a Mianbaoduo purchase</h3>
+    <p>Mianbaoduo has no custom success page. Sign in, open My Orders / Purchased, open the order details and copy the order number.</p>
+    <pre class="code"><code>Order Number: MB123456789
+Platform: Mianbaoduo
+License request code: GW1|H|0123456789abcdef0123456789abcdef</code></pre>
     <p>
-      Keep the labels unchanged, one field per line. If your email client collapses line breaks,
-      use one line separated by <code>|</code> in the same order. Missing or changed labels may
-      prevent automatic processing. One order covers one machine code and one version line.
-      Mianbaoduo has no custom success page: copy the order number from its order details and send Order Number / Platform: Mianbaoduo / License request code. No Checkout ID or Product ID is needed.
+      No Checkout ID, Order ID or Product ID is needed for Mianbaoduo. Keep labels unchanged, one field per line.
+      If line breaks collapse, use <code>|</code> in the same order.
     </p>
 
     <h2>Refunds</h2>
