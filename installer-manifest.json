@@ -8,8 +8,8 @@
       ],
       "app": {
         "zh": {
-          "sha256": "96723dd589376fd0048ac6e058872952a3f85d962f456b246805b23ab0dfd32e",
-          "size": 98152516,
+          "sha256": "e05eb775934d8b3da1d2b959466dbd8c7eefe70cc73cfb1f52fcae94dd57165f",
+          "size": 98175918,
           "mirrors": [
             {
               "source": "gitee",
@@ -22,8 +22,8 @@
           ]
         },
         "en": {
-          "sha256": "c51fd01ddfaf5621ea6f3cf7159b2eb1a284c8a5e164e44f45fde31ba4e9b5c8",
-          "size": 98137097,
+          "sha256": "48951951561604e8910dc564ebd6cab977df42557c1b32b97c7bc3ba43c39458",
+          "size": 98160647,
           "mirrors": [
             {
               "source": "gitee",
@@ -38,8 +38,8 @@
       },
       "db": {
         "zh": {
-          "sha256": "c1bc64abeae29434c5766c354d09145fcd21fe048780ed1b4a61ae31f7013958",
-          "size": 137886,
+          "sha256": "0173ac486c69aefcbf54e0ba331fdccb26c38b0971b8a5d9bfc993a8d2cdb14f",
+          "size": 138152,
           "mirrors": [
             {
               "source": "gitee",
@@ -52,8 +52,8 @@
           ]
         },
         "en": {
-          "sha256": "838de99a62265f28529cbb43d98adec3a0e02f1da41f4e35c12eef6f4fef6354",
-          "size": 33682,
+          "sha256": "61e26ecc04a6a5073f191de2e13dcc32cd1679b72f1ac6142c414f0c8e91ea77",
+          "size": 33674,
           "mirrors": [
             {
               "source": "gitee",
