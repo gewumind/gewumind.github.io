@@ -125,11 +125,12 @@
 <span class="c-comment"># 2. 登录后台 → 配置中心 → 打开「AI 开发接入」</span>
 <span class="c-comment">#    自动生成 X-AI-Key（MCP / REST 发布共用）</span>
 
-<span class="c-comment"># 3. 装上 gewumind-skill</span>
-<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
+<span class="c-comment"># 3. 安装 skill（opencode）</span>
+<span class="c-prompt">$</span> mkdir -p ~/.agents/skills
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
 
-<span class="c-comment"># 4. 对 AI Agent 说：</span>
-<span class="c-str">"用 gewumind-boot 做一个设备管理模块"</span>
+<span class="c-comment"># 4. 用 opencode 执行</span>
+<span class="c-prompt">$</span> opencode run "用 gewumind-boot 做一个设备管理模块"
 
 <span class="c-ai">→ 需求 → 设计文档 → 生成代码 → 一键发布</span>
 
@@ -142,11 +143,12 @@
 <span class="c-comment"># 2. Sign in → Config Center → turn on AI Dev Access</span>
 <span class="c-comment">#    This creates the X-AI-Key for MCP / REST publishing</span>
 
-<span class="c-comment"># 3. Install gewumind-skill</span>
-<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
+<span class="c-comment"># 3. Install the skill (opencode)</span>
+<span class="c-prompt">$</span> mkdir -p ~/.agents/skills
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
 
-<span class="c-comment"># 4. Tell your AI Agent:</span>
-<span class="c-str">"Use gewumind-boot to build a device management module"</span>
+<span class="c-comment"># 4. Run it with opencode</span>
+<span class="c-prompt">$</span> opencode run "Use gewumind-boot to build a device management module"
 
 <span class="c-ai">→ requirements → design → code → publish</span>
 
@@ -396,11 +398,13 @@
         </div>
       </div>
       <div class="ai-card code-card">
-        <h3><span data-zh>安装（以 Claude Code 为例）</span><span data-en>Install (Claude Code example)</span></h3>
-        <pre class="code"><code><span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
+        <h3><span data-zh>安装（以 opencode 为例）</span><span data-en>Install (opencode example)</span></h3>
+        <pre class="code"><code><span class="c-prompt">$</span> mkdir -p ~/.agents/skills
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
 
-<span class="c-prompt">$</span> claude mcp add --transport sse gewumind-boot \
-    http://localhost:9089/mcp</code></pre>
+<span class="c-prompt">$</span> KEY=$(sudo python3 -c "import json;print(json.load(open('/opt/gewumind-boot/data/.gewumind/ai-access.json'))['key'])")
+<span class="c-prompt">$</span> opencode mcp add gewumind-boot --url http://localhost:9089/mcp \
+    --header "X-AI-Key=$KEY"</code></pre>
         <p class="muted"><span data-zh>其他 MCP 客户端可把 <code>SKILL.md</code> 贴进项目 rules，stdio 用 <code>npx mcp-remote</code> 桥接。MCP 与发布接口都需要 <code>X-AI-Key</code>；在配置中心打开「AI 开发接入」后自动生成，写入 <code>data/.gewumind/ai-access.json</code>。</span><span data-en>For other clients, paste <code>SKILL.md</code> into project rules; bridge stdio with <code>npx mcp-remote</code>. Both MCP and the publish API need an <code>X-AI-Key</code>; turning on <strong>AI Dev Access</strong> in the config center generates it in <code>data/.gewumind/ai-access.json</code>.</span></p>
       </div>
     </div>
@@ -615,8 +619,15 @@
 <span class="c-comment"># 3. 打开「AI 开发接入」，生成 X-AI-Key</span>
 <span class="c-comment">#    文件：data/.gewumind/ai-access.json（0600）</span>
 
-<span class="c-comment"># 4. 装上 skill，开始让 AI 交付</span>
-<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot</code></pre>
+<span class="c-comment"># 4. 安装 skill 并配置 MCP（opencode）</span>
+<span class="c-prompt">$</span> mkdir -p ~/.agents/skills
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
+<span class="c-prompt">$</span> KEY=$(sudo python3 -c "import json;print(json.load(open('/opt/gewumind-boot/data/.gewumind/ai-access.json'))['key'])")
+<span class="c-prompt">$</span> opencode mcp add gewumind-boot --url http://localhost:9089/mcp \
+    --header "X-AI-Key=$KEY"
+
+<span class="c-comment"># 5. 开始让 AI 交付</span>
+<span class="c-prompt">$</span> opencode run "用 gewumind-boot 做一个设备管理模块"</code></pre>
       <pre data-en class="code code-lg"><code><span class="c-comment"># 1. Create an empty database</span>
 <span class="c-prompt">$</span> mysql -uroot -p -e "CREATE DATABASE gewumind-boot
       DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci"
@@ -628,8 +639,15 @@
 <span class="c-comment"># 3. Turn on AI Dev Access and create X-AI-Key</span>
 <span class="c-comment">#    File: data/.gewumind/ai-access.json (0600)</span>
 
-<span class="c-comment"># 4. Install the skill and let AI deliver</span>
-<span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot</code></pre>
+<span class="c-comment"># 4. Install the skill and configure MCP (opencode)</span>
+<span class="c-prompt">$</span> mkdir -p ~/.agents/skills
+<span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
+<span class="c-prompt">$</span> KEY=$(sudo python3 -c "import json;print(json.load(open('/opt/gewumind-boot/data/.gewumind/ai-access.json'))['key'])")
+<span class="c-prompt">$</span> opencode mcp add gewumind-boot --url http://localhost:9089/mcp \
+    --header "X-AI-Key=$KEY"
+
+<span class="c-comment"># 5. Let AI deliver</span>
+<span class="c-prompt">$</span> opencode run "Use gewumind-boot to build a device management module"</code></pre>
 
       <div class="start-info">
         <div class="info-row"><span data-zh>后台</span><span data-en>Admin</span><code>http://localhost:9089</code></div>
