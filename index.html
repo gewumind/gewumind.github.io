@@ -402,7 +402,7 @@
         <pre class="code"><code><span class="c-prompt">$</span> mkdir -p ~/.agents/skills
 <span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
 
-<span class="c-prompt">$</span> KEY=$(sudo python3 -c "import json;print(json.load(open('/opt/gewumind-boot/data/.gewumind/ai-access.json'))['key'])")
+<span class="c-prompt">$</span> KEY=$(sudo sed -n 's/.*"key"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' /opt/gewumind-boot/data/.gewumind/ai-access.json)
 <span class="c-prompt">$</span> opencode mcp add gewumind-boot --url http://localhost:9089/mcp \
     --header "X-AI-Key=$KEY"</code></pre>
         <p class="muted"><span data-zh>其他 MCP 客户端可把 <code>SKILL.md</code> 贴进项目 rules，stdio 用 <code>npx mcp-remote</code> 桥接。MCP 与发布接口都需要 <code>X-AI-Key</code>；在配置中心打开「AI 开发接入」后自动生成，写入 <code>data/.gewumind/ai-access.json</code>。</span><span data-en>For other clients, paste <code>SKILL.md</code> into project rules; bridge stdio with <code>npx mcp-remote</code>. Both MCP and the publish API need an <code>X-AI-Key</code>; turning on <strong>AI Dev Access</strong> in the config center generates it in <code>data/.gewumind/ai-access.json</code>.</span></p>
@@ -622,7 +622,7 @@
 <span class="c-comment"># 4. 安装 skill 并配置 MCP（opencode）</span>
 <span class="c-prompt">$</span> mkdir -p ~/.agents/skills
 <span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
-<span class="c-prompt">$</span> KEY=$(sudo python3 -c "import json;print(json.load(open('/opt/gewumind-boot/data/.gewumind/ai-access.json'))['key'])")
+<span class="c-prompt">$</span> KEY=$(sudo sed -n 's/.*"key"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' /opt/gewumind-boot/data/.gewumind/ai-access.json)
 <span class="c-prompt">$</span> opencode mcp add gewumind-boot --url http://localhost:9089/mcp \
     --header "X-AI-Key=$KEY"
 
@@ -642,7 +642,7 @@
 <span class="c-comment"># 4. Install the skill and configure MCP (opencode)</span>
 <span class="c-prompt">$</span> mkdir -p ~/.agents/skills
 <span class="c-prompt">$</span> git clone https://github.com/gewumind/gewumind-skill.git ~/.agents/skills/gewumind-boot
-<span class="c-prompt">$</span> KEY=$(sudo python3 -c "import json;print(json.load(open('/opt/gewumind-boot/data/.gewumind/ai-access.json'))['key'])")
+<span class="c-prompt">$</span> KEY=$(sudo sed -n 's/.*"key"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' /opt/gewumind-boot/data/.gewumind/ai-access.json)
 <span class="c-prompt">$</span> opencode mcp add gewumind-boot --url http://localhost:9089/mcp \
     --header "X-AI-Key=$KEY"
 
