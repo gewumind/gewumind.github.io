@@ -38,6 +38,7 @@
     <p class="legal-meta">Installer v0.1.0 · Linux / Windows / macOS · GUI + CLI</p>
 
     <div class="legal-note">
+      <strong>Enable AI publishing after install:</strong> sign in → Configuration Center → turn on <strong>AI Dev Access</strong>. The backend writes the <code>X-AI-Key</code> to <code>data/.gewumind/ai-access.json</code>. <code>/mcp</code> and <code>/api/ai/bundle/apply</code> require <code>X-AI-Key: &lt;keyId&gt;:&lt;secret&gt;</code>; they return 403 while the switch is off.<br />
       <strong>Live demo (English):</strong> <a href="http://47.117.145.234:34568" target="_blank" rel="noopener">http://47.117.145.234:34568</a> · login <code>admin / 123456</code><br />
       The installer handles environment checks, empty-database validation, schema import, JRE bootstrap,
       service registration, upgrades and uninstall. Download the application and database packages from

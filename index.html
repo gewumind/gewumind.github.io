@@ -122,10 +122,13 @@
 <span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install.sh -o install.sh
 <span class="c-prompt">$</span> sudo bash install.sh
 
-<span class="c-comment"># 2. 装上 gewumind-skill</span>
+<span class="c-comment"># 2. 登录后台 → 配置中心 → 打开「AI 开发接入」</span>
+<span class="c-comment">#    自动生成 X-AI-Key（MCP / REST 发布共用）</span>
+
+<span class="c-comment"># 3. 装上 gewumind-skill</span>
 <span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
 
-<span class="c-comment"># 3. 对 AI Agent 说：</span>
+<span class="c-comment"># 4. 对 AI Agent 说：</span>
 <span class="c-str">"用 gewumind-boot 做一个设备管理模块"</span>
 
 <span class="c-ai">→ 需求 → 设计文档 → 生成代码 → 一键发布</span>
@@ -136,10 +139,13 @@
 <span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install-en.sh -o install-en.sh
 <span class="c-prompt">$</span> sudo bash install-en.sh
 
-<span class="c-comment"># 2. Install gewumind-skill</span>
+<span class="c-comment"># 2. Sign in → Config Center → turn on AI Dev Access</span>
+<span class="c-comment">#    This creates the X-AI-Key for MCP / REST publishing</span>
+
+<span class="c-comment"># 3. Install gewumind-skill</span>
 <span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot
 
-<span class="c-comment"># 3. Tell your AI Agent:</span>
+<span class="c-comment"># 4. Tell your AI Agent:</span>
 <span class="c-str">"Use gewumind-boot to build a device management module"</span>
 
 <span class="c-ai">→ requirements → design → code → publish</span>
@@ -395,7 +401,7 @@
 
 <span class="c-prompt">$</span> claude mcp add --transport sse gewumind-boot \
     http://localhost:9089/mcp</code></pre>
-        <p class="muted"><span data-zh>其他 MCP 客户端可把 <code>SKILL.md</code> 贴进项目 rules，stdio 用 <code>npx mcp-remote</code> 桥接。MCP 与发布接口都需要 <code>X-AI-Key</code>，开发模式启动时会自动生成并打印在日志里。</span><span data-en>For other clients, paste <code>SKILL.md</code> into project rules; bridge stdio with <code>npx mcp-remote</code>. Both MCP and the publish API need an <code>X-AI-Key</code>; in dev mode one is generated at startup and printed to the log.</span></p>
+        <p class="muted"><span data-zh>其他 MCP 客户端可把 <code>SKILL.md</code> 贴进项目 rules，stdio 用 <code>npx mcp-remote</code> 桥接。MCP 与发布接口都需要 <code>X-AI-Key</code>；在配置中心打开「AI 开发接入」后自动生成，写入 <code>data/.gewumind/ai-access.json</code>。</span><span data-en>For other clients, paste <code>SKILL.md</code> into project rules; bridge stdio with <code>npx mcp-remote</code>. Both MCP and the publish API need an <code>X-AI-Key</code>; turning on <strong>AI Dev Access</strong> in the config center generates it in <code>data/.gewumind/ai-access.json</code>.</span></p>
       </div>
     </div>
 
@@ -606,7 +612,10 @@
 <span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install.sh -o install.sh
 <span class="c-prompt">$</span> sudo bash install.sh
 
-<span class="c-comment"># 3. 装上 skill，开始让 AI 交付</span>
+<span class="c-comment"># 3. 打开「AI 开发接入」，生成 X-AI-Key</span>
+<span class="c-comment">#    文件：data/.gewumind/ai-access.json（0600）</span>
+
+<span class="c-comment"># 4. 装上 skill，开始让 AI 交付</span>
 <span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot</code></pre>
       <pre data-en class="code code-lg"><code><span class="c-comment"># 1. Create an empty database</span>
 <span class="c-prompt">$</span> mysql -uroot -p -e "CREATE DATABASE gewumind-boot
@@ -616,7 +625,10 @@
 <span class="c-prompt">$</span> curl -fsSL https://gewumind.com/install-en.sh -o install-en.sh
 <span class="c-prompt">$</span> sudo bash install-en.sh
 
-<span class="c-comment"># 3. Install the skill and let AI deliver</span>
+<span class="c-comment"># 3. Turn on AI Dev Access and create X-AI-Key</span>
+<span class="c-comment">#    File: data/.gewumind/ai-access.json (0600)</span>
+
+<span class="c-comment"># 4. Install the skill and let AI deliver</span>
 <span class="c-prompt">$</span> ln -s /path/to/gewumind-skill ~/.claude/skills/gewumind-boot</code></pre>
 
       <div class="start-info">
@@ -624,6 +636,7 @@
         <div class="info-row"><span>Magic-Web</span><code>http://localhost:9089/magic/web</code></div>
         <div class="info-row"><span data-zh>默认账号</span><span data-en>Default login</span><code>admin / 123456</code></div>
         <div class="info-row"><span>MySQL</span><code>localhost:3306 · gewumind-boot</code></div>
+        <div class="info-row"><span data-zh>AI 开发接入</span><span data-en>AI Dev Access</span><code>X-AI-Key · /mcp</code></div>
         <p class="muted">
           <span data-zh>直接安装时端口和数据库在安装器中设置；源码运行/二次开发时可使用 <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code> 覆盖。</span>
           <span data-en>With the installer, set the port and database in the wizard; for source builds or custom development, override <code>SPRING_DATASOURCE_URL</code> / <code>_USERNAME</code> / <code>_PASSWORD</code>.</span>

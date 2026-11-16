@@ -38,6 +38,7 @@
     <p class="legal-meta">安装器 v0.1.0 · Linux / Windows / macOS · GUI + CLI</p>
 
     <div class="legal-note">
+      <strong>安装后启用 AI 发布：</strong>登录后台 → 配置中心 → 打开「AI 开发接入」；系统自动生成 <code>X-AI-Key</code> 并写入 <code>data/.gewumind/ai-access.json</code>。<code>/mcp</code> 与 <code>/api/ai/bundle/apply</code> 需要请求头 <code>X-AI-Key: &lt;keyId&gt;:&lt;secret&gt;</code>，开关关闭时返回 403。<br />
       <strong>在线体验（中文）：</strong><a href="http://47.117.145.234:34567" target="_blank" rel="noopener">http://47.117.145.234:34567</a> · 账号 <code>admin / 123456</code><br />
       安装器负责环境检测、空库校验、数据库初始化、JRE 准备、服务注册、升级和卸载。
       应用包和数据库包从 <a href="https://github.com/gewumind/gewumind-boot/releases">GitHub</a> 或
