@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free starter build · GewuMind Boot</title>
+  <meta name="description" content="GewuMind Boot free starter build: submit one core module, get a runnable demo in about a week, deploy and trial it. Email intake with a fixed format." />
+  <link rel="canonical" href="https://gewumind.com/starter.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://gewumind.com/starter.zh.html" />
+  <link rel="alternate" hreflang="en" href="https://gewumind.com/starter.html" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/legal-lang.js"></script>
+  <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="assets/js/track.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img src="assets/logo-mark.svg" alt="GewuMind" class="brand-mark" /><span class="brand-text">Gewu<strong>Mind</strong> Boot</span></a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/factory.html">Software factory</a>
+      <a href="/starter.html">Free build</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-ghost btn-sm" href="/starter.zh.html" data-lang-link="zh">中文</a></div>
+  </div>
+</header>
+
+<main class="legal-main">
+  <div class="container legal-wrap">
+    <span class="legal-kicker">FREE STARTER BUILD</span>
+    <h1 class="legal-title">Turn one requirement into a running demo</h1>
+    <p class="legal-meta">One core module · about 1 week · deploy and trial · public case by default</p>
+
+    <div class="legal-note">
+      <strong>How to apply:</strong> email the fixed format below to
+      <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>.
+      The system replies with a ticket; after the request is complete, the ops team reviews it within one business day.
+    </div>
+
+    <p><a class="btn btn-outline" href="http://47.117.145.234:34567" target="_blank" rel="noopener" data-gc-event="cta/starter/demo">See a student course-selection demo</a></p>
+
+    <h2>What you get</h2>
+    <p>
+      Pick one core module. We build a small runnable instance with GewuMind Boot:
+      real tables, APIs, pages, permissions and a basic report, then deploy it to a test environment for your trial.
+      This is not a clickable mockup or a screenshot.
+    </p>
+    <p>
+      Free scope is <strong>one core module</strong>, public video/case by default.
+      Extra modules, private cases, third-party integrations and commercial licenses are quoted separately.
+    </p>
+
+    <h2>Process</h2>
+    <table>
+      <thead><tr><th>Stage</th><th>Owner</th><th>What you receive</th><th>Time</th></tr></thead>
+      <tbody>
+        <tr><td>1. Email intake</td><td>You</td><td>Auto reply + ticket ID</td><td>Immediate</td></tr>
+        <tr><td>2. Clarification</td><td>Requirement lead / PM</td><td>Missing fields and questions</td><td>Within 1 business day</td></tr>
+        <tr><td>3. Scope confirmation</td><td>PM</td><td>Free scope, deliverables, timeline, boundaries</td><td>Before development</td></tr>
+        <tr><td>4. Development</td><td>Developer / AI</td><td>Tables, APIs, pages, permissions</td><td>About 1 week</td></tr>
+        <tr><td>5. Deployment</td><td>Deployment support</td><td>Trial URL, account, usage notes</td><td>After development</td></tr>
+        <tr><td>6. Trial &amp; feedback</td><td>You + PM</td><td>Feedback checklist, next-step recommendation</td><td>7-day trial</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Email format (keep the labels)</h2>
+    <p>
+      Subject: <code>[GW-STARTER] Company/team - Project name</code>.
+      Use one field per line. Write “none” for empty fields; do not remove labels.
+      The system parses these labels, so an invalid format delays processing.
+    </p>
+
+    <textarea id="starter-template" rows="16" spellcheck="false" aria-label="Request email template">[GW-STARTER] Company/team - Project name
+
+Contact:
+Email:
+Company/team:
+System name:
+Business scenario:
+User roles:
+Core data (3-5 tables):
+Must-have features:
+Integrations:
+Expected launch:
+Public case (yes/no):
+Deployment:
+Notes:</textarea>
+    <div class="legal-actions" style="margin-top:12px">
+      <button class="btn btn-primary" type="button" onclick="sendStarter()">Send by email</button>
+      <button class="btn" type="button" onclick="copyStarter()">Copy template</button>
+    </div>
+    <p class="muted">Do not send passwords, private keys, full identity numbers or customer-sensitive data. Desensitize demo data first.</p>
+
+    <h2>Follow-up email format</h2>
+    <p>Keep the ticket number in the subject. Use this structure; one email should move one stage only:</p>
+    <pre class="code"><code>Ticket: GW-S-YYYYMMDD-XXXX
+Stage: clarification / scope / development / deployed / trial / result
+Project:
+
+Conclusion:
+- ...
+
+Need your confirmation:
+- ...
+
+Next step:
+- ...
+
+Deadline:</code></pre>
+
+    <h2>Scope and boundaries</h2>
+    <ul>
+      <li>One core module, smallest runnable instance; not a full project delivery.</li>
+      <li>Public video/case by default; private cases are quoted separately.</li>
+      <li>Extra modules, complex approvals, third-party API/hardware integrations, migration and data cleanup are quoted separately.</li>
+      <li>A commercial license is separate from the free instance.</li>
+      <li>We do not take illegal, classified or high-risk projects; final acceptance is at the ops team's discretion.</li>
+    </ul>
+
+    <h2>Why start with a small instance</h2>
+    <p>
+      The real risk in a backend system is not drawing pages. It is misaligned requirements,
+      unclear permission boundaries and a data model that is wrong from day one.
+      Build one core module, run a real workflow, then decide whether to invest in the full project.
+    </p>
+
+    <div class="legal-note">
+      Email: <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a><br />
+      First reply within 1 business day; Chinese and English supported.
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="GewuMind" class="footer-logo" />
+      <p>Knowledge into practice · AI-powered low-code backend</p>
+    </div>
+    <div class="footer-links">
+      <div><h5>Product</h5><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/factory.html">Software factory</a><a href="/starter.html">Free build</a><a href="/contact.html">Contact</a></div>
+      <div><h5>Legal</h5><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/license.html">License</a></div>
+      <div><h5>Resources</h5><a href="/#start">Quick start</a><a href="/install.html">Installer</a><a href="/pricing.html">Commercial license</a></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 GewuMind</span><span>Open core under Apache-2.0</span></div>
+</footer>
+
+<script>
+const starterTemplate = document.getElementById('starter-template');
+function track(name) {
+  if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+    window.goatcounter.count({ path: name, title: name, event: true });
+  }
+}
+function field(label) {
+  const line = starterTemplate.value.split('\n').find((item) => item.startsWith(label + ':'));
+  return line ? line.slice(label.length + 1).trim() : '';
+}
+function sendStarter() {
+  track('cta/starter/send');
+  const company = field('Company/team') || 'Company/team';
+  const project = field('System name') || 'Project name';
+  const subject = encodeURIComponent('[GW-STARTER] ' + company + ' - ' + project);
+  const body = encodeURIComponent(starterTemplate.value);
+  window.location.href = 'mailto:gewumind@foxmail.com?subject=' + subject + '&body=' + body;
+}
+function copyStarter() {
+  track('cta/starter/copy');
+  navigator.clipboard.writeText(starterTemplate.value).then(
+    () => { alert('Template copied. Paste it into the email body and fill it in.'); },
+    () => { starterTemplate.select(); document.execCommand('copy'); }
+  );
+}
+</script>
+</body>
+</html>

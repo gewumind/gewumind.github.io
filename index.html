@@ -21,6 +21,7 @@
   <meta property="og:image:alt" data-i18n="GewuMind Boot · AI dev tool · open-source kernel" content="GewuMind Boot · AI 开发 + AI 客服 · 开源内核" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="assets/js/track.js" defer></script>
 </head>
 <body>
 
@@ -39,6 +40,8 @@
       <a href="#ai-service"><span data-zh>AI 客服</span><span data-en>AI Support</span></a>
       <a href="#start"><span data-zh>快速开始</span><span data-en>Start</span></a>
       <a href="/install.html"><span data-zh>安装器</span><span data-en>Installer</span></a>
+      <a href="/factory.zh.html" data-zh>软件工厂</a><a href="/factory.html" data-en>Software factory</a>
+      <a href="/starter.zh.html" data-zh>免费实例</a><a href="/starter.html" data-en>Free build</a>
       <a href="#license"><span data-zh>版本与授权</span><span data-en>License</span></a>
       <details class="nav-more">
         <summary><span data-zh>更多</span><span data-en>More</span></summary>
@@ -94,19 +97,21 @@
       </p>
 
       <div class="hero-cta">
-        <a class="btn btn-primary" data-zh href="http://47.117.145.234:34567" target="_blank" rel="noopener">在线体验 · admin / 123456</a>
-        <a class="btn btn-primary" data-en href="http://47.117.145.234:34568" target="_blank" rel="noopener">Live demo · admin / 123456</a>
-        <a class="btn btn-outline" href="/install.html">
+        <a class="btn btn-primary" data-zh href="http://47.117.145.234:34567" target="_blank" rel="noopener" data-gc-event="cta/demo">在线体验 · admin / 123456</a>
+        <a class="btn btn-primary" data-en href="http://47.117.145.234:34568" target="_blank" rel="noopener" data-gc-event="cta/demo">Live demo · admin / 123456</a>
+        <a class="btn btn-outline" href="/install.html" data-gc-event="cta/install">
           <span data-zh>下载安装器</span><span data-en>Download installer</span>
         </a>
         <a class="btn btn-outline" href="#start">
           <span data-zh>5 分钟上手</span><span data-en>Get started in 5 min</span>
         </a>
+        <a class="btn btn-outline" data-zh href="/starter.zh.html" data-gc-event="cta/starter">免费做最小实例</a>
+        <a class="btn btn-outline" data-en href="/starter.html" data-gc-event="cta/starter">Free starter build</a>
       </div>
 
       <p class="hero-release">
-        <span data-zh><strong>v2.3.0</strong> · AI 客服 + 三档授权 + 中英文 + 安装器交付 · <a href="/install.html">下载</a> · <a href="/pricing.html">获取授权</a></span>
-        <span data-en><strong>v2.3.0</strong> · AI support + three editions + bilingual + installer delivery · <a href="/install.html">Download</a> · <a href="/pricing.html">Get a license</a></span>
+        <span data-zh><strong>v2.3.0</strong> · AI 客服 + 三档授权 + 中英文 + 安装器交付 · <a href="/install.html">下载</a> · <a href="/pricing.html" data-gc-event="cta/pricing">获取授权</a></span>
+        <span data-en><strong>v2.3.0</strong> · AI support + three editions + bilingual + installer delivery · <a href="/install.html">Download</a> · <a href="/pricing.html" data-gc-event="cta/pricing">Get a license</a></span>
       </p>
 
       <div class="hero-tags">
@@ -796,7 +801,7 @@ spring:
           <li><span data-zh>基础 CRUD、页面组件、开放接口</span><span data-en>Basic CRUD, page components, Open API</span></li>
           <li><span data-zh>社区支持</span><span data-en>Community support</span></li>
         </ul>
-        <p class="plan-cta"><a class="btn btn-primary btn-sm" href="/install.html"><span data-zh>下载 2.3.0</span><span data-en>Download 2.3.0</span></a></p>
+        <p class="plan-cta"><a class="btn btn-primary btn-sm" href="/install.html" data-gc-event="cta/install"><span data-zh>下载 2.3.0</span><span data-en>Download 2.3.0</span></a></p>
       </div>
       <article class="card plan">
         <div class="plan-badge"><span data-zh>标准版</span><span data-en>Standard</span></div>
@@ -809,8 +814,8 @@ spring:
         </ul>
         <p class="price"><span data-zh>单机 / 年 · 799 CNY / 129 USD 起</span><span data-en>Per machine / year · from 799 CNY / 129 USD</span></p>
         <p class="plan-cta">
-          <a class="btn btn-primary btn-sm" href="https://mbd.pub/o/bread/YZaWl5lsag==" target="_blank" rel="noopener"><span data-zh>面包多购买</span><span data-en>Buy with CNY</span></a>
-          <a class="btn btn-ghost btn-sm" href="https://www.creem.io/product/prod_1oxfqJvBWhi14cASP1EF5j" target="_blank" rel="noopener"><span data-zh>Creem 购买</span><span data-en>Buy with USD</span></a>
+          <a class="btn btn-primary btn-sm" href="https://mbd.pub/o/bread/YZaWl5lsag==" target="_blank" rel="noopener" data-gc-event="cta/buy/standard/mianbaoduo"><span data-zh>面包多购买</span><span data-en>Buy with CNY</span></a>
+          <a class="btn btn-ghost btn-sm" href="https://www.creem.io/product/prod_1oxfqJvBWhi14cASP1EF5j" target="_blank" rel="noopener" data-gc-event="cta/buy/standard/creem"><span data-zh>Creem 购买</span><span data-en>Buy with USD</span></a>
         </p>
       </article>
       <article class="card plan pro">
@@ -825,8 +830,8 @@ spring:
         </ul>
         <p class="price"><span data-zh>单机 / 年 · 1,599 CNY / 249 USD 起</span><span data-en>Per machine / year · from 1,599 CNY / 249 USD</span></p>
         <p class="plan-cta">
-          <a class="btn btn-primary btn-sm" href="https://mbd.pub/o/bread/YZaWl5lsaw==" target="_blank" rel="noopener"><span data-zh>面包多购买</span><span data-en>Buy with CNY</span></a>
-          <a class="btn btn-ghost btn-sm" href="https://www.creem.io/product/prod_ny41sK4odYG1gp0EOYmoy" target="_blank" rel="noopener"><span data-zh>Creem 购买</span><span data-en>Buy with USD</span></a>
+          <a class="btn btn-primary btn-sm" href="https://mbd.pub/o/bread/YZaWl5lsaw==" target="_blank" rel="noopener" data-gc-event="cta/buy/enterprise/mianbaoduo"><span data-zh>面包多购买</span><span data-en>Buy with CNY</span></a>
+          <a class="btn btn-ghost btn-sm" href="https://www.creem.io/product/prod_ny41sK4odYG1gp0EOYmoy" target="_blank" rel="noopener" data-gc-event="cta/buy/enterprise/creem"><span data-zh>Creem 购买</span><span data-en>Buy with USD</span></a>
         </p>
       </article>
     </div>
@@ -924,6 +929,8 @@ spring:
         <h5><span data-zh>资源</span><span data-en>Resources</span></h5>
         <a href="#start"><span data-zh>快速开始</span><span data-en>Quick start</span></a>
         <a href="/install.html"><span data-zh>安装器</span><span data-en>Installer</span></a>
+      <a href="/factory.zh.html" data-zh>软件工厂</a><a href="/factory.html" data-en>Software factory</a>
+      <a href="/starter.zh.html" data-zh>免费实例</a><a href="/starter.html" data-en>Free build</a>
       <a data-zh href="http://47.117.145.234:34567" target="_blank" rel="noopener">在线体验</a>
       <a data-en href="http://47.117.145.234:34568" target="_blank" rel="noopener">Live demo</a>
         <a href="https://github.com/gewumind/gewumind-boot/releases" target="_blank" rel="noopener"><span data-zh>GitHub 下载</span><span data-en>GitHub downloads</span></a>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>免费最小实例活动 · GewuMind Boot</title>
+  <meta name="description" content="GewuMind Boot 免费最小实例活动：提交一个核心模块的需求，1 周左右做出可运行 demo，部署后交付试用。邮件提交，流程和格式固定。" />
+  <link rel="canonical" href="https://gewumind.com/starter.zh.html" />
+  <link rel="alternate" hreflang="en" href="https://gewumind.com/starter.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://gewumind.com/starter.zh.html" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/legal-lang.js"></script>
+  <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="assets/js/track.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img src="assets/logo-mark.svg" alt="GewuMind" class="brand-mark" /><span class="brand-text">Gewu<strong>Mind</strong> Boot</span></a>
+    <nav class="nav-links">
+      <a href="/">首页</a>
+      <a href="/pricing.zh.html">价格</a>
+      <a href="/factory.zh.html">软件工厂</a>
+      <a href="/starter.zh.html">免费实例</a>
+      <a href="/contact.zh.html">联系</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-ghost btn-sm" href="/starter.html" data-lang-link="en">English</a></div>
+  </div>
+</header>
+
+<main class="legal-main">
+  <div class="container legal-wrap">
+    <span class="legal-kicker">免费最小实例活动</span>
+    <h1 class="legal-title">把你的需求，先做成一个能跑的版本</h1>
+    <p class="legal-meta">1 个核心模块 · 约 1 周开发 · 部署后试用 · 默认公开案例</p>
+
+    <div class="legal-note">
+      <strong>怎么参加：</strong>按下面的固定格式发邮件到
+      <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>。
+      系统会自动回执并生成工单；资料完整后，运营团队会在 1 个工作日内评估。
+    </div>
+
+    <p><a class="btn btn-outline" href="http://47.117.145.234:34567" target="_blank" rel="noopener" data-gc-event="cta/starter/demo">先看一个学生选课 Demo</a></p>
+
+    <h2>活动做什么</h2>
+    <p>
+      选一个你最想验证的核心模块，我们用 GewuMind Boot 做一个最小可运行实例：
+      有真实的数据表、接口、页面、权限和基础报表，部署到测试环境后交给你试用。
+      不是画原型，也不是只看截图。
+    </p>
+    <p>
+      免费范围是 <strong>1 个核心模块</strong>，默认作为公开视频/案例；
+      额外模块、私有案例、第三方系统对接和商业 License 另计。
+    </p>
+
+    <h2>整个流程</h2>
+    <table>
+      <thead><tr><th>阶段</th><th>谁负责</th><th>你会收到什么</th><th>时间</th></tr></thead>
+      <tbody>
+        <tr><td>1. 邮件提交</td><td>你</td><td>系统自动回执 + 工单号</td><td>即时</td></tr>
+        <tr><td>2. 需求澄清</td><td>需求顾问 / 项目经理</td><td>缺失信息清单、澄清问题</td><td>1 个工作日内</td></tr>
+        <tr><td>3. 范围确认</td><td>项目经理</td><td>免费范围、交付物、时间、边界</td><td>确认后进入开发</td></tr>
+        <tr><td>4. 开发</td><td>开发 / AI 协作</td><td>数据表、接口、页面、权限</td><td>约 1 周</td></tr>
+        <tr><td>5. 部署</td><td>部署支持</td><td>试用地址、账号、使用说明</td><td>开发完成后</td></tr>
+        <tr><td>6. 试用与反馈</td><td>你 + 项目经理</td><td>反馈清单、是否转正式建议</td><td>试用 7 天</td></tr>
+      </tbody>
+    </table>
+
+    <h2>邮件格式（标签不要改）</h2>
+    <p>
+      邮件主题固定为：<code>[GW-STARTER] 公司/团队 - 项目名称</code>。
+      正文一行一个字段；没有的字段写“无”，不要删除标签。
+      系统按固定标签解析，格式不对会延迟处理。
+    </p>
+
+    <textarea id="starter-template" rows="16" spellcheck="false" aria-label="需求邮件模板">[GW-STARTER] 公司/团队 - 项目名称
+
+联系人：
+邮箱：
+公司/团队：
+系统名称：
+业务场景：
+使用角色：
+核心数据（3-5 张表）：
+必须功能：
+需要对接的系统：
+期望上线时间：
+是否接受公开案例（是/否）：
+部署环境：
+其他说明：</textarea>
+    <div class="legal-actions" style="margin-top:12px">
+      <button class="btn btn-primary" type="button" onclick="sendStarter()">用邮件发送</button>
+      <button class="btn" type="button" onclick="copyStarter()">复制模板</button>
+    </div>
+    <p class="muted">请勿在邮件中发送密码、私钥、完整身份证号或客户敏感数据；演示数据请先脱敏。</p>
+
+    <h2>后续邮件格式</h2>
+    <p>回复时保留主题里的工单号，不要改主题。正文按下面结构写，一封邮件只推进一个阶段：</p>
+    <pre class="code"><code>工单：GW-S-YYYYMMDD-XXXX
+阶段：需求澄清 / 范围确认 / 开发中 / 已部署 / 试用 / 结果
+项目：
+
+结论：
+- ...
+
+需要你确认：
+- ...
+
+下一步：
+- ...
+
+截止时间：</code></pre>
+
+    <h2>免费范围与边界</h2>
+    <ul>
+      <li>1 个核心模块，最小可运行实例；不是完整项目交付。</li>
+      <li>默认公开为视频/案例；不愿公开需按私有案例计费。</li>
+      <li>额外模块、复杂审批流、第三方 API/硬件对接、迁移和历史数据清洗另计。</li>
+      <li>商业 License 按价格页单独购买；免费实例不等于商业授权。</li>
+      <li>违法、涉密、高风险行业不接；具体以运营团队评估为准。</li>
+    </ul>
+
+    <h2>为什么先做最小实例</h2>
+    <p>
+      后台系统真正的风险不是“页面做不出来”，而是需求没对齐、权限边界没想清楚、
+      数据模型一开始就错。先做一个能跑的核心模块，用真实流程验证，再决定是否投入完整项目。
+    </p>
+
+    <div class="legal-note">
+      邮件：<a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a><br />
+      首次回复：1 个工作日内；支持中文和英文。
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="GewuMind" class="footer-logo" />
+      <p>格物致知 · AI 驱动的低代码后端容器</p>
+    </div>
+    <div class="footer-links">
+      <div><h5>产品</h5><a href="/">首页</a><a href="/pricing.zh.html">价格</a><a href="/factory.zh.html">软件工厂</a><a href="/starter.zh.html">免费实例</a><a href="/contact.zh.html">联系我们</a></div>
+      <div><h5>法律</h5><a href="/terms.zh.html">服务条款</a><a href="/privacy.zh.html">隐私政策</a><a href="/license.zh.html">软件授权协议</a></div>
+      <div><h5>资源</h5><a href="/#start">快速开始</a><a href="/install.zh.html">安装器</a><a href="/pricing.zh.html">商业授权</a></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 GewuMind</span><span>内核基于 Apache-2.0 开源</span></div>
+</footer>
+
+<script>
+const starterTemplate = document.getElementById('starter-template');
+function track(name) {
+  if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+    window.goatcounter.count({ path: name, title: name, event: true });
+  }
+}
+function field(label) {
+  const line = starterTemplate.value.split('\n').find((item) => item.startsWith(label + '：'));
+  return line ? line.slice(label.length + 1).trim() : '';
+}
+function sendStarter() {
+  track('cta/starter/send');
+  const company = field('公司/团队') || '公司/团队';
+  const project = field('系统名称') || '项目名称';
+  const subject = encodeURIComponent('[GW-STARTER] ' + company + ' - ' + project);
+  const body = encodeURIComponent(starterTemplate.value);
+  window.location.href = 'mailto:gewumind@foxmail.com?subject=' + subject + '&body=' + body;
+}
+function copyStarter() {
+  track('cta/starter/copy');
+  navigator.clipboard.writeText(starterTemplate.value).then(
+    () => { alert('模板已复制，请粘贴到邮件正文并填写。'); },
+    () => { starterTemplate.select(); document.execCommand('copy'); }
+  );
+}
+</script>
+</body>
+</html>

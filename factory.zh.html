@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>软件工厂 · 邮件下单、原型确认与进度查询 · GewuMind Boot</title>
+  <meta name="description" content="GewuMind 软件工厂：通过邮件提交需求，确认需求与原型，工厂设计、生产、QA、部署，运营验收后交付。支持用工单号邮件查询排队位置、预计时间和当前状态。" />
+  <link rel="canonical" href="https://gewumind.com/factory.zh.html" />
+  <link rel="alternate" hreflang="en" href="https://gewumind.com/factory.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://gewumind.com/factory.zh.html" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/legal-lang.js"></script>
+  <script data-goatcounter="https://gewumind.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="assets/js/track.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img src="assets/logo-mark.svg" alt="GewuMind" class="brand-mark" /><span class="brand-text">Gewu<strong>Mind</strong> Boot</span></a>
+    <nav class="nav-links">
+      <a href="/">首页</a>
+      <a href="/pricing.zh.html">价格</a>
+      <a href="/factory.zh.html">软件工厂</a>
+      <a href="/starter.zh.html">免费实例</a>
+      <a href="/contact.zh.html">联系</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-ghost btn-sm" href="/factory.html" data-lang-link="en">English</a></div>
+  </div>
+</header>
+
+<main class="legal-main">
+  <div class="container legal-wrap">
+    <span class="legal-kicker">GewuMind 软件工厂</span>
+    <h1 class="legal-title">从一封邮件需求，到可验收的应用</h1>
+    <p class="legal-meta">邮件提交 · 原型确认 · 工厂生产 · QA · 试用 · 验收 · 变更</p>
+
+    <div class="legal-note">
+      <strong>怎么开始：</strong>把需求和附件发到
+      <a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a>。
+      邮件主题使用 <code>[GW-STARTER] 公司/团队 - 项目名称</code>。
+      系统会自动回执并生成工单号；之后所有沟通保留工单号。
+    </div>
+
+    <p><a class="btn btn-primary" href="mailto:gewumind@foxmail.com?subject=%5BGW-STARTER%5D%20公司%2F团队%20-%20项目名称">发需求邮件</a>
+       <a class="btn btn-outline" href="#status">用工单号查进度</a></p>
+
+    <h2>这套流程适合谁</h2>
+    <ul>
+      <li>想先做一个核心模块、验证业务流程的团队。</li>
+      <li>已经有明确需求、但不想从零写后台的管理系统项目。</li>
+      <li>希望原型、开发、QA、部署由同一条生产线负责，减少来回传话。</li>
+      <li>能接受“先确认原型，再投入生产”的交付方式。</li>
+    </ul>
+
+    <h2>全流程（建议先看这一节）</h2>
+    <table>
+      <thead><tr><th>阶段</th><th>谁负责</th><th>你会看到什么</th><th>你需要做什么</th></tr></thead>
+      <tbody>
+        <tr><td>1. 邮件提交</td><td>你</td><td>自动回执 + 工单号</td><td>按固定格式发需求，附件一起发</td></tr>
+        <tr><td>2. 需求确认</td><td>运营 / 需求顾问</td><td>范围、角色、验收标准、时间</td><td>回复“确认”或补充信息</td></tr>
+        <tr><td>3. 工厂接单</td><td>项目经理</td><td>订单进入排期</td><td>等待，不需要重复发需求</td></tr>
+        <tr><td>4. 设计</td><td>设计工位</td><td>页面、数据、接口设计</td><td>有疑问及时提出</td></tr>
+        <tr><td>5. 原型确认</td><td>你 + 运营</td><td>可点击原型 / 预览地址</td><td><strong>确认原型后才能生产</strong></td></tr>
+        <tr><td>6. 生产</td><td>生产工位</td><td>真实数据表、接口、页面、权限</td><td>等待工厂同步</td></tr>
+        <tr><td>7. QA</td><td>品控工位</td><td>接口、权限、负向和清理测试结果</td><td>无；失败由工厂修复</td></tr>
+        <tr><td>8. 部署 / 验收</td><td>部署 + 运营</td><td>试用地址、管理员账号、使用账号</td><td>按验收清单测试</td></tr>
+        <tr><td>9. 客户确认</td><td>你</td><td>交付确认或变更单</td><td>确认交付，或提出变更</td></tr>
+      </tbody>
+    </table>
+
+    <p class="muted">时间取决于需求范围、附件完整度和排队情况；邮件回执和状态查询会给出预计区间，不会承诺精确到分钟。</p>
+
+    <h2>第一步：发需求邮件</h2>
+    <p>主题固定，正文一行一个字段，标签不要改；没有的字段写“无”。附件支持 PDF、DOCX、XLSX、图片和 ZIP。</p>
+
+    <textarea id="request-template" rows="18" spellcheck="false" aria-label="需求邮件模板">[GW-STARTER] 公司/团队 - 项目名称
+
+联系人：
+邮箱：
+公司/团队：
+系统名称：
+业务场景：
+使用角色：
+核心数据（3-5 张表）：
+必须功能：
+需要对接的系统：
+期望上线时间：
+是否接受公开案例（是/否）：
+部署环境：
+其他说明：</textarea>
+    <div class="legal-actions" style="margin-top:12px">
+      <button class="btn btn-primary" type="button" onclick="sendRequest()">用邮件发送</button>
+      <button class="btn" type="button" onclick="copyTemplate('request-template')">复制模板</button>
+    </div>
+
+    <h3>附件怎么放</h3>
+    <ul>
+      <li>需求文档、原型草图、Excel 字段表、现有系统截图都可以作为附件。</li>
+      <li>附件文件名建议带项目名，例如 <code>学生选课-需求-v1.docx</code>。</li>
+      <li>不要在邮件里发送密码、私钥、完整身份证号或客户敏感数据；演示数据请先脱敏。</li>
+      <li>附件太大时先发需求正文，运营会回复安全的传输方式。</li>
+    </ul>
+
+    <h2>第二步：确认需求</h2>
+    <p>运营会回复一份需求摘要，包含：</p>
+    <ul>
+      <li>本期做什么、不做什么</li>
+      <li>使用角色和权限</li>
+      <li>核心数据表和页面清单</li>
+      <li>验收标准和交付时间</li>
+    </ul>
+    <p>你回复“确认”后工厂才接单。需要补充时直接回复缺失字段；不要重新开一个新工单。</p>
+
+    <h2>第三步：确认原型（关键门禁）</h2>
+    <p>设计完成后，运营会给你一个原型预览地址或截图。原型和最终系统使用同一套页面结构、首页、菜单和视觉风格，不是另做一套静态稿。</p>
+    <table>
+      <thead><tr><th>检查项</th><th>确认内容</th></tr></thead>
+      <tbody>
+        <tr><td>页面结构</td><td>页面是否齐全，导航是否符合业务习惯</td></tr>
+        <tr><td>首页</td><td>首页指标、图表、快捷入口是否是你要看的</td></tr>
+        <tr><td>列表字段</td><td>列表列是否够用，顺序是否合理</td></tr>
+        <tr><td>表单字段</td><td>新增/编辑字段、必填项、校验是否清楚</td></tr>
+        <tr><td>角色菜单</td><td>管理员和实际使用账号分别看到什么</td></tr>
+        <tr><td>移动端</td><td>手机宽度下是否可操作</td></tr>
+      </tbody>
+    </table>
+    <div class="legal-note">
+      <strong>重要：</strong>没有确认原型，工厂不会进入生产。原型确认后再改布局，会走变更流程。
+    </div>
+    <p>回复格式：</p>
+    <pre class="code"><code>工单：GW-S-YYYYMMDD-XXXX
+阶段：原型确认
+结论：确认原型 / 需要修改
+需要修改：
+- ...
+下一步：进入生产 / 重新出原型
+截止时间：</code></pre>
+
+    <h2>第四步：试用与验收</h2>
+    <p>部署完成后，运营会提供试用地址和<strong>两个账号</strong>：</p>
+    <ul>
+      <li><strong>管理员账号</strong>：配置、权限、完整菜单和全部数据。</li>
+      <li><strong>使用账号</strong>：只显示本次开发的功能菜单，例如“学生选课”，不显示系统设置等管理菜单。</li>
+    </ul>
+    <p>每个角色一个账号，不要共用 admin 验收普通用户路径。验收时重点看：</p>
+    <ul>
+      <li>首页是否能直接回答业务问题，而不是通用销售/日志首页。</li>
+      <li>使用账号是否只看到该看的菜单。</li>
+      <li>新增、编辑、查询、删除或业务等价链路是否可用。</li>
+      <li>权限、空态、错误提示、移动端是否可接受。</li>
+      <li>是否出现 5xx、页面空白、控制台错误。</li>
+    </ul>
+    <p>不符合预期时，回复验收邮件并列明页面、操作步骤、期望结果和截图；工厂确认后修复并重新交付。</p>
+
+    <h2>第五步：客户确认与变更</h2>
+    <p>运营验收通过后，会把试用地址、账号、范围和已知限制发给你确认。你可以：</p>
+    <ul>
+      <li><strong>确认交付</strong>：工单关闭，输出交付说明、版本和回滚信息。</li>
+      <li><strong>提变更</strong>：新增功能、改流程、改页面、改权限。工厂会先评估范围、工期和费用，确认后再排期。</li>
+    </ul>
+    <p>变更不覆盖旧版本；每个版本保留独立的原型、构建、QA 和验收记录。</p>
+
+    <h2 id="status">用工单号查询进度</h2>
+    <p>不需要重复发需求。只要知道工单号，就可以直接回复或新发邮件查询。</p>
+
+    <h3>查询邮件格式</h3>
+    <p>主题包含工单号，正文写明查询即可：</p>
+    <pre class="code"><code>主题：[GW-STARTER] [GW-S-20261117-4FC5] 进度查询
+
+工单：GW-S-20261117-4FC5
+请查询当前状态、排队位置和预计时间。</code></pre>
+
+    <p>系统会自动回复类似：</p>
+    <pre class="code"><code>工单：GW-S-20261117-4FC5
+当前状态：排队中
+下一步：前面还有 1 个排队订单
+排队位置：第 2 位
+预计排队：约 35 分钟
+预计完成：约 1 小时 45 分钟
+最后更新：2026-11-17 18:10
+
+说明：预计时间按当前产线排队和标准工位节拍估算，实际可能提前或延后。</code></pre>
+
+    <h3>状态说明</h3>
+    <table>
+      <thead><tr><th>状态</th><th>含义</th><th>你要做什么</th></tr></thead>
+      <tbody>
+        <tr><td>已收到</td><td>需求已进入工单</td><td>等待运营评估</td></tr>
+        <tr><td>待补充</td><td>缺少必要字段或附件不可读</td><td>按回复补充</td></tr>
+        <tr><td>需求确认</td><td>范围和验收标准待你确认</td><td>回复确认或修改</td></tr>
+        <tr><td>排队中</td><td>工厂已接单，等待产线</td><td>可查排队位置</td></tr>
+        <tr><td>设计中 / 原型制作</td><td>工厂正在准备原型</td><td>等待预览</td></tr>
+        <tr><td>等待原型确认</td><td>原型已出，等待你确认</td><td>确认或提修改</td></tr>
+        <tr><td>生产中</td><td>正在生成真实应用</td><td>等待 QA/部署</td></tr>
+        <tr><td>品控测试</td><td>接口、权限、负向测试中</td><td>无；失败由工厂修复</td></tr>
+        <tr><td>已部署，待验收</td><td>可试用</td><td>按验收清单测试</td></tr>
+        <tr><td>已交付</td><td>验收和客户确认完成</td><td>无</td></tr>
+        <tr><td>需要人工处理</td><td>环境/权限/需求阻塞</td><td>等待运营联系</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">只查询工单本人信息；系统不会在邮件里返回其他客户或其他订单的内容。</p>
+
+    <h2>时间、范围和边界</h2>
+    <ul>
+      <li>回执：即时自动回复；需求评估：1 个工作日内。</li>
+      <li>原型：通常在需求确认后 1–2 个工作日；生产、QA、部署按范围和排队情况估算。</li>
+      <li>免费最小实例默认 1 个核心模块，默认公开案例；额外模块、私有案例、复杂集成、迁移和商业 License 另计。</li>
+      <li>不接违法、涉密、高风险行业；是否接单以运营评估为准。</li>
+      <li>测试阶段默认内网/受控访问，公开上线由双方确认后执行。</li>
+    </ul>
+
+    <h2>常见问题</h2>
+    <h3>我可以只发附件吗？</h3>
+    <p>最好正文和附件一起发。正文用于自动建单，附件用于理解细节；只发附件可能缺字段，工单会进入“待补充”。</p>
+    <h3>工单号丢了怎么办？</h3>
+    <p>用原发件邮箱回复原邮件线程，或联系运营；不要新开一个工单，避免重复排队。</p>
+    <h3>为什么用户账号看不到系统设置？</h3>
+    <p>这是角色隔离。使用账号只绑定本次开发的功能菜单；管理员账号才拥有完整配置权限。</p>
+    <h3>原型确认后还能改吗？</h3>
+    <p>可以，但走变更流程。原型确认是生产门禁，确认后改布局/数据/接口会重新评估工期和费用。</p>
+    <h3>为什么预计时间不是精确时间？</h3>
+    <p>产线按订单排队，各工位实际耗时会受需求、附件和 QA 结果影响；邮件给的是区间，不是承诺。</p>
+
+    <div class="legal-note">
+      邮件：<a href="mailto:gewumind@foxmail.com">gewumind@foxmail.com</a><br />
+      主题：<code>[GW-STARTER] 公司/团队 - 项目名称</code><br />
+      首次回复：1 个工作日内 · 支持中文和英文
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="GewuMind" class="footer-logo" />
+      <p>格物致知 · AI 驱动的低代码后端容器</p>
+    </div>
+    <div class="footer-links">
+      <div><h5>产品</h5><a href="/">首页</a><a href="/pricing.zh.html">价格</a><a href="/factory.zh.html">软件工厂</a><a href="/factory.zh.html">软件工厂</a><a href="/starter.zh.html">免费实例</a><a href="/contact.zh.html">联系我们</a></div>
+      <div><h5>法律</h5><a href="/terms.zh.html">服务条款</a><a href="/privacy.zh.html">隐私政策</a><a href="/license.zh.html">软件授权协议</a></div>
+      <div><h5>资源</h5><a href="/#start">快速开始</a><a href="/install.zh.html">安装器</a><a href="/pricing.zh.html">商业授权</a></div>
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 GewuMind</span><span>内核基于 Apache-2.0 开源</span></div>
+</footer>
+
+<script>
+function track(name) {
+  if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+    window.goatcounter.count({ path: name, title: name, event: true });
+  }
+}
+function copyTemplate(id) {
+  const el = document.getElementById(id);
+  track('cta/factory/copy');
+  navigator.clipboard.writeText(el.value).then(
+    () => alert('模板已复制，请粘贴到邮件正文并填写。'),
+    () => { el.select(); document.execCommand('copy'); }
+  );
+}
+function sendRequest() {
+  track('cta/factory/send');
+  const el = document.getElementById('request-template');
+  const value = el.value;
+  const project = (value.split('\n').find((x) => x.startsWith('系统名称：')) || '').replace('系统名称：', '').trim() || '项目名称';
+  const company = (value.split('\n').find((x) => x.startsWith('公司/团队：')) || '').replace('公司/团队：', '').trim() || '公司/团队';
+  window.location.href = 'mailto:gewumind@foxmail.com?subject=' + encodeURIComponent('[GW-STARTER] ' + company + ' - ' + project) + '&body=' + encodeURIComponent(value);
+}
+</script>
+</body>
+</html>
