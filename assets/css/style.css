@@ -125,8 +125,9 @@ code {
   color: var(--muted); font-size: .85rem; white-space: nowrap;
 }
 .nav-more-menu a:hover { color: var(--text); background: rgba(99,102,241,.12); }
-.nav-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.nav-actions { margin-left: auto; display: flex; align-items: center; gap: 8px; flex-shrink: 0; padding-left: 14px; border-left: 1px solid var(--border-soft); }
 .lang-switch {
+  white-space: nowrap;
   font-family: var(--font);
   font-size: .85rem;
   color: var(--muted);
@@ -446,7 +447,14 @@ ul.check li::after {
 .release-date { color: var(--muted); font-size: .86rem; }
 .release-item p { margin: 0; color: var(--muted); font-size: .92rem; }
 
+@media (max-width: 1320px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: .86rem; }
+  .nav-actions { gap: 6px; padding-left: 10px; }
+}
+
 @media (max-width: 1200px) {
+  .nav-actions { border-left: 0; padding-left: 0; }
   .nav-inner { flex-wrap: wrap; height: auto; padding: 10px 0; row-gap: 6px; }
   .nav-links {
     order: 3; width: 100%; margin-left: 0; gap: 12px 16px;
